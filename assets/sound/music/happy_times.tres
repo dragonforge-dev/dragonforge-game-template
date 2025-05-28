@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Song" load_steps=3 format=3 uid="uid://cjncndw8bjijx"]
+
+[ext_resource type="Script" uid="uid://dsoiwds3eb65w" path="res://addons/dragonforge_dev_game_template/utilities/sound/song.gd" id="1_41qet"]
+[ext_resource type="AudioStream" uid="uid://dfxsvd0ar6ugf" path="res://assets/sound/music/gamedev_market/tom_feldmann/UpbeatCalm1.mp3" id="2_xqdx2"]
+
+[resource]
+script = ExtResource("1_41qet")
+song = ExtResource("2_xqdx2")
+title = "Happy Times"
+artist = "Tom Feldmann"
+album = "Casual Games Music Pack"
+album_link = "https://www.gamedevmarket.net/asset/casual-games-music-pack"

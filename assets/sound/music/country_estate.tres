@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Song" load_steps=3 format=3 uid="uid://60we880c5js"]
+
+[ext_resource type="Script" uid="uid://dsoiwds3eb65w" path="res://addons/dragonforge_dev_game_template/utilities/sound/song.gd" id="1_ji3be"]
+[ext_resource type="AudioStream" uid="uid://bj26x1axfe76x" path="res://assets/sound/music/gamedev_market/andy_sv/Casual Theme #3 - Acoustic Version.wav" id="2_kho62"]
+
+[resource]
+script = ExtResource("1_ji3be")
+song = ExtResource("2_kho62")
+title = "Country Estate"
+artist = "AndySv"
+album = "Casual Game Music Pack (Acoustic)"
+album_link = "https://www.gamedevmarket.net/asset/massive-game-music-collection"
