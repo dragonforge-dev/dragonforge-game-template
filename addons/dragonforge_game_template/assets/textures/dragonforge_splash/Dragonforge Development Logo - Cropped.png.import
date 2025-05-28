@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://srra5lb8b8ry"
+path="res://.godot/imported/Dragonforge Development Logo - Cropped.png-54e0f6454784d483b4c9c1d76cbdcd94.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://addons/dragonforge_game_template/assets/textures/dragonforge_splash/Dragonforge Development Logo - Cropped.png"
+dest_files=["res://.godot/imported/Dragonforge Development Logo - Cropped.png-54e0f6454784d483b4c9c1d76cbdcd94.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
