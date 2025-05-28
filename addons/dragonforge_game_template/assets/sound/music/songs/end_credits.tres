@@ -2,10 +2,10 @@
 
 [ext_resource type="Resource" uid="uid://bvroot63dq1c7" path="res://addons/dragonforge_game_template/assets/sound/music/albums/action_rpg_music_free.tres" id="1_f4tww"]
 [ext_resource type="Script" uid="uid://crtp3aqhoaixr" path="res://addons/dragonforge_sound/resources/song.gd" id="1_pxci6"]
-[ext_resource type="AudioStream" uid="uid://bmi2xvae3gmia" path="res://addons/dragonforge_game_template/assets/sound/music/cristian_e/BGM09credits.wav" id="2_2h6rq"]
+[ext_resource type="AudioStream" uid="uid://c83otaeeyfrkt" path="res://addons/dragonforge_game_template/assets/sound/music/cristian_e/BGM09credits.ogg" id="3_s0j7m"]
 
 [resource]
 script = ExtResource("1_pxci6")
-song = ExtResource("2_2h6rq")
+song = ExtResource("3_s0j7m")
 title = "End Credits"
 album = ExtResource("1_f4tww")

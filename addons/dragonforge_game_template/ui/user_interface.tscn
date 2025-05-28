@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://0mqhuyryguhi" path="res://addons/dragonforge_game_template/assets/textures/wild_jam_splash/broked.png" id="7_0fqce"]
 [ext_resource type="Texture2D" uid="uid://c6yp4fxygbnyc" path="res://addons/dragonforge_game_template/assets/textures/wild_jam_splash/plants-for-hire.png" id="8_owpk4"]
 [ext_resource type="Texture2D" uid="uid://b6u5ls6byjmqe" path="res://addons/dragonforge_game_template/assets/textures/wild_jam_splash/stalker.png" id="9_kwysy"]
-[ext_resource type="AudioStream" uid="uid://c63np4khe8quv" path="res://addons/dragonforge_game_template/assets/sound/music/andy_sv/Logo 9.wav" id="10_6p3n0"]
+[ext_resource type="AudioStream" uid="uid://pskfn74mxes6" path="res://addons/dragonforge_game_template/assets/sound/music/andy_sv/Logo 9.ogg" id="10_6p3n0"]
 [ext_resource type="Texture2D" uid="uid://g342n3s3xm1d" path="res://addons/dragonforge_game_template/assets/textures/wild_jam_splash/74-Haunted.png" id="11_s3i4g"]
 [ext_resource type="PackedScene" uid="uid://cqj74t73rs4bm" path="res://addons/dragonforge_game_template/ui/themes/plain/start_menu.tscn" id="12_bsxny"]
 [ext_resource type="PackedScene" uid="uid://c0hrf4hhhs6ce" path="res://addons/dragonforge_game_template/ui/themes/plain/settings_menu.tscn" id="13_6eyr5"]
@@ -377,7 +377,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c77r1")
-bypass_splash_screens = true
 splash_screens = [NodePath("GodotSplash"), NodePath("CompanySplash"), NodePath("WildJamSplash")]
 
 [node name="GodotSplash" type="Control" parent="." node_paths=PackedStringArray("timer", "video_player")]
