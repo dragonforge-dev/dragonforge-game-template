@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bdvcsuhyldt01"
+path="res://.godot/imported/Casual Theme #3 - Acoustic Version.ogg-a62c846ddcc8dbf9341ee625d465b35b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/music/gamedev_market/andy_sv/Casual Theme #3 - Acoustic Version.ogg"
+dest_files=["res://.godot/imported/Casual Theme #3 - Acoustic Version.ogg-a62c846ddcc8dbf9341ee625d465b35b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
