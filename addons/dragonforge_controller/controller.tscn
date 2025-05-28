@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://3ltyjrnxgjpo"]
+
+[ext_resource type="Script" uid="uid://casbfj55cmjsq" path="res://addons/dragonforge_controller/controller.gd" id="1_36o3i"]
+
+[node name="Controller" type="Node"]
+script = ExtResource("1_36o3i")

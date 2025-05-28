@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0nyff4fg7q68"]
+
+[ext_resource type="Script" uid="uid://ce76u4r4qyjw1" path="res://addons/dragonforge_controller/keyboard.gd" id="1_1ihxf"]
+
+[node name="Keyboard" type="Node"]
+script = ExtResource("1_1ihxf")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=9 format=3 uid="uid://bwlgdsh0r723f"]
+
+[ext_resource type="Script" uid="uid://cc3ogbw2jeabt" path="res://addons/dragonforge_controller/mouse.gd" id="1_qe06y"]
+[ext_resource type="Texture2D" uid="uid://d0uftybjj7wbe" path="res://addons/dragonforge_controller/assets/mouse_buttons/mouse_left.svg" id="2_g73en"]
+[ext_resource type="Texture2D" uid="uid://bkyejvrbwrng1" path="res://addons/dragonforge_controller/assets/mouse_buttons/mouse_right.svg" id="3_57bmx"]
+[ext_resource type="Texture2D" uid="uid://bmfrh702gip8q" path="res://addons/dragonforge_controller/assets/mouse_buttons/mouse_scroll.svg" id="4_44vq5"]
+[ext_resource type="Texture2D" uid="uid://bb424bve31pkr" path="res://addons/dragonforge_controller/assets/mouse_buttons/mouse_scroll_up.svg" id="5_xhbuf"]
+[ext_resource type="Texture2D" uid="uid://cq2dfs0jqk03l" path="res://addons/dragonforge_controller/assets/mouse_buttons/mouse_scroll_down.svg" id="6_ajmum"]
+[ext_resource type="Texture2D" uid="uid://ct8f7v5s6jams" path="res://addons/dragonforge_controller/assets/mouse_buttons/xbox_button_back_icon.svg" id="7_lhtrv"]
+[ext_resource type="Texture2D" uid="uid://dfmfa0cx7nhhg" path="res://addons/dragonforge_controller/assets/mouse_buttons/xbox_button_start_icon.svg" id="8_s4be0"]
+
+[node name="Mouse" type="Node"]
+script = ExtResource("1_qe06y")
+mouse_button_images = Array[Texture2D]([null, ExtResource("2_g73en"), ExtResource("3_57bmx"), ExtResource("4_44vq5"), ExtResource("5_xhbuf"), ExtResource("6_ajmum"), ExtResource("4_44vq5"), ExtResource("4_44vq5"), ExtResource("7_lhtrv"), ExtResource("8_s4be0")])
