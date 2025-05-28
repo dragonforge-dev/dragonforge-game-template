@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu8urhg3gqynd"]
+
+[ext_resource type="Script" uid="uid://b6ya4wv1c5g7n" path="res://addons/dragonforge_game_template/ui/screens/screen.gd" id="1_vxjqk"]
+[ext_resource type="Resource" uid="uid://vhcmupvl5exb" path="res://addons/dragonforge_game_template/assets/sound/music/songs/end_credits.tres" id="2_g020a"]
+
+[node name="Plain Credits" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vxjqk")
+screen_type = 12
+background_music = ExtResource("2_g020a")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.304195, 0.668422, 0.661168, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+text = "
+[center][font_size=48]Godot Game Template[/font_size]
+[font_size=24]by[/font_size]
+[font_size=36][url=https://www.dragonforge.dev/]Dragonforge Development[/url][/font_size]
+
+[url=LICENSE.txt]MIT License[/url]
+
+[font_size=36]Sound Effects[/font_size]
+by [url=\"https://elvgames.itch.io/user-interface-sound-fx-2\"]ELV Games[/url]
+
+[font_size=36]Godot Animated Splash Screen[/font_size]
+by [url=\"https://stayathomedev.itch.io/free-godot-logo-redesigns\"]StayAtHomeDev[/url]
+
+[font_size=36]Music[/font_size]
+by
+[url=\"https://escalonamusic.itch.io/action-rpg-music-free\"]Escalona Music[/url]
+
+and
+[url=\"https://ovanisound.com/products/jingles-stingers-sound-fx-pack-vol-2\"]Ovani Sound[/url]
+[/center]"
+fit_content = true
+scroll_active = false
+scroll_following = true

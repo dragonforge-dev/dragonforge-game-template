@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqj74t73rs4bm"]
+
+[ext_resource type="Script" uid="uid://b6ya4wv1c5g7n" path="res://addons/dragonforge_game_template/ui/screens/screen.gd" id="1_brcp3"]
+[ext_resource type="Script" uid="uid://dutfwuvpmtiu1" path="res://addons/dragonforge_game_template/ui/buttons/button_resume_game.gd" id="2_5stl4"]
+[ext_resource type="Script" uid="uid://dbx17g06kde6w" path="res://addons/dragonforge_game_template/ui/buttons/button_show_screen.gd" id="2_tulfn"]
+[ext_resource type="Script" uid="uid://cvefjrirkydyn" path="res://addons/dragonforge_game_template/ui/buttons/button_toggle_screen.gd" id="3_1n2sg"]
+[ext_resource type="Script" uid="uid://1e5jknrhaq58" path="res://addons/dragonforge_game_template/ui/buttons/button_quit.gd" id="3_lxie6"]
+[ext_resource type="PackedScene" uid="uid://cafpr86jr14t2" path="res://addons/dragonforge_game_template/ui/screens/confirmation_quit_dialog.tscn" id="5_addid"]
+
+[node name="Plain Start" type="MarginContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -113.5
+offset_right = 112.0
+offset_bottom = 113.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_brcp3")
+screen_type = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ResumeGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resume Game"
+script = ExtResource("2_5stl4")
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+script = ExtResource("2_tulfn")
+screen_to_open = 7
+
+[node name="MusicDisplay" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "Music Display"
+script = ExtResource("3_1n2sg")
+screen_to_toggle = 10
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+script = ExtResource("2_tulfn")
+screen_to_open = 11
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit Game"
+script = ExtResource("3_lxie6")
+
+[node name="ConfirmationQuitDialog" parent="." instance=ExtResource("5_addid")]
+unique_name_in_owner = true

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cafpr86jr14t2"]
+
+[ext_resource type="Script" uid="uid://cmuk6es1guuig" path="res://addons/dragonforge_game_template/ui/screens/confirmation_quit_dialog.gd" id="1_mfsgf"]
+
+[node name="ConfirmationQuitDialog" type="ConfirmationDialog"]
+auto_translate_mode = 1
+title = "Quit to Desktop?"
+initial_position = 2
+script = ExtResource("1_mfsgf")

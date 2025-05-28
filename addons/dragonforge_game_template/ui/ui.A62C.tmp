@@ -1,0 +1,241 @@
+[gd_scene load_steps=17 format=3 uid="uid://bocu6nvxn404x"]
+
+[ext_resource type="Script" path="res://addons/dragonforge_dev_game_template/ui/ui.gd" id="1_ts2fb"]
+[ext_resource type="Script" path="res://addons/dragonforge_dev_game_template/ui/screens/screen_splash.gd" id="2_1qk8m"]
+[ext_resource type="VideoStream" path="res://addons/dragonforge_dev_game_template/assets/video/godot_splash/stayathomedev_logo-animation.ogv" id="3_bbu6u"]
+[ext_resource type="Texture2D" uid="uid://dkvnywn5646nt" path="res://addons/dragonforge_dev_game_template/assets/textures/dragonforge_splash/Dragonforge Development Logo.png" id="4_nbmnu"]
+[ext_resource type="AudioStream" uid="uid://qi8y05u37225" path="res://addons/dragonforge_dev_game_template/assets/sound/music/ovani/Asian Sho.wav" id="4_xy00d"]
+[ext_resource type="PackedScene" uid="uid://cqj74t73rs4bm" path="res://addons/dragonforge_dev_game_template/ui/themes/plain/plain_start.tscn" id="7_xva14"]
+[ext_resource type="PackedScene" uid="uid://c0hrf4hhhs6ce" path="res://addons/dragonforge_dev_game_template/ui/themes/plain/plain_settings.tscn" id="8_70hve"]
+[ext_resource type="PackedScene" uid="uid://dh4mxnah0vdkm" path="res://addons/dragonforge_dev_game_template/ui/themes/plain/plain__video.tscn" id="9_ev4at"]
+[ext_resource type="PackedScene" uid="uid://b18v4qfpxln1t" path="res://addons/dragonforge_dev_game_template/ui/themes/plain/plain_audio.tscn" id="10_vu1p7"]
+[ext_resource type="PackedScene" uid="uid://brk0pye2sgsww" path="res://addons/dragonforge_dev_game_template/ui/themes/plain/plain_music_display.tscn" id="11_2oa6l"]
+[ext_resource type="Script" path="res://addons/dragonforge_dev_game_template/ui/screens/screen.gd" id="11_3728w"]
+[ext_resource type="Resource" uid="uid://b00s8d5vshil0" path="res://addons/dragonforge_dev_game_template/assets/sound/music/songs/end_credits.tres" id="12_eajgc"]
+[ext_resource type="Script" path="res://addons/dragonforge_dev_game_template/ui/labels/label_richtext_autoscroll.gd" id="13_d4f63"]
+
+[sub_resource type="Animation" id="Animation_tjkbo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ur1dr"]
+resource_name = "Show"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_my70f"]
+_data = {
+"RESET": SubResource("Animation_tjkbo"),
+"Show": SubResource("Animation_ur1dr")
+}
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ts2fb")
+bypass_splash_screens = true
+
+[node name="GodotSplash" type="Control" parent="." node_paths=PackedStringArray("timer", "video_player")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_1qk8m")
+timer = NodePath("Timer")
+video_player = NodePath("VideoStreamPlayer")
+screen_type = 1
+
+[node name="ColorRect" type="ColorRect" parent="GodotSplash"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="GodotSplash"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_bbu6u")
+expand = true
+
+[node name="Timer" type="Timer" parent="GodotSplash"]
+wait_time = 4.5
+one_shot = true
+
+[node name="CompanySplash" type="Control" parent="." node_paths=PackedStringArray("timer", "animation_player")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_1qk8m")
+timer = NodePath("Timer")
+animation_player = NodePath("AnimationPlayer")
+screen_type = 2
+show_sound = ExtResource("4_xy00d")
+
+[node name="TextureRect" type="TextureRect" parent="CompanySplash"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_nbmnu")
+
+[node name="Timer" type="Timer" parent="CompanySplash"]
+wait_time = 6.2
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CompanySplash"]
+libraries = {
+"": SubResource("AnimationLibrary_my70f")
+}
+
+[node name="Plain Start" parent="." instance=ExtResource("7_xva14")]
+visible = false
+layout_mode = 1
+
+[node name="Plain Settings" parent="." instance=ExtResource("8_70hve")]
+visible = false
+layout_mode = 1
+
+[node name="Plain  Video" parent="." instance=ExtResource("9_ev4at")]
+visible = false
+layout_mode = 1
+offset_left = -147.0
+offset_right = 147.0
+
+[node name="Plain Audio" parent="." instance=ExtResource("10_vu1p7")]
+visible = false
+layout_mode = 1
+
+[node name="Plain Music Display" parent="." instance=ExtResource("11_2oa6l")]
+visible = false
+layout_mode = 1
+offset_top = -122.0
+
+[node name="Plain Credits Scrolling" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_3728w")
+screen_type = 12
+background_music = ExtResource("12_eajgc")
+
+[node name="ColorRect" type="ColorRect" parent="Plain Credits Scrolling"]
+layout_mode = 2
+color = Color(0.304195, 0.668422, 0.661168, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Plain Credits Scrolling"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][font_size=48]Godot Game Template[/font_size]
+[font_size=24]by[/font_size]
+[font_size=36][url=https://www.dragonforge.dev/]Dragonforge Development[/url][/font_size]
+[url=LICENSE.txt]MIT License[/url]
+
+
+
+[font_size=36]Sound Effects[/font_size]
+
+[font_size=24]Click Sound[/font_size]
+[url=\"https://elvgames.itch.io/user-interface-sound-fx-2\"]UI2_Button_1[/url] by [url=\"https://elvgames.itch.io/\"]ELV Games[/url]
+
+[font_size=24]Confirmation Sound[/font_size]
+[url=\"https://elvgames.itch.io/user-interface-sound-fx-2\"]UI2_Accept_2[/url] by [url=\"https://elvgames.itch.io/\"]ELV Games[/url]
+
+
+
+[font_size=36]Video[/font_size]
+
+[font_size=24]Godot Animated Splash Screen[/font_size]
+Provided by  [url=\"https://stayathomedev.itch.io/free-godot-logo-redesigns\"]StayAtHomeDev[/url]
+
+
+
+[font_size=36]Music[/font_size]
+
+[font_size=24]Dragonforge Development Logo[/font_size]
+[url=\"https://ovanisound.com/products/jingles-stingers-sound-fx-pack-vol-2\"]Asian Sho[/url] by [url=\"https://ovanisound.com/\"]Ovani Sound[/url]
+
+[font_size=24]Hero Theme[/font_size]
+[url=\"https://escalonamusic.itch.io/action-rpg-music-free\"]BGM01hero[/url] by [url=\"https://escalonamusic.itch.io/\"]Escalona Music[/url]
+
+[font_size=24]Prairie Theme[/font_size]
+[url=\"https://escalonamusic.itch.io/action-rpg-music-free\"]BGM03prairie[/url] by [url=\"https://escalonamusic.itch.io/\"]Escalona Music[/url]
+
+[font_size=24]End Credits[/font_size]
+[url=\"https://escalonamusic.itch.io/action-rpg-music-free\"]BGM09credits[/url] by [url=\"https://escalonamusic.itch.io/\"]Escalona Music[/url]
+
+[/center]
+"
+scroll_active = false
+script = ExtResource("13_d4f63")
+
+[connection signal="timeout" from="GodotSplash/Timer" to="GodotSplash" method="_on_timer_timeout"]
+[connection signal="timeout" from="CompanySplash/Timer" to="CompanySplash" method="_on_timer_timeout"]

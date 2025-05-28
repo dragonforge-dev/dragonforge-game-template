@@ -1,0 +1,638 @@
+[gd_scene load_steps=32 format=3 uid="uid://bocu6nvxn404x"]
+
+[ext_resource type="Script" uid="uid://dt6uhbxhhsg5o" path="res://addons/dragonforge_game_template/ui/user_interface.gd" id="1_c77r1"]
+[ext_resource type="Script" uid="uid://dmidkj05fs34v" path="res://addons/dragonforge_game_template/ui/screens/screen_splash.gd" id="2_xqg2l"]
+[ext_resource type="VideoStream" uid="uid://ds5optmxmhaxf" path="res://addons/dragonforge_game_template/assets/video/godot_splash/stayathomedev_logo-animation.ogv" id="3_cpl07"]
+[ext_resource type="Resource" uid="uid://q1r4p03r3yk7" path="res://addons/dragonforge_game_template/assets/sound/music/songs/dragonforge_theme.tres" id="4_4w3hp"]
+[ext_resource type="Texture2D" uid="uid://srra5lb8b8ry" path="res://addons/dragonforge_game_template/assets/textures/dragonforge_splash/Dragonforge Development Logo - Cropped.png" id="5_lcfsg"]
+[ext_resource type="Texture2D" uid="uid://bvi3ghac7q1vt" path="res://addons/dragonforge_game_template/assets/textures/wild_jam_splash/GWJ-Full-Logo-tag.png" id="6_4b6w3"]
+[ext_resource type="Texture2D" uid="uid://0mqhuyryguhi" path="res://addons/dragonforge_game_template/assets/textures/wild_jam_splash/broked.png" id="7_0fqce"]
+[ext_resource type="Texture2D" uid="uid://c6yp4fxygbnyc" path="res://addons/dragonforge_game_template/assets/textures/wild_jam_splash/plants-for-hire.png" id="8_owpk4"]
+[ext_resource type="Texture2D" uid="uid://b6u5ls6byjmqe" path="res://addons/dragonforge_game_template/assets/textures/wild_jam_splash/stalker.png" id="9_kwysy"]
+[ext_resource type="AudioStream" uid="uid://c63np4khe8quv" path="res://addons/dragonforge_game_template/assets/sound/music/andy_sv/Logo 9.wav" id="10_6p3n0"]
+[ext_resource type="Texture2D" uid="uid://g342n3s3xm1d" path="res://addons/dragonforge_game_template/assets/textures/wild_jam_splash/74-Haunted.png" id="11_s3i4g"]
+[ext_resource type="PackedScene" uid="uid://cqj74t73rs4bm" path="res://addons/dragonforge_game_template/ui/themes/plain/start_menu.tscn" id="12_bsxny"]
+[ext_resource type="PackedScene" uid="uid://c0hrf4hhhs6ce" path="res://addons/dragonforge_game_template/ui/themes/plain/settings_menu.tscn" id="13_6eyr5"]
+[ext_resource type="PackedScene" uid="uid://dh4mxnah0vdkm" path="res://addons/dragonforge_game_template/ui/themes/plain/video_menu.tscn" id="14_1qtf3"]
+[ext_resource type="PackedScene" uid="uid://b18v4qfpxln1t" path="res://addons/dragonforge_game_template/ui/themes/plain/audio_menu.tscn" id="15_tdpav"]
+[ext_resource type="PackedScene" uid="uid://brk0pye2sgsww" path="res://addons/dragonforge_game_template/ui/themes/plain/music_display.tscn" id="16_rkb3j"]
+[ext_resource type="PackedScene" uid="uid://cbdby6nhdihtr" path="res://addons/dragonforge_game_template/ui/themes/plain/credits_screen_scrolling.tscn" id="17_s6n7i"]
+[ext_resource type="PackedScene" uid="uid://jkxeyd7qjn6" path="res://addons/dragonforge_game_template/ui/themes/plain/controls_menu.tscn" id="18_awd41"]
+[ext_resource type="PackedScene" uid="uid://cafpr86jr14t2" path="res://addons/dragonforge_game_template/ui/screens/confirmation_quit_dialog.tscn" id="19_5h2d4"]
+[ext_resource type="Script" uid="uid://jlvx3ci4rbmi" path="res://addons/dragonforge_game_template/ui/control_hint.gd" id="20_grx48"]
+
+[sub_resource type="Animation" id="Animation_tjkbo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/TextureRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ur1dr"]
+resource_name = "Show"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/TextureRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4, 4.5, 6.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_my70f"]
+_data = {
+&"RESET": SubResource("Animation_tjkbo"),
+&"Show": SubResource("Animation_ur1dr")
+}
+
+[sub_resource type="Animation" id="Animation_6501j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/Wild Jam Logo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Card 1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Card 2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Card 3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarginContainer/VBoxContainer/Wild Jam Logo:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_4b6w3")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Spacer:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Spacer2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_4xdlc"]
+resource_name = "Show"
+length = 21.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_6p3n0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/Wild Jam Logo:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Card 1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Card 2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(9.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Card 3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(13),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MarginContainer/VBoxContainer/Wild Jam Logo:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(15),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_s3i4g")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Spacer:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(15),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Spacer2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(15),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r7vrj"]
+_data = {
+&"RESET": SubResource("Animation_6501j"),
+&"Show": SubResource("Animation_4xdlc")
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rt2tl"]
+load_path = "res://.godot/imported/generic_button_square_fill.svg-cbdbcf9e9903ab549f6977865c764b69.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_uhkfu"]
+font_size = 28
+
+[sub_resource type="Animation" id="Animation_v485b"]
+resource_name = "FadeOutText"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xt760"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ula1i"]
+_data = {
+&"FadeOutText": SubResource("Animation_v485b"),
+&"RESET": SubResource("Animation_xt760")
+}
+
+[node name="UserInterface" type="Control" node_paths=PackedStringArray("splash_screens")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c77r1")
+bypass_splash_screens = true
+splash_screens = [NodePath("GodotSplash"), NodePath("CompanySplash"), NodePath("WildJamSplash")]
+
+[node name="GodotSplash" type="Control" parent="." node_paths=PackedStringArray("timer", "video_player")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_xqg2l")
+timer = NodePath("Timer")
+video_player = NodePath("VideoStreamPlayer")
+screen_type = 1
+
+[node name="ColorRect" type="ColorRect" parent="GodotSplash"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="GodotSplash"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_cpl07")
+expand = true
+
+[node name="Timer" type="Timer" parent="GodotSplash"]
+wait_time = 4.5
+one_shot = true
+
+[node name="CompanySplash" type="Control" parent="." node_paths=PackedStringArray("timer", "animation_player")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_xqg2l")
+timer = NodePath("Timer")
+animation_player = NodePath("AnimationPlayer")
+screen_type = 1
+background_music = ExtResource("4_4w3hp")
+
+[node name="ColorRect" type="ColorRect" parent="CompanySplash"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0431373, 0.188235, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="CompanySplash"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="CompanySplash/MarginContainer"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture = ExtResource("5_lcfsg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Timer" type="Timer" parent="CompanySplash"]
+wait_time = 6.2
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CompanySplash"]
+libraries = {
+&"": SubResource("AnimationLibrary_my70f")
+}
+
+[node name="WildJamSplash" type="Control" parent="." node_paths=PackedStringArray("timer", "animation_player")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_xqg2l")
+timer = NodePath("Timer")
+animation_player = NodePath("AnimationPlayer")
+screen_type = 1
+
+[node name="Timer" type="Timer" parent="WildJamSplash"]
+wait_time = 21.0
+one_shot = true
+
+[node name="ColorRect" type="ColorRect" parent="WildJamSplash"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0784314, 0.133333, 0.25098, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="WildJamSplash"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WildJamSplash/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Wild Jam Logo" type="TextureRect" parent="WildJamSplash/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 205)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("6_4b6w3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WildJamSplash/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="WildJamSplash/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Card 1" type="TextureRect" parent="WildJamSplash/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("7_0fqce")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Card 2" type="TextureRect" parent="WildJamSplash/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_owpk4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Card 3" type="TextureRect" parent="WildJamSplash/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("9_kwysy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Spacer2" type="Control" parent="WildJamSplash/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WildJamSplash"]
+libraries = {
+&"": SubResource("AnimationLibrary_r7vrj")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="WildJamSplash"]
+
+[node name="Plain Start" parent="." instance=ExtResource("12_bsxny")]
+visible = false
+layout_mode = 1
+screen_type = 2
+
+[node name="Plain Settings" parent="." instance=ExtResource("13_6eyr5")]
+visible = false
+layout_mode = 1
+screen_type = 7
+
+[node name="Plain  Video" parent="." instance=ExtResource("14_1qtf3")]
+visible = false
+layout_mode = 1
+offset_left = -147.0
+offset_right = 147.0
+screen_type = 9
+
+[node name="Plain Audio" parent="." instance=ExtResource("15_tdpav")]
+visible = false
+layout_mode = 1
+screen_type = 8
+
+[node name="Plain Music Display" parent="." instance=ExtResource("16_rkb3j")]
+visible = false
+layout_mode = 1
+offset_top = -122.0
+screen_type = 10
+
+[node name="Plain Credits Scrolling" parent="." instance=ExtResource("17_s6n7i")]
+visible = false
+layout_mode = 1
+screen_type = 11
+
+[node name="Plain Controls" parent="." instance=ExtResource("18_awd41")]
+visible = false
+layout_mode = 1
+screen_type = 12
+
+[node name="ConfirmationQuitDialog" parent="." instance=ExtResource("19_5h2d4")]
+
+[node name="ControlHint" type="HBoxContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -40.0
+offset_right = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("20_grx48")
+
+[node name="HintTexture" type="TextureRect" parent="ControlHint"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_rt2tl")
+
+[node name="HintLabel" type="Label" parent="ControlHint"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Text"
+label_settings = SubResource("LabelSettings_uhkfu")
+
+[node name="HintAnimationPlayer" type="AnimationPlayer" parent="ControlHint"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_ula1i")
+}
+
+[connection signal="timeout" from="GodotSplash/Timer" to="GodotSplash" method="_on_timer_timeout"]
+[connection signal="timeout" from="CompanySplash/Timer" to="CompanySplash" method="_on_timer_timeout"]
+[connection signal="timeout" from="WildJamSplash/Timer" to="WildJamSplash" method="_on_timer_timeout"]

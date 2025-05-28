@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=3 uid="uid://jkxeyd7qjn6"]
+
+[ext_resource type="Script" uid="uid://b6ya4wv1c5g7n" path="res://addons/dragonforge_dev_game_template/ui/screens/screen.gd" id="1_x32wl"]
+[ext_resource type="Script" uid="uid://bfsctifk23o82" path="res://addons/dragonforge_dev_game_template/ui/containers/vbox_action_list.gd" id="2_lowvw"]
+[ext_resource type="Script" uid="uid://df7wv0yurjtap" path="res://addons/dragonforge_dev_game_template/ui/labels/label_controller_name.gd" id="2_rdll3"]
+[ext_resource type="PackedScene" uid="uid://5flkja4oovpi" path="res://addons/dragonforge_dev_game_template/ui/themes/plain/button_input.tscn" id="3_tv21m"]
+[ext_resource type="Script" uid="uid://dwh8ip1wchbwy" path="res://addons/dragonforge_dev_game_template/ui/buttons/button_back.gd" id="4_emlc8"]
+[ext_resource type="Script" uid="uid://ehcsw5x41dbb" path="res://addons/dragonforge_dev_game_template/ui/buttons/button_reset_action_mappings.gd" id="6_h6luc"]
+
+[node name="Controls Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x32wl")
+screen_type = 13
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -285.0
+offset_right = 303.0
+offset_bottom = 285.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Action" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Action"
+
+[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Keyboard" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Keyboard"
+
+[node name="Spacer2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Mouse" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Mouse"
+
+[node name="Spacer3" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControllerNameLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+script = ExtResource("2_rdll3")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ActionList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+script = ExtResource("2_lowvw")
+input_button_scene = ExtResource("3_tv21m")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer3" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Back" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Reset")
+text = "Back"
+expand_icon = true
+script = ExtResource("4_emlc8")
+
+[node name="Spacer4" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Reset" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Back")
+text = "Reset"
+script = ExtResource("6_h6luc")
+
+[node name="Spacer5" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3

@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://dh4mxnah0vdkm"]
+
+[ext_resource type="Script" uid="uid://b6ya4wv1c5g7n" path="res://addons/dragonforge_game_template/ui/screens/screen.gd" id="2_23rri"]
+[ext_resource type="Script" uid="uid://dnnu0sc2v25s3" path="res://addons/dragonforge_game_template/ui/buttons/option_button_monitor_selection.gd" id="3_x0fjp"]
+[ext_resource type="Script" uid="uid://bk02n10symmj7" path="res://addons/dragonforge_game_template/ui/buttons/button_fullscreen.gd" id="4_d42uj"]
+[ext_resource type="Script" uid="uid://0gegjhvbrn7" path="res://addons/dragonforge_game_template/ui/buttons/option_button_set_resolution.gd" id="5_bc8tt"]
+[ext_resource type="Script" uid="uid://851d5ffw8aar" path="res://addons/dragonforge_game_template/ui/hsliders/hslider_scale_zoom.gd" id="6_6piwf"]
+[ext_resource type="Script" uid="uid://crvtlm7xwcjcf" path="res://addons/dragonforge_game_template/ui/labels/label_scale_zoom_percentage.gd" id="7_tln51"]
+[ext_resource type="Script" uid="uid://dwh8ip1wchbwy" path="res://addons/dragonforge_game_template/ui/buttons/button_back.gd" id="8_j3dqy"]
+
+[node name="Video Menu" type="MarginContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -122.0
+offset_right = 129.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_23rri")
+screen_type = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Monitor"
+
+[node name="SelectDisplay" type="OptionButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_x0fjp")
+
+[node name="FullscreenButton" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Fullscreen"
+script = ExtResource("4_d42uj")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Resolution"
+
+[node name="Resolution" type="OptionButton" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+script = ExtResource("5_bc8tt")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Zoom/Scale"
+
+[node name="ScaleZoom" type="HSlider" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+min_value = 0.5
+max_value = 2.0
+step = 0.01
+value = 1.0
+script = ExtResource("6_6piwf")
+
+[node name="ScalePercentLabel" type="Label" parent="VBoxContainer/HBoxContainer3"]
+use_parent_material = true
+layout_mode = 2
+text = "100 %"
+script = ExtResource("7_tln51")
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Back"
+expand_icon = true
+script = ExtResource("8_j3dqy")

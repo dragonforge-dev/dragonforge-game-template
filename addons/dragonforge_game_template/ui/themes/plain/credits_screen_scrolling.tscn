@@ -1,0 +1,194 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbdby6nhdihtr"]
+
+[ext_resource type="Script" uid="uid://b6ya4wv1c5g7n" path="res://addons/dragonforge_game_template/ui/screens/screen.gd" id="1_m6dt3"]
+[ext_resource type="Resource" uid="uid://vhcmupvl5exb" path="res://addons/dragonforge_game_template/assets/sound/music/songs/end_credits.tres" id="2_vuvog"]
+[ext_resource type="Script" uid="uid://canfdc3frsbgu" path="res://addons/dragonforge_game_template/ui/labels/label_richtext_autoscroll.gd" id="3_ykhkf"]
+[ext_resource type="Texture2D" uid="uid://srra5lb8b8ry" path="res://addons/dragonforge_game_template/assets/textures/dragonforge_splash/Dragonforge Development Logo - Cropped.png" id="4_h63ap"]
+[ext_resource type="Script" uid="uid://c5kgsky8f1rhq" path="res://addons/dragonforge_game_template/ui/labels/label_rich_text_hyperlink_click.gd" id="4_pq1fs"]
+
+[node name="Plain Credits Scrolling" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m6dt3")
+screen_type = 12
+background_music = ExtResource("2_vuvog")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.0352941, 0.0431373, 0.188235, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][font_size=48]Godot Game Template[/font_size]
+
+[font_size=24]by[/font_size]
+
+[font_size=36][url=https://www.dragonforge.dev/]Dragonforge Development[/url][/font_size]
+
+[url=https://opensource.org/license/mit]MIT License[/url]
+
+
+
+
+
+
+
+
+
+
+
+
+
+[font_size=36]Sound Effects[/font_size]
+
+[font_size=24]Click Sound[/font_size]
+[url=\"https://elvgames.itch.io/user-interface-sound-fx-2\"]UI2_Button_1[/url] by [url=\"https://elvgames.itch.io/\"]ELV Games[/url]
+
+[font_size=24]Confirmation Sound[/font_size]
+[url=\"https://elvgames.itch.io/user-interface-sound-fx-2\"]UI2_Accept_2[/url] by [url=\"https://elvgames.itch.io/\"]ELV Games[/url]
+
+
+
+
+
+
+
+
+
+
+
+
+
+[font_size=36]Video[/font_size]
+
+[font_size=24]Godot Animated Splash Screen[/font_size]
+Provided by  [url=\"https://stayathomedev.itch.io/free-godot-logo-redesigns\"]StayAtHomeDev[/url]
+
+
+
+
+
+
+
+
+
+
+
+
+
+[font_size=36]Music[/font_size]
+
+[font_size=24]Dragonforge Development Logo[/font_size]
+[url=\"https://ovanisound.com/products/jingles-stingers-sound-fx-pack-vol-2\"]Asian Sho[/url] by [url=\"https://ovanisound.com/\"]Ovani Sound[/url]
+
+[font_size=24]Godot Wild Jam Logo[/font_size]
+[url=\"https://www.gamedevmarket.net/asset/short-action-logos-and-loops-pack\"]Logo #9[/url] by [url=\"https://www.gamedevmarket.net/member/andysv\"]AndySv[/url]
+
+[font_size=24]Hero Theme[/font_size]
+[url=\"https://escalonamusic.itch.io/action-rpg-music-free\"]BGM01hero[/url] by [url=\"https://escalonamusic.itch.io/\"]Escalona Music[/url]
+
+[font_size=24]Prairie Theme[/font_size]
+[url=\"https://escalonamusic.itch.io/action-rpg-music-free\"]BGM03prairie[/url] by [url=\"https://escalonamusic.itch.io/\"]Escalona Music[/url]
+
+[font_size=24]End Credits[/font_size]
+[url=\"https://escalonamusic.itch.io/action-rpg-music-free\"]BGM09credits[/url] by [url=\"https://escalonamusic.itch.io/\"]Escalona Music[/url]
+
+[/center]
+"
+fit_content = true
+scroll_active = false
+script = ExtResource("3_ykhkf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Header" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][font_size=60]Godot Game Template[/font_size][/center]"
+fit_content = true
+script = ExtResource("4_pq1fs")
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_h63ap")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SFX" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][font_size=36]Sound Effects[/font_size]
+[font_size=24]Click Sound[/font_size]
+[url=\"https://elvgames.itch.io/user-interface-sound-fx-2\"]UI2_Button_1[/url] by [url=\"https://elvgames.itch.io/\"]ELV Games[/url]
+[font_size=24]Confirmation Sound[/font_size]
+[url=\"https://elvgames.itch.io/user-interface-sound-fx-2\"]UI2_Accept_2[/url] by [url=\"https://elvgames.itch.io/\"]ELV Games[/url][/center]"
+fit_content = true
+script = ExtResource("4_pq1fs")
+
+[node name="Video" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][font_size=36]Video[/font_size]
+
+[font_size=24]Godot Animated Splash Screen[/font_size]
+Provided by  [url=\"https://stayathomedev.itch.io/free-godot-logo-redesigns\"]StayAtHomeDev[/url][/center]"
+fit_content = true
+script = ExtResource("4_pq1fs")
+
+[node name="Music Header" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][font_size=36]Music[/font_size][/center]"
+fit_content = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Music1" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][font_size=24]Dragonforge Development Logo[/font_size]
+[url=\"https://ovanisound.com/products/jingles-stingers-sound-fx-pack-vol-2\"]Asian Sho[/url] by [url=\"https://ovanisound.com/\"]Ovani Sound[/url]
+
+[font_size=24]Godot Wild Jam Logo[/font_size]
+[url=\"https://www.gamedevmarket.net/asset/short-action-logos-and-loops-pack\"]Logo #9[/url] by [url=\"https://www.gamedevmarket.net/member/andysv\"]AndySv[/url][/center]"
+fit_content = true
+script = ExtResource("4_pq1fs")
+
+[node name="Music2" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][font_size=24]Hero Theme[/font_size]
+[url=\"https://escalonamusic.itch.io/action-rpg-music-free\"]BGM01hero[/url] by [url=\"https://escalonamusic.itch.io/\"]Escalona Music[/url]
+[font_size=24]Prairie Theme[/font_size]
+[url=\"https://escalonamusic.itch.io/action-rpg-music-free\"]BGM03prairie[/url] by [url=\"https://escalonamusic.itch.io/\"]Escalona Music[/url]
+[font_size=24]End Credits[/font_size]
+[url=\"https://escalonamusic.itch.io/action-rpg-music-free\"]BGM09credits[/url] by [url=\"https://escalonamusic.itch.io/\"]Escalona Music[/url][/center]"
+fit_content = true
+script = ExtResource("4_pq1fs")
