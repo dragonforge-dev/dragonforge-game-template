@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=5 format=3 uid="uid://i6jcfctqcto2"]
+
+[ext_resource type="Script" uid="uid://b7r30kknqypxw" path="res://addons/dragonforge_sound/resources/sound_effect.gd" id="1_4rxsa"]
+[ext_resource type="AudioStream" uid="uid://b5n827rqtwbm1" path="res://addons/dragonforge_sound/assets/sound/sfx/missing_sfx/Broken Tape Spin.wav" id="2_3jkhy"]
+[ext_resource type="AudioStream" uid="uid://bs1qesstrghc8" path="res://addons/dragonforge_sound/assets/sound/sfx/missing_sfx/Im missing something.wav" id="3_21ayg"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_lpl4u"]
+loop = false
+stream_count = 2
+stream_0 = ExtResource("2_3jkhy")
+stream_1 = ExtResource("3_21ayg")
+
+[resource]
+script = ExtResource("1_4rxsa")
+stream = SubResource("AudioStreamPlaylist_lpl4u")
+play_only_one_sound = false
+title = ""
+metadata/_custom_type_script = "uid://b7r30kknqypxw"

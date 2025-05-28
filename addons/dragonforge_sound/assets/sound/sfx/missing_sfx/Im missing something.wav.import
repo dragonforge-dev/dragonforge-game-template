@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bs1qesstrghc8"
+path="res://.godot/imported/Im missing something.wav-805ed9f78b79a20d49470bdf31b4effe.sample"
+
+[deps]
+
+source_file="res://addons/dragonforge_sound/assets/sound/sfx/missing_sfx/Im missing something.wav"
+dest_files=["res://.godot/imported/Im missing something.wav-805ed9f78b79a20d49470bdf31b4effe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
