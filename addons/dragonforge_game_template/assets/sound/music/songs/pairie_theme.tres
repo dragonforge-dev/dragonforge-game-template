@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Song" load_steps=4 format=3 uid="uid://cc7b2koxhbs1p"]
+
+[ext_resource type="Script" uid="uid://crtp3aqhoaixr" path="res://addons/dragonforge_sound/resources/song.gd" id="1_p8j5d"]
+[ext_resource type="Resource" uid="uid://bvroot63dq1c7" path="res://addons/dragonforge_game_template/assets/sound/music/albums/action_rpg_music_free.tres" id="1_tvrvm"]
+[ext_resource type="AudioStream" uid="uid://pqh0fp8nn3rm" path="res://addons/dragonforge_game_template/assets/sound/music/cristian_e/BGM03prairie.wav" id="2_3x6rg"]
+
+[resource]
+script = ExtResource("1_p8j5d")
+song = ExtResource("2_3x6rg")
+title = "Prairie Overland Theme"
+album = ExtResource("1_tvrvm")

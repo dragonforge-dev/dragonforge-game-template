@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Album" load_steps=2 format=3 uid="uid://bvroot63dq1c7"]
+
+[ext_resource type="Script" uid="uid://b4o4ygvaj344p" path="res://addons/dragonforge_sound/resources/album.gd" id="1_58uuh"]
+
+[resource]
+script = ExtResource("1_58uuh")
+name = "Action RPG Music Free"
+artist = "Escalona Music"
+link = "https://escalonamusic.itch.io/action-rpg-music-free"
+metadata/_custom_type_script = "uid://b4o4ygvaj344p"

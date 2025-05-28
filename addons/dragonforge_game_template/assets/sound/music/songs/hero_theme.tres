@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Song" load_steps=4 format=3 uid="uid://sv75l1ihxgwm"]
+
+[ext_resource type="Resource" uid="uid://bvroot63dq1c7" path="res://addons/dragonforge_game_template/assets/sound/music/albums/action_rpg_music_free.tres" id="1_gw6hm"]
+[ext_resource type="Script" uid="uid://crtp3aqhoaixr" path="res://addons/dragonforge_sound/resources/song.gd" id="1_iwlru"]
+[ext_resource type="AudioStream" uid="uid://crl0143jcwyt5" path="res://addons/dragonforge_game_template/assets/sound/music/cristian_e/BGM01hero.wav" id="2_f2hm5"]
+
+[resource]
+script = ExtResource("1_iwlru")
+song = ExtResource("2_f2hm5")
+title = "Hero Theme"
+album = ExtResource("1_gw6hm")

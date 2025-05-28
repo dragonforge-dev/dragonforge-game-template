@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Song" load_steps=3 format=3 uid="uid://q1r4p03r3yk7"]
+
+[ext_resource type="Script" uid="uid://crtp3aqhoaixr" path="res://addons/dragonforge_sound/resources/song.gd" id="1_n1vfu"]
+[ext_resource type="AudioStream" uid="uid://qi8y05u37225" path="res://addons/dragonforge_game_template/assets/sound/music/ovani/Asian Sho.wav" id="2_6f7eq"]
+
+[resource]
+script = ExtResource("1_n1vfu")
+song = ExtResource("2_6f7eq")
+title = "Dragonforge Theme"
+artist = "Ovani"
+album = "Jingles & Stingers SFX 2"
+album_link = "https://ovanisound.com/products/jingles-stingers-sound-fx-pack-vol-2"
+metadata/_custom_type_script = "uid://crtp3aqhoaixr"
