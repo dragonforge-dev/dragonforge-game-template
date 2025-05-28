@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk5xch3fb1b3o"]
+
+[ext_resource type="Script" uid="uid://1dodwc7w8hak" path="res://addons/dragonforge_display/display.gd" id="1_3cjp4"]
+
+[node name="Display" type="Node"]
+script = ExtResource("1_3cjp4")
