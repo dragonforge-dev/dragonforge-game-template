@@ -1,0 +1,110 @@
+[gd_scene load_steps=12 format=3 uid="uid://dp61qlmb25nm5"]
+
+[ext_resource type="Script" uid="uid://b6ya4wv1c5g7n" path="res://addons/dragonforge_game_template/ui/screens/screen.gd" id="1_bm86j"]
+[ext_resource type="Texture2D" uid="uid://bu083h5to1ajt" path="res://assets/textures/Texture_600x800_color1.png" id="2_ocdu5"]
+[ext_resource type="StyleBox" uid="uid://uouwqic77ya6" path="res://resources/styleboxes/wood_panel_small_001.stylebox" id="3_xnw0y"]
+[ext_resource type="Texture2D" uid="uid://bfsjpynstruhi" path="res://assets/textures/Background_ornaments_color1.png" id="4_3el1i"]
+[ext_resource type="Theme" uid="uid://dgrbdoc82fx7l" path="res://ui/themes/fantasy/fantasy_theme_001.tres" id="5_xh6k5"]
+[ext_resource type="Script" uid="uid://dbx17g06kde6w" path="res://addons/dragonforge_game_template/ui/buttons/button_show_screen.gd" id="6_vx6cn"]
+[ext_resource type="Texture2D" uid="uid://biuf06gfpfjn" path="res://assets/textures/Panel_ornaments.png" id="7_q38i6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hwjh"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otmen"]
+texture = ExtResource("2_ocdu5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tnmh"]
+atlas = ExtResource("4_3el1i")
+region = Rect2(1754, 1262, 564, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py2my"]
+atlas = ExtResource("7_q38i6")
+region = Rect2(1131, 318, 57, 57)
+margin = Rect2(0, 2, 0, 0)
+
+[node name="Fantasy Start" type="MarginContainer"]
+visible = false
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -142.5
+offset_right = 224.0
+offset_bottom = 142.5
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+script = ExtResource("1_bm86j")
+
+[node name="OrnamentContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+
+[node name="CutOut" type="PanelContainer" parent="OrnamentContainer"]
+clip_children = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6hwjh")
+
+[node name="Paper" type="PanelContainer" parent="OrnamentContainer/CutOut"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_otmen")
+
+[node name="Frame" type="PanelContainer" parent="OrnamentContainer/CutOut"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_xnw0y")
+
+[node name="MarginContainer" type="MarginContainer" parent="OrnamentContainer/CutOut"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OrnamentContainer/CutOut/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Scrollwork" type="TextureRect" parent="OrnamentContainer/CutOut/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6tnmh")
+expand_mode = 5
+flip_v = true
+
+[node name="NewGame" type="Button" parent="OrnamentContainer/CutOut/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_xh6k5")
+text = "New Game"
+
+[node name="Settings" type="Button" parent="OrnamentContainer/CutOut/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_xh6k5")
+text = "Settings"
+script = ExtResource("6_vx6cn")
+screen_to_open = 8
+
+[node name="Quit" type="Button" parent="OrnamentContainer/CutOut/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_xh6k5")
+text = "Quit"
+
+[node name="Scrollwork2" type="TextureRect" parent="OrnamentContainer/CutOut/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6tnmh")
+expand_mode = 5
+
+[node name="CornerTopLeft" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_py2my")
+
+[node name="CornerTopRight" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_py2my")
+flip_h = true

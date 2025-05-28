@@ -1,0 +1,150 @@
+[gd_scene load_steps=19 format=3 uid="uid://cgu4jkkyme8cw"]
+
+[ext_resource type="Script" uid="uid://dpdved8xjp6e" path="res://ui/themes/fantasy/menu_screen_burn.gd" id="1_7dhmt"]
+[ext_resource type="Script" uid="uid://bjw7amafx4j55" path="res://ui/themes/fantasy/panel_container_cutout.gd" id="2_jsriu"]
+[ext_resource type="Texture2D" uid="uid://bu083h5to1ajt" path="res://assets/textures/Texture_600x800_color1.png" id="3_6fqhe"]
+[ext_resource type="StyleBox" uid="uid://uouwqic77ya6" path="res://resources/styleboxes/wood_panel_small_001.stylebox" id="4_47pig"]
+[ext_resource type="Texture2D" uid="uid://bfsjpynstruhi" path="res://assets/textures/Background_ornaments_color1.png" id="5_gkfkf"]
+[ext_resource type="Theme" uid="uid://dgrbdoc82fx7l" path="res://ui/themes/fantasy/fantasy_theme_001.tres" id="6_mdplb"]
+[ext_resource type="Texture2D" uid="uid://dgfk8lt6tcxhl" path="res://assets/textures/ButtonsSmall_ornaments.png" id="7_1yb05"]
+[ext_resource type="Script" uid="uid://dbx17g06kde6w" path="res://addons/dragonforge_game_template/ui/buttons/button_show_screen.gd" id="8_arrhc"]
+[ext_resource type="Script" uid="uid://dwh8ip1wchbwy" path="res://addons/dragonforge_game_template/ui/buttons/button_back.gd" id="9_e8e4r"]
+[ext_resource type="Texture2D" uid="uid://biuf06gfpfjn" path="res://assets/textures/Panel_ornaments.png" id="10_2pa3a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hwjh"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otmen"]
+texture = ExtResource("3_6fqhe")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tnmh"]
+atlas = ExtResource("5_gkfkf")
+region = Rect2(1754, 1262, 564, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvqrh"]
+atlas = ExtResource("7_1yb05")
+region = Rect2(117, 57, 37, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yfwb"]
+atlas = ExtResource("7_1yb05")
+region = Rect2(297, 63, 35, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jksk"]
+atlas = ExtResource("7_1yb05")
+region = Rect2(177, 63, 37, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nqcv"]
+atlas = ExtResource("7_1yb05")
+region = Rect2(52, 341, 33, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py2my"]
+atlas = ExtResource("10_2pa3a")
+region = Rect2(1131, 318, 57, 57)
+margin = Rect2(0, 2, 0, 0)
+
+[node name="Fantasy Settings" type="MarginContainer"]
+visible = false
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -171.0
+offset_right = 230.0
+offset_bottom = 171.0
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+script = ExtResource("1_7dhmt")
+
+[node name="OrnamentContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+
+[node name="CutOut" type="PanelContainer" parent="OrnamentContainer"]
+clip_children = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6hwjh")
+script = ExtResource("2_jsriu")
+
+[node name="Paper" type="PanelContainer" parent="OrnamentContainer/CutOut"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_otmen")
+
+[node name="Frame" type="PanelContainer" parent="OrnamentContainer/CutOut"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_47pig")
+
+[node name="MarginContainer" type="MarginContainer" parent="OrnamentContainer/CutOut"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OrnamentContainer/CutOut/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Scrollwork" type="TextureRect" parent="OrnamentContainer/CutOut/MarginContainer/VBoxContainer"]
+use_parent_material = true
+layout_mode = 2
+texture = SubResource("AtlasTexture_6tnmh")
+expand_mode = 5
+flip_v = true
+
+[node name="Video" type="Button" parent="OrnamentContainer/CutOut/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+theme = ExtResource("6_mdplb")
+text = "Video"
+icon = SubResource("AtlasTexture_hvqrh")
+script = ExtResource("8_arrhc")
+screen_to_open = 10
+
+[node name="Audio" type="Button" parent="OrnamentContainer/CutOut/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+theme = ExtResource("6_mdplb")
+text = "Audio"
+icon = SubResource("AtlasTexture_0yfwb")
+script = ExtResource("8_arrhc")
+screen_to_open = 9
+
+[node name="Controls" type="Button" parent="OrnamentContainer/CutOut/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+theme = ExtResource("6_mdplb")
+text = "Controls"
+icon = SubResource("AtlasTexture_6jksk")
+
+[node name="Back" type="Button" parent="OrnamentContainer/CutOut/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_mdplb")
+text = "Back"
+icon = SubResource("AtlasTexture_6nqcv")
+expand_icon = true
+script = ExtResource("9_e8e4r")
+
+[node name="Scrollwork2" type="TextureRect" parent="OrnamentContainer/CutOut/MarginContainer/VBoxContainer"]
+use_parent_material = true
+layout_mode = 2
+texture = SubResource("AtlasTexture_6tnmh")
+expand_mode = 5
+
+[node name="CornerTopLeft" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_py2my")
+
+[node name="CornerTopRight" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_py2my")
+flip_h = true
