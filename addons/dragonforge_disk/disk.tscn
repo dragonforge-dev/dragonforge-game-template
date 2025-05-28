@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvwxsyeklphp3"]
+
+[ext_resource type="Script" uid="uid://0id1h22211qs" path="res://addons/dragonforge_disk/disk.gd" id="1_c4llb"]
+
+[node name="Disk" type="Node"]
+script = ExtResource("1_c4llb")
