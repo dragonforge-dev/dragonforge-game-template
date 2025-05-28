@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c6qjm6udf1rdk"
+path="res://.godot/imported/Fire Punch.wav-e424abd9117a44dc432b9f326ca2f807.sample"
+
+[deps]
+
+source_file="res://assets/sound/sfx/burn/Fire Punch.wav"
+dest_files=["res://.godot/imported/Fire Punch.wav-e424abd9117a44dc432b9f326ca2f807.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
