@@ -1,6 +1,5 @@
 extends Label
 
-
 @export var bus: String
 
 
@@ -10,6 +9,6 @@ func _ready() -> void:
 	Sound.volume_changed.connect(_on_volume_changed)
 
 
-func _on_volume_changed(bus: String, value: float):
-	if bus == self.bus:
+func _on_volume_changed(incoming_bus: String, value: float):
+	if incoming_bus == bus:
 		text = str(round(value * 100))

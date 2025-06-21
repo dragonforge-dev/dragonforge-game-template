@@ -1,7 +1,7 @@
 @tool
 extends EditorPlugin
 
-const AUTOLOAD_DISPLAY = "Video"
+const AUTOLOAD_DISPLAY = "Display"
 
 
 func _enable_plugin() -> void:

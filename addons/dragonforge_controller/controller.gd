@@ -1,18 +1,25 @@
 extends Node
 
-
-## Signals that there is a request to load the default keybindings shipped
+## Signal that there is a request to load the default keybindings shipped
 ## with the game. (I.E. what was set in the Godot Editor.)
+## Calls Controller._on_restore_default_keybindings() which will reset all keybindings to default.
 signal restore_default_keybindings
-signal show_control_hint(action: String, text: String)
-
+## Signal to tell the action display to show up and what to show.
+## (For example, the hint to press a key to skip a dialog, tutorial info,
+## or the info on how to enter a building.)
+signal show_action_display(action_name: String, action_text: String)
+## Signal to stop showing the action display.
+signal hide_action_display
+## Allows anything listening (like UI) to know when the input method being
+## used changed for something new. Primarily for changing what interaction
+## hints and control icons are shown on screen.
+signal input_method_changed(last_input_type: LastInput)
 
 ## Enumerates the kinds of inputs that are possible.
 enum LastInput {
 	KEYBOARD_AND_MOUSE,
 	GAMEPAD
 }
-
 
 ## Stores the amount of movement in the x/y direction that the player is trying
 ## to look in a 3D game.
@@ -37,8 +44,12 @@ func _ready() -> void:
 ## Updates the last input type for use throughout the game.
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton or event is InputEventMouseMotion or event is InputEventKey:
+		if _last_input_type != LastInput.KEYBOARD_AND_MOUSE:
+			input_method_changed.emit(LastInput.KEYBOARD_AND_MOUSE)
 		_last_input_type = LastInput.KEYBOARD_AND_MOUSE
 	elif event is InputEventJoypadButton or event is InputEventJoypadMotion:
+		if _last_input_type != LastInput.GAMEPAD:
+			input_method_changed.emit(LastInput.GAMEPAD)
 		_last_input_type = LastInput.GAMEPAD
 
 
@@ -48,11 +59,12 @@ func get_last_input_type() -> LastInput:
 
 
 ## Returns the correct Texture2D representation of the action passed based on
-## the last input type used by the player.
-func get_action_icon(action_name: String) -> Texture2D:
+## the last input type used by the player - which can be specified. (Useful when
+## the type changes and you want to update the UI immediately - resovles race conditions.)
+func get_action_icon(action_name: String, input_type: LastInput = _last_input_type) -> Texture2D:
 	var events = InputMap.action_get_events(action_name)
 	for event in events:
-		if get_last_input_type() == LastInput.KEYBOARD_AND_MOUSE:
+		if input_type == LastInput.KEYBOARD_AND_MOUSE:
 			if event is InputEventKey:
 				return Keyboard.get_key_icon(event)
 			if event is InputEventMouse:

@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtf8itc6airoq"]
+
+[ext_resource type="Script" uid="uid://cthbfg6vun8p0" path="res://addons/dragonforge_game_template/main.gd" id="1_0yxrq"]
+[ext_resource type="PackedScene" uid="uid://bocu6nvxn404x" path="res://addons/dragonforge_game_template/ui/user_interface.tscn" id="2_4lww7"]
+[ext_resource type="Script" uid="uid://dju5iegodsjoq" path="res://addons/dragonforge_game_template/state_machine/game_state_splash_screen.gd" id="3_a4ekl"]
+[ext_resource type="PackedScene" uid="uid://d0j3kl3qm1q1n" path="res://addons/dragonforge_game_template/game_state_machine.tscn" id="3_mcui4"]
+[ext_resource type="Script" uid="uid://blec6461a1lyh" path="res://addons/dragonforge_game_template/state_machine/game_state_initialize.gd" id="3_nfd70"]
+[ext_resource type="Script" uid="uid://dkjxqs5dyr560" path="res://addons/dragonforge_game_template/state_machine/game_state_main_menu.gd" id="4_ccn8h"]
+[ext_resource type="Script" uid="uid://cnxe7drinae80" path="res://addons/dragonforge_game_template/state_machine/state.gd" id="4_s72dw"]
+[ext_resource type="PackedScene" uid="uid://dn4h558cas0ke" path="res://addons/dragonforge_game_template/ui/screens/splash_screens/splash_screens.tscn" id="6_ccn8h"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0yxrq")
+bypass_splash_screens = true
+
+[node name="Game State Machine" parent="." instance=ExtResource("3_mcui4")]
+
+[node name="Initialize" type="Node" parent="Game State Machine"]
+unique_name_in_owner = true
+script = ExtResource("3_nfd70")
+
+[node name="Splash Screen" type="Node" parent="Game State Machine"]
+unique_name_in_owner = true
+script = ExtResource("3_a4ekl")
+
+[node name="Main Menu" type="Node" parent="Game State Machine"]
+unique_name_in_owner = true
+script = ExtResource("4_ccn8h")
+
+[node name="Loading Screen" type="Node" parent="Game State Machine"]
+unique_name_in_owner = true
+script = ExtResource("4_s72dw")
+
+[node name="Gameplay" type="Node" parent="Game State Machine"]
+unique_name_in_owner = true
+script = ExtResource("4_s72dw")
+
+[node name="Minigame" type="Node" parent="Game State Machine"]
+unique_name_in_owner = true
+script = ExtResource("4_s72dw")
+
+[node name="Cutscene" type="Node" parent="Game State Machine"]
+unique_name_in_owner = true
+script = ExtResource("4_s72dw")
+
+[node name="Dialogue" type="Node" parent="Game State Machine"]
+unique_name_in_owner = true
+script = ExtResource("4_s72dw")
+
+[node name="SplashScreens" parent="." instance=ExtResource("6_ccn8h")]
+unique_name_in_owner = true
+
+[node name="UserInterface" parent="." instance=ExtResource("2_4lww7")]
+unique_name_in_owner = true
+
+[editable path="SplashScreens"]

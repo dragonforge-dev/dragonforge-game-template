@@ -4,6 +4,8 @@ extends Node
 const SETTINGS_PATH = "user://configuration.settings"
 const SAVE_GAME_PATH = "user://game.save"
 
+## If this value is On, save_game() will be called when the player quits the game.
+@export var save_on_quit: bool = false
 
 var configuration_settings: Dictionary
 var game_information
@@ -17,12 +19,7 @@ func _ready() -> void:
 func _notification(what) -> void:
 	match what:
 		NOTIFICATION_WM_CLOSE_REQUEST: #Called when the application quits.
-			pass
-
-
-func quit() -> void:
-	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
-	get_tree().quit()
+			save_game()
 
 
 ## To add a value to be saved, add a node to the "Persist" Global Group on
@@ -32,7 +29,7 @@ func quit() -> void:
 ## await Signal(self, "ready") line at the top so it doesn't try to load values
 ## before the node exists. If you need to store multiple values, use a
 ## dictionary or changes later will result in save/load errors.
-func save_game() -> void:
+func save_game() -> bool:
 	var saved_nodes = get_tree().get_nodes_in_group("Persist")
 	for node in saved_nodes:
 		# Check the node has a save function.
@@ -41,7 +38,8 @@ func save_game() -> void:
 			continue
 		
 		game_information[node.name] = node.save_node()
-	_save_file(game_information, SAVE_GAME_PATH)
+		print("Saving Info for %s: %s" % [node.name, game_information[node.name]])
+	return _save_file(game_information, SAVE_GAME_PATH)
 
 
 func load_game() -> void:
@@ -56,6 +54,7 @@ func load_game() -> void:
 			continue
 		# Check if we have information to load for the value
 		if game_information.has(node.name):
+			print("Loading Info for %s: %s" % [node.name, game_information[node.name]])
 			node.load_node(game_information[node.name])
 
 
@@ -77,7 +76,7 @@ func save_setting(data: Variant, category: String) -> void:
 func load_setting(category: String) -> Variant:
 	if configuration_settings.has(category):
 		return configuration_settings[category]
-	return null
+	return ERR_DOES_NOT_EXIST
 
 
 ## Takes data and serializes it for saving.
@@ -108,6 +107,7 @@ func _save_file(save_information: Dictionary, path: String) -> bool:
 func _load_file(path: String) -> Variant:
 	if not FileAccess.file_exists(path):
 		print("File '%s' does not exist. File not loaded." % path)
+		var return_value: Dictionary = {}
 		return
 	var file = FileAccess.open(path, FileAccess.READ)
 	return file.get_var()

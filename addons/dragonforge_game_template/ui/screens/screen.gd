@@ -1,5 +1,4 @@
-extends Control
-class_name Screen
+class_name Screen extends Control
 
 enum Type {
 	None,
@@ -29,7 +28,6 @@ var visible_on_new_screen: bool = false
 var _controls: Array[Control]
 var _control_last_focused: Control
 var _buttons: Array[Button]
-
 
 func _ready() -> void:
 	self.visible = false

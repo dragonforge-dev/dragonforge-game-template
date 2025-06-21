@@ -1,14 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://brk0pye2sgsww"]
+[gd_scene load_steps=6 format=3 uid="uid://brk0pye2sgsww"]
 
 [ext_resource type="Script" uid="uid://b6ya4wv1c5g7n" path="res://addons/dragonforge_game_template/ui/screens/screen.gd" id="1_mpuvi"]
 [ext_resource type="Script" uid="uid://dti4alui5qqx1" path="res://addons/dragonforge_game_template/ui/labels/label_song_title.gd" id="2_3xkgv"]
 [ext_resource type="Script" uid="uid://doynbyugfibdl" path="res://addons/dragonforge_game_template/ui/labels/label_song_artist.gd" id="3_s4bal"]
 [ext_resource type="Script" uid="uid://d3ife8jqx1668" path="res://addons/dragonforge_game_template/ui/labels/label_rich_text_song_album.gd" id="4_qykqu"]
 [ext_resource type="Script" uid="uid://dh7sfof8h6qlu" path="res://addons/dragonforge_game_template/ui/containers/hbox_music_player.gd" id="5_x57pj"]
-[ext_resource type="Script" uid="uid://crtp3aqhoaixr" path="res://addons/dragonforge_sound/resources/song.gd" id="6_7hnfr"]
-[ext_resource type="Resource" uid="uid://sv75l1ihxgwm" path="res://addons/dragonforge_game_template/assets/sound/music/songs/hero_theme.tres" id="7_kf3df"]
-[ext_resource type="Resource" uid="uid://cc7b2koxhbs1p" path="res://addons/dragonforge_game_template/assets/sound/music/songs/pairie_theme.tres" id="8_xctal"]
-[ext_resource type="Resource" uid="uid://vhcmupvl5exb" path="res://addons/dragonforge_game_template/assets/sound/music/songs/end_credits.tres" id="9_kn8pu"]
 
 [node name="Music Display" type="MarginContainer"]
 anchors_preset = 3
@@ -77,7 +73,6 @@ script = ExtResource("4_qykqu")
 layout_mode = 2
 size_flags_horizontal = 4
 script = ExtResource("5_x57pj")
-song_list = Array[ExtResource("6_7hnfr")]([ExtResource("7_kf3df"), ExtResource("8_xctal"), ExtResource("9_kn8pu")])
 
 [node name="PlayPauseButton" type="Button" parent="VBoxContainer/MusicPlayer"]
 layout_mode = 2

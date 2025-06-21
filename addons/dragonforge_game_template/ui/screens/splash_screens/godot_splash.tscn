@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmfavks32bu0m"]
+
+[ext_resource type="Script" uid="uid://dmidkj05fs34v" path="res://addons/dragonforge_game_template/ui/screens/splash_screens/screen_splash.gd" id="1_c160n"]
+[ext_resource type="VideoStream" uid="uid://ds5optmxmhaxf" path="res://addons/dragonforge_game_template/assets/video/godot_splash/stayathomedev_logo-animation.ogv" id="2_qne57"]
+
+[node name="GodotSplash" type="Control" node_paths=PackedStringArray("timer", "video_player")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c160n")
+timer = NodePath("Timer")
+video_player = NodePath("VideoStreamPlayer")
+screen_type = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_qne57")
+expand = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

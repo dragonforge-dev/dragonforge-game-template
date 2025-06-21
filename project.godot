@@ -10,8 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Dragonforge Development Game Template"
-run/main_scene="res://addons/dragonforge_game_template/ui/user_interface.tscn"
+config/name="Dragonforge Game Template v0.1"
+config/description="A game template for game jams."
+config/version="0.1"
+run/main_scene="uid://dtf8itc6airoq"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
@@ -19,18 +21,19 @@ config/icon="res://addons/dragonforge_game_template/assets/textures/logo/icon_mo
 
 [autoload]
 
-Disk="*res://addons/dragonforge_disk/disk.tscn"
 Gamepad="*res://addons/dragonforge_controller/gamepad.tscn"
 Mouse="*res://addons/dragonforge_controller/mouse.tscn"
 Keyboard="*res://addons/dragonforge_controller/keyboard.tscn"
 Controller="*res://addons/dragonforge_controller/controller.tscn"
-Video="*res://addons/dragonforge_display/display.tscn"
+Disk="*res://addons/dragonforge_disk/disk.tscn"
+Display="*res://addons/dragonforge_display/display.tscn"
 Sound="*res://addons/dragonforge_sound/sound.tscn"
 Music="*res://addons/dragonforge_sound/music.tscn"
+Game="*res://addons/dragonforge_game_template/game.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dragonforge_controller/plugin.cfg", "res://addons/dragonforge_disk/plugin.cfg", "res://addons/dragonforge_display/plugin.cfg", "res://addons/dragonforge_sound/plugin.cfg")
+enabled=PackedStringArray("res://addons/dragonforge_controller/plugin.cfg", "res://addons/dragonforge_disk/plugin.cfg", "res://addons/dragonforge_display/plugin.cfg", "res://addons/dragonforge_game_template/plugin.cfg", "res://addons/dragonforge_sound/plugin.cfg")
 
 [input]
 

@@ -21,12 +21,12 @@ func _on_play_pause_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		$PlayPauseButton.text = "Pause"
 		if song_paused:
-			Music.unpause()
+			Sound.unpause_music()
 		else:
-			Music.play(song_list[_current_song])
+			Sound.play_music(song_list[_current_song])
 	else:
 		$PlayPauseButton.text = "Play"
-		Music.pause()
+		Sound.pause_music()
 		song_paused = true
 
 

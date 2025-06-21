@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6psgppqahbu1"]
+
+[ext_resource type="Script" uid="uid://c4ts5eh8bhmfy" path="res://addons/dragonforge_game_template/game.gd" id="1_lm4fu"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_lm4fu")

@@ -6,4 +6,11 @@ func _ready() -> void:
 
 
 func _on_new_song_playing(song: Song) -> void:
-	text = song.get_album_artist()
+	if song.album == null:
+		text = "No Album Info"
+		return
+	if song.album.artist == null:
+		text = "No Artist Info"
+		return
+	
+	text = song.album.artist

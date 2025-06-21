@@ -1,6 +1,5 @@
 extends Node
 
-
 ## Processes mouse movement for a 3D camera look feature when it is on and 
 ## Input.mouse_mode == Input.MOUSE_MODE_CAPTURED[br]
 ## Turn this off if you are not using it to save processing cycles.

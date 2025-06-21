@@ -9,12 +9,12 @@ func _ready() -> void:
 	for i in DisplayServer.get_screen_count():
 		self.add_item(str(i+1),i+1)
 	self.item_selected.connect(_on_monitor_selected)
-	Video.window_moved_to_monitor.connect(_on_window_moved)
+	Display.window_moved_to_monitor.connect(_on_window_moved)
 	selected = DisplayServer.window_get_current_screen()
 
 
 func _on_monitor_selected(index: int) -> void:
-	Video.select_monitor(index)
+	Display.select_monitor(index)
 
 
 func _on_window_moved(new_monitor_id: int) -> void:

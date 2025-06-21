@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://4hjki5phxtks"]
 
 [ext_resource type="Script" uid="uid://dt6uhbxhhsg5o" path="res://addons/dragonforge_game_template/ui/user_interface.gd" id="1_brdr3"]
-[ext_resource type="Script" uid="uid://dmidkj05fs34v" path="res://addons/dragonforge_game_template/ui/screens/screen_splash.gd" id="2_vo74m"]
+[ext_resource type="Script" uid="uid://dmidkj05fs34v" path="res://addons/dragonforge_game_template/ui/screens/splash_screens/screen_splash.gd" id="2_vo74m"]
 [ext_resource type="VideoStream" uid="uid://ds5optmxmhaxf" path="res://addons/dragonforge_game_template/assets/video/godot_splash/stayathomedev_logo-animation.ogv" id="3_if43f"]
 [ext_resource type="AudioStream" uid="uid://qi8y05u37225" path="res://addons/dragonforge_game_template/assets/sound/music/ovani/Asian Sho.wav" id="4_onf65"]
 [ext_resource type="Texture2D" uid="uid://srra5lb8b8ry" path="res://addons/dragonforge_game_template/assets/textures/dragonforge_splash/Dragonforge Development Logo - Cropped.png" id="5_aggwh"]

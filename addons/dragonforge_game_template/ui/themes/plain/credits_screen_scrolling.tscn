@@ -21,6 +21,7 @@ layout_mode = 2
 color = Color(0.0352941, 0.0431373, 0.188235, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][font_size=48]Godot Game Template[/font_size]
@@ -118,7 +119,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[center][font_size=60]Godot Game Template[/font_size][/center]"
+text = "[center][font_size=40]The Restaurant at the End of the Universe[/font_size][/center]"
 fit_content = true
 script = ExtResource("4_pq1fs")
 
@@ -140,11 +141,10 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[center][font_size=36]Sound Effects[/font_size]
-[font_size=24]Click Sound[/font_size]
-[url=\"https://elvgames.itch.io/user-interface-sound-fx-2\"]UI2_Button_1[/url] by [url=\"https://elvgames.itch.io/\"]ELV Games[/url]
-[font_size=24]Confirmation Sound[/font_size]
-[url=\"https://elvgames.itch.io/user-interface-sound-fx-2\"]UI2_Accept_2[/url] by [url=\"https://elvgames.itch.io/\"]ELV Games[/url][/center]"
+text = "[center][font_size=36]Sound Effects & Music[/font_size]
+
+[font_size=24][url=\"https://escalonamusic.itch.io/action-rpg-music-free\"]Free Action RPG Music[/url] by [url=\"https://escalonamusic.itch.io/\"]Escalona Music[/url][/font_size]
+[/center]"
 fit_content = true
 script = ExtResource("4_pq1fs")
 
@@ -159,26 +159,8 @@ Provided by  [url=\"https://stayathomedev.itch.io/free-godot-logo-redesigns\"]St
 fit_content = true
 script = ExtResource("4_pq1fs")
 
-[node name="Music Header" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][font_size=36]Music[/font_size][/center]"
-fit_content = true
-
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="Music1" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[center][font_size=24]Dragonforge Development Logo[/font_size]
-[url=\"https://ovanisound.com/products/jingles-stingers-sound-fx-pack-vol-2\"]Asian Sho[/url] by [url=\"https://ovanisound.com/\"]Ovani Sound[/url]
-
-[font_size=24]Godot Wild Jam Logo[/font_size]
-[url=\"https://www.gamedevmarket.net/asset/short-action-logos-and-loops-pack\"]Logo #9[/url] by [url=\"https://www.gamedevmarket.net/member/andysv\"]AndySv[/url][/center]"
-fit_content = true
-script = ExtResource("4_pq1fs")
 
 [node name="Music2" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -190,5 +172,16 @@ text = "[center][font_size=24]Hero Theme[/font_size]
 [url=\"https://escalonamusic.itch.io/action-rpg-music-free\"]BGM03prairie[/url] by [url=\"https://escalonamusic.itch.io/\"]Escalona Music[/url]
 [font_size=24]End Credits[/font_size]
 [url=\"https://escalonamusic.itch.io/action-rpg-music-free\"]BGM09credits[/url] by [url=\"https://escalonamusic.itch.io/\"]Escalona Music[/url][/center]"
+fit_content = true
+script = ExtResource("4_pq1fs")
+
+[node name="Music1" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][font_size=36]HDRI[/font_size]
+
+[font_size=24][url=\"https://ambientcg.com/view?id=NightSkyHDRI008\"]Night Sky 008[/url] by [url=\"https://ambientcg.com/\"]Ambient CG[/url][/font_size]
+[/center]"
 fit_content = true
 script = ExtResource("4_pq1fs")

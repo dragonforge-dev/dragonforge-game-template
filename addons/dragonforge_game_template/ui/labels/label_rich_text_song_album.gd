@@ -7,7 +7,10 @@ func _ready() -> void:
 
 
 func _on_new_song_playing(song: Song) -> void:
-	text = "[url=%s]%s[/url]" % [song.get_album_link(), song.get_album_name()]
+	if song.album == null:
+		text = "No Album Info"
+		return
+	text = "[url=%s]%s[/url]" % [song.album.link, song.album]
 
 
 func _on_meta_clicked(meta: Variant) -> void:

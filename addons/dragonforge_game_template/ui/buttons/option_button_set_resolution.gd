@@ -13,7 +13,7 @@ func _ready() -> void:
 	current_resolution = get_window().get_size()
 	var monitor_max_resolution = DisplayServer.screen_get_size()
 	var i: int = 0
-	for resolution in Video.RESOLUTIONS:
+	for resolution in Display.RESOLUTIONS:
 		if resolution <= monitor_max_resolution:
 			self.add_item("%d x %d" % [resolution.x , resolution.y])
 			supported_resolutions.append(resolution)
@@ -21,15 +21,15 @@ func _ready() -> void:
 	_highlight_selection()
 	
 	self.item_selected.connect(_on_resolution_selected)
-	Video.fullscreen.connect(_on_fullscreen_toggled)
-	Video.resolution_changed.connect(_on_resolution_changed)
+	Display.fullscreen.connect(_on_fullscreen_toggled)
+	Display.resolution_changed.connect(_on_resolution_changed)
 	
-	if Video.is_fullscreen():
+	if Display.is_fullscreen():
 		disabled = true
 
 
 func _on_resolution_selected(index: int) -> void:
-	Video.set_resolution(supported_resolutions[index])
+	Display.set_resolution(supported_resolutions[index])
 
 
 func _on_resolution_changed(new_resolution: Vector2i) -> void:
