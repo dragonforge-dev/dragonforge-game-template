@@ -1,18 +1,12 @@
-extends Control
+class_name UserInterface extends CanvasLayer
 
-class_name UserInterface
 
 @export var override_button_press_sound: AudioStream
-#@export var bypass_splash_screens: bool = false
-#@export var splash_screens: Array[SplashScreen]
 
 var _screens: Dictionary
 var _current_screen: Screen.Type
-#var _current_splash_screen: int = 0
 
-#@onready var game: Game = $Game
-#@onready var menu: State = $Game/Menu
-#@onready var splash_screen: State = $"Game/Splash Screen"
+@onready var background: ColorRect = $Background
 
 
 func _ready() -> void:
@@ -22,40 +16,23 @@ func _ready() -> void:
 	if override_button_press_sound != null:
 		Sound.default_button_pressed_sound = override_button_press_sound
 
-	# Bypass splash screens if bypass is on and we are in a debug version of the game. Can't bypass in a release version.
-	#if (bypass_splash_screens and OS.is_debug_build()) or splash_screens.size() == 0:
-		#_screens[Screen.Type.Start].visible = true
-		#_current_screen = Screen.Type.Start
-		#game.switch_state(menu)
-	#else:
-		#_current_screen = Screen.Type.Splash
-		#for splash_screen in splash_screens:
-			#splash_screen.connect("splash_complete", _onSplashComplete)
-		#
-		#splash_screens[_current_splash_screen].visible = true
-		#game.switch_state(splash_screen)
-
 	_connect_butttons(self)
 
 
 func start() -> void:
 	_screens[Screen.Type.Start].visible = true
+	background.show()
 	_current_screen = Screen.Type.Start
+
+
+func hide_ui() -> void:
+	background.hide()
+	_screens[Screen.Type.Start].visible = false
 
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("back_button"):
 		_onScreenCloseRequest()
-
-
-#func _onSplashComplete() -> void:
-	#splash_screens[_current_splash_screen].visible = false
-	#_current_splash_screen += 1
-	#if _current_splash_screen < splash_screens.size():
-		#splash_screens[_current_splash_screen].visible = true
-	#else:
-		#_current_screen = Screen.Type.Start
-		#_screens[Screen.Type.Start].visible = true
 
 
 func _connect_butttons(parent: Node):
@@ -97,5 +74,3 @@ func _onScreenCloseRequest(screen: Screen.Type = Screen.Type.None) -> void:
 		if not parent_screen.visible_on_new_screen:
 			parent_screen.show()
 		_current_screen = current_screen.parent.screen_type
-	else:
-		$ConfirmationQuitDialog.show()

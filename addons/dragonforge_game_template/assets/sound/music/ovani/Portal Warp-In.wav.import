@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bx5lalpaxuu03"
+path="res://.godot/imported/Portal Warp-In.wav-06da07b5a88c90e640c13cbd45174e75.sample"
+
+[deps]
+
+source_file="res://addons/dragonforge_game_template/assets/sound/music/ovani/Portal Warp-In.wav"
+dest_files=["res://.godot/imported/Portal Warp-In.wav-06da07b5a88c90e640c13cbd45174e75.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

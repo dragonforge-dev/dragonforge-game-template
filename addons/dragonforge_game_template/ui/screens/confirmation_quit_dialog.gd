@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 func _on_quit_confirmed() -> void:
-	Disk.quit()
+	Game.quit()
 
 
 func _on_quit_canceled() -> void:

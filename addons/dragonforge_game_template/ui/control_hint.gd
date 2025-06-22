@@ -7,7 +7,7 @@ extends HBoxContainer
 
 
 func _ready() -> void:
-	Controller.show_control_hint.connect(show_hint)
+	Controller.show_action_display.connect(show_hint)
 
 
 func show_hint(action: String, message: String):

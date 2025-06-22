@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dajppavo7htp1"
+path="res://.godot/imported/Jingles Danger 001.wav-b9b63e27729eda5cb00317e4aab0c0fd.sample"
+
+[deps]
+
+source_file="res://addons/dragonforge_game_template/assets/sound/music/ovani/Jingles Danger 001.wav"
+dest_files=["res://.godot/imported/Jingles Danger 001.wav-b9b63e27729eda5cb00317e4aab0c0fd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

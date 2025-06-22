@@ -1,13 +1,10 @@
 extends VBoxContainer
 
-
 @export var input_button_scene: PackedScene
-
 
 var is_remapping = false
 var action_to_remap = null
 var remapping_button = null
-
 ## Add action names and the text you would like to show up in the UI here.
 ## Only actions added to this list will show up in the UI.
 var input_actions = {

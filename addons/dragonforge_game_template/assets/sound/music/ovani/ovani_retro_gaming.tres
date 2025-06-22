@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Album" load_steps=2 format=3 uid="uid://duwqt714cklso"]
+
+[ext_resource type="Script" uid="uid://b4o4ygvaj344p" path="res://addons/dragonforge_sound/resources/album.gd" id="1_uirs8"]
+
+[resource]
+script = ExtResource("1_uirs8")
+name = "Retro Gaming Sound FX Pack Vol. 4"
+artist = "Ovani Sound"
+link = "https://ovanisound.com/products/retro-gaming-sound-fx-pack-vol-4"
+metadata/_custom_type_script = "uid://b4o4ygvaj344p"

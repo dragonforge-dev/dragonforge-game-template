@@ -1,3 +1,4 @@
+@icon("res://addons/dragonforge_game_template/assets/textures/icons/splash_screen.svg")
 class_name SplashScreen extends Screen
 
 signal splash_complete

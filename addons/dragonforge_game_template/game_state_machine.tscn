@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0j3kl3qm1q1n"]
-
-[ext_resource type="Script" uid="uid://yqq3ctg3w52p" path="res://addons/dragonforge_game_template/game_state_machine.gd" id="1_sbnhc"]
-
-[node name="Game State Machine" type="Node"]
-script = ExtResource("1_sbnhc")

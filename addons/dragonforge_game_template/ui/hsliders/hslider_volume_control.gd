@@ -22,7 +22,7 @@ func _on_value_changed(new_value: float) -> void:
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_released():
 		Sound.play(Sound.volume_confirm_sound, bus)
-	if event.is_action_released("left") or event.is_action_released("right"):
+	if event.is_action_released("ui_left") or event.is_action_released("ui_right"):
 		if gamepad_timer.is_stopped():
 			Sound.play(Sound.volume_confirm_sound, bus)
 			gamepad_timer.start()

@@ -1,5 +1,5 @@
-extends Node
 #TODO: Add unit tests.
+extends Node
 
 const SETTINGS_PATH = "user://configuration.settings"
 const SAVE_GAME_PATH = "user://game.save"
@@ -8,18 +8,21 @@ const SAVE_GAME_PATH = "user://game.save"
 @export var save_on_quit: bool = false
 
 var configuration_settings: Dictionary
-var game_information
+var game_information: Dictionary
+var is_ready = false
 
 
 func _ready() -> void:
 	if FileAccess.file_exists(SETTINGS_PATH):
 		configuration_settings = _load_file(SETTINGS_PATH)
+	ready.connect(func(): is_ready = true)
 
 
 func _notification(what) -> void:
 	match what:
 		NOTIFICATION_WM_CLOSE_REQUEST: #Called when the application quits.
-			save_game()
+			if save_on_quit:
+				save_game()
 
 
 ## To add a value to be saved, add a node to the "Persist" Global Group on
@@ -74,6 +77,9 @@ func save_setting(data: Variant, category: String) -> void:
 ## values before the node exists.
 ## Call this function using Setting.load_setting(self)
 func load_setting(category: String) -> Variant:
+	if !is_ready:
+		if FileAccess.file_exists(SETTINGS_PATH):
+			configuration_settings = _load_file(SETTINGS_PATH)
 	if configuration_settings.has(category):
 		return configuration_settings[category]
 	return ERR_DOES_NOT_EXIST
