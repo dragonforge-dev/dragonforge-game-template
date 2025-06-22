@@ -27,7 +27,7 @@ For use with **Godot 4.4.1-stable** and later.
 - `in_progress: bool = false` Starts out false. Becomes true when a new game is started, or a game is loaded. Saved to disk.
 - `level_path: String` Path for loading the next level. Saved to disk.
 #### Public Functions
-Most of these functions are convenience methods, as they just call `get_tree()`. However they have been implemented to make code clearer. Also, the quit method actually send out a quit signal before calling get_tree().quit(), just as if the user had closed the window.
+Most of these functions are convenience methods, as they just call `get_tree()`. However they have been implemented to make code clearer. Also, the quit method actually sends out a quit signal before calling get_tree().quit(), just as if the user had closed the window.
 - `quit() -> void` Quits the game, after notifying all nodes, which allows save on quit functionality. This should be used instead of get_tree.quit()
 - `pause(pause: bool = true) -> void` Pauses or unpauses the game based on the boolean sent. Defaults to pausing the game. (*Convenience method.*)
 - `unpause() -> void` Unpauses the game. (*Convenience method.*)
