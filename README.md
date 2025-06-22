@@ -1,6 +1,6 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.4.1.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
-# Godot Game Template
-A game template for game jams.
+# Dragonforge Game Template
+A Godot game template for game jams.
 # Version 0.2
 For use with **Godot 4.4.1-stable** and later.
 # Installation Instructions
