@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://bocu6nvxn404x"]
+[gd_scene load_steps=16 format=3 uid="uid://bocu6nvxn404x"]
 
 [ext_resource type="Script" uid="uid://dt6uhbxhhsg5o" path="res://addons/dragonforge_game_template/ui/user_interface.gd" id="1_c77r1"]
-[ext_resource type="Texture2D" uid="uid://dcf5kxmahsco7" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/PNG_Godot Font 1 Circle Cloud.png" id="2_x0yhw"]
 [ext_resource type="PackedScene" uid="uid://cqj74t73rs4bm" path="res://addons/dragonforge_game_template/ui/themes/plain/start_menu.tscn" id="12_bsxny"]
 [ext_resource type="PackedScene" uid="uid://c0hrf4hhhs6ce" path="res://addons/dragonforge_game_template/ui/themes/plain/settings_menu.tscn" id="13_6eyr5"]
 [ext_resource type="PackedScene" uid="uid://dh4mxnah0vdkm" path="res://addons/dragonforge_game_template/ui/themes/plain/video_menu.tscn" id="14_1qtf3"]
@@ -81,25 +80,6 @@ _data = {
 [node name="UserInterface" type="CanvasLayer"]
 process_mode = 2
 script = ExtResource("1_c77r1")
-
-[node name="Background" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0852618, 0.209337, 0.303794, 1)
-
-[node name="BackgroundImage" type="TextureRect" parent="Background"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_x0yhw")
-expand_mode = 5
-stretch_mode = 5
 
 [node name="Plain Start" parent="." instance=ExtResource("12_bsxny")]
 visible = false

@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://c4ts5eh8bhmfy" path="res://addons/dragonforge_game_template/game.gd" id="1_lm4fu"]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" groups=["Persist"]]
 script = ExtResource("1_lm4fu")

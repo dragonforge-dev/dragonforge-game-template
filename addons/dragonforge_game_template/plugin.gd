@@ -6,6 +6,7 @@ const UI_ACCEPT_ACTION = "ui_accept"
 const BACK_BUTTON_ACTION = "back_button"
 const SKIP_ACTION = "skip"
 const PAUSE_ACTION = "pause"
+const MAIN_SCENE_SETTING = "application/run/main_scene"
 
 
 func _enable_plugin() -> void:
@@ -14,6 +15,7 @@ func _enable_plugin() -> void:
 	add_action(BACK_BUTTON_ACTION, JOY_BUTTON_B, MOUSE_BUTTON_XBUTTON1, KEY_ESCAPE)
 	add_action(SKIP_ACTION, JOY_BUTTON_B, MOUSE_BUTTON_LEFT, KEY_SPACE)
 	add_action(PAUSE_ACTION, JOY_BUTTON_START, MOUSE_BUTTON_NONE, KEY_ESCAPE)
+	ProjectSettings.set_setting(MAIN_SCENE_SETTING, "res://addons/dragonforge_game_template/main.tscn")
 	#if get_node_or_null("/root/Sound") == null:
 		#load Sound autoload
 	print_rich("[color=yellow][b]WARNING[/b][/color]: Project must be reloaded for InputMap changes to appear. [color=ivory][b]Project -> Reload Current Project[/b][/color]")
@@ -25,6 +27,7 @@ func _disable_plugin() -> void:
 	remove_action(BACK_BUTTON_ACTION)
 	remove_action(SKIP_ACTION)
 	remove_action(PAUSE_ACTION)
+	ProjectSettings.set_setting(MAIN_SCENE_SETTING, "")
 	print_rich("[color=yellow][b]WARNING[/b][/color]: Project must be reloaded for InputMap changes to appear. [color=ivory][b]Project -> Reload Current Project[/b][/color]")
 
 

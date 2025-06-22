@@ -5,7 +5,6 @@ var player: Node
 var current_level: Node
 var target_transition_area
 var level_loading = false
-var current_level_name: String = ""
 
 
 func _activate_state() -> void:
@@ -23,7 +22,7 @@ func _process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if not Game.is_paused:
+	if not Game.is_paused():
 		return
 	if event.is_action_pressed("pause"):
 		switch_state()
@@ -32,22 +31,10 @@ func _input(event: InputEvent) -> void:
 
 func _enter_state() -> void:
 	super()
+	if Game.is_paused():
+		Game.unpause()
 	if level_loading:
 		_start_level()
-
-
-# Save the current level (which on changing level should be the one we just left)
-func save_node() -> String:
-	if current_level:
-		return current_level.name.to_snake_case()
-	return current_level_name
-
-
-# Load the current saved level
-func load_node(level_name: String) -> void:
-	if level_name:
-		current_level_name = level_name
-		Game.level_path = level_name
 
 
 func _on_load_level(level_name: String, player: Node, transition_area: String) -> void:

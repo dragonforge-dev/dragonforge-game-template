@@ -1,5 +1,6 @@
 class_name GameStateMainMenu extends State
 
+@onready var background: ColorRect = %Background
 @onready var user_interface: UserInterface = %UserInterface
 
 
@@ -7,18 +8,21 @@ func _activate_state() -> void:
 	super()
 	Game.splash_screens_complete.connect(switch_state)
 	user_interface.hide_ui()
+	background.hide()
 
 
 func _enter_state() -> void:
 	super()
-	Game.pause_game()
+	Game.pause()
+	if not Game.is_loaded:
+		background.show()
 	user_interface.start()
 
 
 func _exit_state() -> void:
 	super()
 	user_interface.hide_ui()
-	Game.unpause_game()
+	background.hide()
 
 
 func _input(event: InputEvent) -> void:

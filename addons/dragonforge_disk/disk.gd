@@ -47,7 +47,7 @@ func save_game() -> bool:
 
 func load_game() -> void:
 	game_information = _load_file(SAVE_GAME_PATH)
-	if game_information == null:
+	if game_information.is_empty():
 		return
 	var saved_nodes = get_tree().get_nodes_in_group("Persist")
 	for node in saved_nodes:
@@ -114,6 +114,6 @@ func _load_file(path: String) -> Variant:
 	if not FileAccess.file_exists(path):
 		print("File '%s' does not exist. File not loaded." % path)
 		var return_value: Dictionary = {}
-		return
+		return return_value
 	var file = FileAccess.open(path, FileAccess.READ)
 	return file.get_var()

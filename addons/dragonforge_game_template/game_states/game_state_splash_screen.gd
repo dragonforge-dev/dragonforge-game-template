@@ -2,17 +2,29 @@ class_name GameStateSplashScreen extends State
 
 const SPLASH_SCREENS_VIEWED = "splash_screens_viewed"
 
-## All the splash screens to show, and the order to show them in.
+## All the splash screens to show, and the order to show them in. Add any 
+## [SplashScreen] nodes you want shown at the beginning of the game. Leaving
+## this blank will cause the splash screen state to be skipped.
 @export var active_splash_screens: Array[SplashScreen]
-## If true, you can skip the splash screens as long as you have viewed them once.
-## (Resets if settings.conf is deleted in the UserData folder.)
-@export var splash_screens_are_skippable = true
+## If true, you can skip the splash screens using the "skip" action (which is
+## automatically added when this plugin is activated) as long as you have viewed
+## them once. See [member GameStateSplashScreen.splash_screens_viewed] for more
+## information.
+## See also: [member Main.bypass_splash_screens_during_debug].
+@export var splash_screens_are_skippable: bool = true
 
 var _current_splash_screen: int = 0
-var splash_screens_viewed := false
+## Stores whether the user has seen the splash screens before. Saved to disk.
+## Once this value is true, and as long as splash_screens_are_skippable remains
+## true, the player may skip splash screens using the "skip" action (which is
+## automatically added when this plugin is activated). This value resets to
+## false if configuration.settings is deleted in the UserData folder.
+## See also: [member Main.bypass_splash_screens_during_debug].
+var splash_screens_viewed: bool = false
 
 
 func _ready() -> void:
+	super()
 	for splash_screen in active_splash_screens:
 		splash_screen.splash_complete.connect(_on_splash_complete)
 	# Load whether or not the splash screens have been viewed.

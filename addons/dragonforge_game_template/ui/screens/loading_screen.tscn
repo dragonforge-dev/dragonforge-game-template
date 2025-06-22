@@ -1,0 +1,153 @@
+[gd_scene load_steps=7 format=3 uid="uid://delmnc2tqg36f"]
+
+[ext_resource type="Texture2D" uid="uid://dcf5kxmahsco7" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/PNG_Godot Font 1 Circle Cloud.png" id="1_two1e"]
+
+[sub_resource type="GDScript" id="GDScript_two1e"]
+script/source = "class_name LoadingScreen extends CanvasLayer
+
+var progress_amount := 0.0
+var level_path: String
+
+@onready var progress_bar: ProgressBar = %ProgressBar
+@onready var precentage_label: Label = %PrecentageLabel
+
+
+func _ready() -> void:
+	set_process(false)
+	set_physics_process(false)
+
+
+func _process(delta: float) -> void:
+	var progress: Array = []
+	var status = ResourceLoader.load_threaded_get_status(level_path, progress)
+	
+	if progress[0] > progress_amount:
+		progress_amount = progress[0]
+	
+	if progress_bar.value < progress_amount:
+		progress_bar.value = lerp(progress_bar.value, progress_amount, delta * 60)
+	progress_bar.value += delta * 0.2 * (3.0 if progress_amount >= 1.0 else clamp(0.95 - progress_bar.value, 0.0, 1.0))
+	
+	precentage_label.text = str(int(progress_bar.value * 100.0)) + \" %\"
+	
+	if status == ResourceLoader.THREAD_LOAD_LOADED:
+		set_process(false)
+		progress_bar.value = 1.0
+		precentage_label.text = \"100 %\"
+
+
+func start_background_load(level_path: String) -> void:
+	print_rich(\"[color=purple][b]Level Loading[/b][/color]: %s\" % [level_path])
+	progress_bar.value = 0.0
+	self.level_path = level_path
+	ResourceLoader.load_threaded_request(level_path)
+	set_process(true)
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_two1e"]
+font_size = 72
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btk71"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3lj3"]
+bg_color = Color(0.133333, 0.270588, 0.403922, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_2x8tg"]
+font_size = 72
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+
+[node name="Loading screen" type="CanvasLayer"]
+script = SubResource("GDScript_two1e")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0852618, 0.209337, 0.303794, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="BackgroundImage" type="TextureRect" parent="Background/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_two1e")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoadingLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "LOADING..."
+label_settings = SubResource("LabelSettings_two1e")
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 75)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_btk71")
+theme_override_styles/fill = SubResource("StyleBoxFlat_l3lj3")
+max_value = 1.0
+step = 0.0
+value = 0.5
+show_percentage = false
+
+[node name="PrecentageLabel" type="Label" parent="VBoxContainer/ProgressBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -49.5
+offset_right = 72.0
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "50%"
+label_settings = SubResource("LabelSettings_2x8tg")
+horizontal_alignment = 1

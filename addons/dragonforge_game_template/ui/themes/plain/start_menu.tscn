@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cqj74t73rs4bm"]
 
 [ext_resource type="Script" uid="uid://b6ya4wv1c5g7n" path="res://addons/dragonforge_game_template/ui/screens/screen.gd" id="1_brcp3"]
-[ext_resource type="Script" uid="uid://dutfwuvpmtiu1" path="res://addons/dragonforge_game_template/ui/buttons/button_resume_game.gd" id="2_5stl4"]
+[ext_resource type="Script" uid="uid://dutfwuvpmtiu1" path="res://addons/dragonforge_game_template/ui/buttons/button_new_or_resume_game.gd" id="2_5stl4"]
 [ext_resource type="Script" uid="uid://dbx17g06kde6w" path="res://addons/dragonforge_game_template/ui/buttons/button_show_screen.gd" id="2_tulfn"]
 [ext_resource type="Script" uid="uid://cvefjrirkydyn" path="res://addons/dragonforge_game_template/ui/buttons/button_toggle_screen.gd" id="3_1n2sg"]
 [ext_resource type="Script" uid="uid://1e5jknrhaq58" path="res://addons/dragonforge_game_template/ui/buttons/button_quit.gd" id="3_lxie6"]
@@ -26,9 +26,9 @@ screen_type = 3
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="ResumeGame" type="Button" parent="VBoxContainer"]
+[node name="New or Resume Game" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Resume Game"
+text = "New Game"
 script = ExtResource("2_5stl4")
 
 [node name="Settings" type="Button" parent="VBoxContainer"]

@@ -6,8 +6,6 @@ class_name UserInterface extends CanvasLayer
 var _screens: Dictionary
 var _current_screen: Screen.Type
 
-@onready var background: ColorRect = $Background
-
 
 func _ready() -> void:
 	for screen in get_children():
@@ -21,12 +19,10 @@ func _ready() -> void:
 
 func start() -> void:
 	_screens[Screen.Type.Start].visible = true
-	background.show()
 	_current_screen = Screen.Type.Start
 
 
 func hide_ui() -> void:
-	background.hide()
 	_screens[Screen.Type.Start].visible = false
 
 
