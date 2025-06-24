@@ -7,6 +7,7 @@ class_name GameStateMainMenu extends State
 func _activate_state() -> void:
 	super()
 	Game.splash_screens_complete.connect(switch_state)
+	set_process_input(true)
 	user_interface.hide_ui()
 	background.hide()
 
@@ -26,7 +27,7 @@ func _exit_state() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if Game.is_paused:
+	if Game.is_paused():
 		return
 	if event.is_action_pressed("pause"):
 		switch_state()

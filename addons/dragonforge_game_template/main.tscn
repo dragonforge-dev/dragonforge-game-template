@@ -55,6 +55,7 @@ script = ExtResource("1_0yxrq")
 starting_level = "uid://bluou3no6spkg"
 
 [node name="Game State Machine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+process_mode = 3
 script = ExtResource("2_s72dw")
 starting_state = NodePath("Splash Screen")
 metadata/_custom_type_script = "uid://i0o4sv7i7cp0"
@@ -77,7 +78,6 @@ metadata/_custom_type_script = "uid://diddwe2khtlx7"
 [node name="Metroidvania Month Splash" parent="Game State Machine/Splash Screen" instance=ExtResource("9_0a8os")]
 
 [node name="Loading" type="Node" parent="Game State Machine"]
-process_mode = 3
 script = ExtResource("14_sb2qx")
 metadata/_custom_type_script = "uid://7h7dfu4itm5m"
 
@@ -157,7 +157,6 @@ label_settings = SubResource("LabelSettings_nuw6w")
 horizontal_alignment = 1
 
 [node name="Gameplay" type="Node" parent="Game State Machine"]
-process_mode = 3
 script = ExtResource("10_scl5m")
 metadata/_custom_type_script = "uid://jd2223iicj5q"
 
