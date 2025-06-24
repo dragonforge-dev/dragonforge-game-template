@@ -5,7 +5,7 @@ const PLAYER = preload("res://addons/dragonforge_game_template/example/test_char
 @export var spawn_point: Node2D
 @export var level_music: Song
 
-var player: CharacterBody2D
+var player: Node
 
 
 func _ready() -> void:
@@ -16,11 +16,11 @@ func start(incoming_player: Node, incoming_spawn_position: String) -> void:
 	show()
 	if incoming_player == null:
 		player = PLAYER.instantiate()
-		#player.set_physics_process(false)
+		player.set_physics_process(false)
 		add_child(player)
 	else:
 		player = incoming_player
-		#player.set_physics_process(false)
+		player.set_physics_process(false)
 		player.reparent(self)
 	if incoming_spawn_position != "":
 		for node in get_children():
