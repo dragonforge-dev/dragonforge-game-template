@@ -21,8 +21,8 @@ func _enter_state() -> void:
 	loading_screen.show()
 	print_rich("[color=purple][b]Level Loading[/b][/color]: %s" % [level_path])
 	progress_bar.value = 0.0
-	ResourceLoader.load_threaded_request(level_path)
 	set_process(true)
+	ResourceLoader.load_threaded_request(level_path)
 
 
 func _exit_state() -> void:

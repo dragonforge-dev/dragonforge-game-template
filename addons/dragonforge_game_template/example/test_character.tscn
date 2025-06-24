@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://6nqucutpoirn"]
+
+[ext_resource type="Script" uid="uid://b3bpvv3tlkr3p" path="res://addons/dragonforge_game_template/example/test_character.gd" id="1_amp8v"]
+[ext_resource type="Texture2D" uid="uid://owrnlmkqcu27" path="res://addons/dragonforge_game_template/assets/textures/logo/icon_monochrome_dark.svg" id="2_w7513"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amp8v"]
+size = Vector2(100, 100)
+
+[node name="TestCharacter" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_amp8v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.821911, 2.62313e-06, 7.70092e-07, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_w7513")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_amp8v")

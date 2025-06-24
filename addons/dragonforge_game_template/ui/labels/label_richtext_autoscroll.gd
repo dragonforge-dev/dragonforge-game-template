@@ -13,6 +13,7 @@ func _ready() -> void:
 	get_parent().connect("visibility_changed", _on_visibility_changed)
 	self.connect("meta_clicked", _on_meta_clicked)
 	self.visible = true
+	set_process(false)
 
 
 func _process(delta: float) -> void:
@@ -40,6 +41,9 @@ func _on_visibility_changed():
 		for line in (number_of_buffer_lines):
 			buffertext += "\n"
 		text = buffertext + text
+		set_process(true)
+	else:
+		set_process(false)
 
 
 func _on_meta_clicked(meta: Variant):
