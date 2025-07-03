@@ -1,6 +1,6 @@
 # Game Configuration
 @tool
-extends Node
+class_name GameConfiguration extends Node
 
 const MAIN_SCENE_SETTING = "application/run/main_scene"
 const DEFAULT_AUTOLOAD_MAIN_SCENE = "res://addons/dragonforge_game_template/main.tscn"
@@ -15,7 +15,7 @@ const DEFAULT_AUTOLOAD_MAIN_SCENE = "res://addons/dragonforge_game_template/main
 ## this variable to have any effect. You do not need to reload the project for this change.
 @export_file("*.tscn") var game_scene:
 	set(value):
-		if value:
+		if value and not value.contains("null"):
 			game_scene = load(value).resource_path
 		else:
 			game_scene = null
@@ -30,7 +30,7 @@ const DEFAULT_AUTOLOAD_MAIN_SCENE = "res://addons/dragonforge_game_template/main
 ## setting it here will retain the value if you update or disable/re-enable the plugin.
 @export_file("*.tscn") var main_scene:
 	set(value):
-		if value:
+		if value and not value.contains("null"):
 			main_scene = load(value).resource_path
 			ProjectSettings.set_setting("application/config/autoload_main_scene", main_scene)
 			ProjectSettings.set_setting(MAIN_SCENE_SETTING, main_scene)
