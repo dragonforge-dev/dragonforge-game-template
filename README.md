@@ -1,7 +1,7 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.4.1.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 # Dragonforge Game Template
 A Godot game template for game jams.
-# Version 0.3.2
+# Version 0.3.3
 For use with **Godot 4.4.1-stable** and later.
 # Installation Instructions
 1. Copy the **dragonforge_game_template** folder from the **addons** folder into your project's **addons** folder.
@@ -14,9 +14,23 @@ For use with **Godot 4.4.1-stable** and later.
 8. Wait for the project to reload.
 
 **NOTE:** It's important to reload the project after running the plugin because it updates the `ui_accpet` action, and creates three new actions: `back_button`, `skip`, and `pause`. Once you reboot, you can edit these actions as you wish, but disabling and re-enabling them will reset them.
+
+# FAQ
+## Why a plugin?
+I felt it was important to be able to update existing games with new features from this code. The easiest way to do that is to create an addon/plugin because then it is clear how to use it and makes it easy to upgrade. If this was a template to start a game that you modified, then any further updates would be much harder to add in.
+
 # Usage
+There is an example folder that contains an example level and player for loading a level. This is what will load when you first import the template. Note that while it loads a 2D level and charcter, this template works with 3D games as well.
+## Example Folder
+This folder is found at `res://addons/dragonforge_game_template/example/` and contains example code.
+### map_level.gd
+Extends **Node2D** (can easily be changed to extend **Node3D**.) It can be used as a base for your own levels.
+#### Export Variables
+- `spawn_point: Node2D` A **Node2D** that is used for spawning the player if they do not have one. (Typically the starting point for the game. This can easily be changed to a **Node3D**. and used the exact same way.
+- `level_music: Song` A **Song** can be added here and will automatically begin playing when the level loads, and paused when the game is paused. Note **Song** is a **Resource** in the **Sound** plugin. This can easily be changed to an **AudioStream**.
 
 ## Game (Autoload)
+By default, the **Game** autoload scene is loaded from the example folder. (res://addons/dragonforge_game_template/examples/game.tscn) This template inherits from **GameBase**. The reason for this is you will likely want to add your own custom signals, variables and even functions to **Game**. You can either put them right into the example folder version, or make your own version and put it somewhere else. In that case, you need to add a **Project Setting** for `application/config/autoload_game_scene` Through code you do this with the line: `ProjectSettings.set_setting("application/config/autoload_game_scene", "res://addons/dragonforge_game_template/example/game.tscn")` replacing the second argument with the path of *your* scene.
 #### Signals
 - `signal splash_screens_complete` Splash screens have completed or been skipped.
 - `signal start_cutscene(cutscene: String)` Tell a cutsene to start.
@@ -34,7 +48,7 @@ Most of these functions are convenience methods, as they just call `get_tree()`.
 - `is_paused() -> bool` Returns whether or not the game is paused. (*Convenience method.*)
 
 ## Main
-This scene, found at `res://addons/dragonforge_game_template/main.tscn`, is intended to be made the Main Scene. The plugin does this automatically. To load your main game scene, add it to the `starting_level` export variable.
+This scene, found at `res://addons/dragonforge_game_template/main.tscn`, is intended to be made the Main Scene. The plugin does this automatically. To load your main game scene, add it to the `starting_level` export variable. **NOTE:** You may want to copy this scene or inherit from it and place it somewhere else so that future changes you make are not overwritten by new versions of this plugin.
 #### Export Variables
 - `starting_level: String` The first game level to load and attach to the UI's start button. You can either paste in a path to the scene, or press the **Open a File** dialog button to the right of the text field and browse to the starting scene.
 - `bypass_splash_screens_during_debug: bool = false` This is here in case we aren't allowing the player to skip the splash screens but we want to do so for testing. (See also GameStateSplashScreen.splash_screens_are_skippable.) It only affects debug builds of the game.

@@ -7,15 +7,20 @@ const BACK_BUTTON_ACTION = "back_button"
 const SKIP_ACTION = "skip"
 const PAUSE_ACTION = "pause"
 const MAIN_SCENE_SETTING = "application/run/main_scene"
+const DEFAULT_AUTOLOAD_GAME_SCENE = "res://addons/dragonforge_game_template/game.tscn"
+const DEFAULT_AUTOLOAD_MAIN_SCENE = "res://addons/dragonforge_game_template/main.tscn"
 
 
 func _enable_plugin() -> void:
-	add_autoload_singleton(AUTOLOAD_GAME, "res://addons/dragonforge_game_template/game.tscn")
+	var game_scene = ProjectSettings.get_setting("application/config/autoload_game_scene", DEFAULT_AUTOLOAD_GAME_SCENE)
+	add_autoload_singleton(AUTOLOAD_GAME, game_scene)
 	append_action(UI_ACCEPT_ACTION, JOY_BUTTON_A)
 	add_action(BACK_BUTTON_ACTION, JOY_BUTTON_B, MOUSE_BUTTON_XBUTTON1, KEY_ESCAPE)
 	add_action(SKIP_ACTION, JOY_BUTTON_B, MOUSE_BUTTON_LEFT, KEY_SPACE)
 	add_action(PAUSE_ACTION, JOY_BUTTON_START, MOUSE_BUTTON_NONE, KEY_ESCAPE)
-	ProjectSettings.set_setting(MAIN_SCENE_SETTING, "res://addons/dragonforge_game_template/main.tscn")
+	var main_scene = ProjectSettings.get_setting("application/config/autoload_main_scene", DEFAULT_AUTOLOAD_MAIN_SCENE)
+	ProjectSettings.set_setting(MAIN_SCENE_SETTING, main_scene)
+	ProjectSettings.save()
 	#if get_node_or_null("/root/Sound") == null:
 		#load Sound autoload
 	print_rich("[color=yellow][b]WARNING[/b][/color]: Project must be reloaded for InputMap changes to appear. [color=ivory][b]Project -> Reload Current Project[/b][/color]")

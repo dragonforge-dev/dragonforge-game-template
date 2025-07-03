@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpq3jo5tb7x0d"]
+
+[ext_resource type="Script" uid="uid://b2r183647kwkp" path="res://addons/dragonforge_game_template/game_configuration.gd" id="1_ix3ps"]
+
+[node name="Game Configuration" type="Node"]
+script = ExtResource("1_ix3ps")

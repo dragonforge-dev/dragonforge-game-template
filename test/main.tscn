@@ -1,0 +1,196 @@
+[gd_scene load_steps=21 format=3 uid="uid://dp38lokfd15ge"]
+
+[ext_resource type="Script" uid="uid://cthbfg6vun8p0" path="res://addons/dragonforge_game_template/main.gd" id="1_31n8c"]
+[ext_resource type="Script" uid="uid://i0o4sv7i7cp0" path="res://addons/dragonforge_state_machine/state_machine.gd" id="2_kgc3d"]
+[ext_resource type="Script" uid="uid://diddwe2khtlx7" path="res://addons/dragonforge_game_template/game_states/game_state_splash_screen.gd" id="3_1veka"]
+[ext_resource type="PackedScene" uid="uid://bmfavks32bu0m" path="res://addons/dragonforge_game_template/ui/screens/splash_screens/godot_splash.tscn" id="4_n3vhu"]
+[ext_resource type="PackedScene" uid="uid://co63tnsmbtfhe" path="res://addons/dragonforge_game_template/ui/screens/splash_screens/godot_splash_black_and_white.tscn" id="5_0qvyo"]
+[ext_resource type="PackedScene" uid="uid://ceb3gy7uscaxq" path="res://addons/dragonforge_game_template/ui/screens/splash_screens/dragonforge_splash.tscn" id="6_vrydu"]
+[ext_resource type="PackedScene" uid="uid://c8d6shr5b4pl5" path="res://addons/dragonforge_game_template/ui/screens/splash_screens/wild_jam_splash.tscn" id="7_cspph"]
+[ext_resource type="PackedScene" uid="uid://chwyrfteil51a" path="res://addons/dragonforge_game_template/ui/screens/splash_screens/game_dev_tv_splash.tscn" id="8_nreix"]
+[ext_resource type="PackedScene" uid="uid://btraax77thglo" path="res://addons/dragonforge_game_template/ui/screens/splash_screens/metroidvania_splash.tscn" id="9_6uy3o"]
+[ext_resource type="Script" uid="uid://7h7dfu4itm5m" path="res://addons/dragonforge_game_template/game_states/game_state_loading.gd" id="10_swt0j"]
+[ext_resource type="Texture2D" uid="uid://dcf5kxmahsco7" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/PNG_Godot Font 1 Circle Cloud.png" id="11_x0fqb"]
+[ext_resource type="Script" uid="uid://jd2223iicj5q" path="res://addons/dragonforge_game_template/game_states/game_state_gameplay.gd" id="12_8cqqc"]
+[ext_resource type="PackedScene" uid="uid://dw00qvyib81gf" path="res://addons/dragonforge_game_template/ui/screens/action_display.tscn" id="13_yiuch"]
+[ext_resource type="Script" uid="uid://b716hier1tnm7" path="res://addons/dragonforge_game_template/game_states/game_state_main_menu.gd" id="14_u1j32"]
+[ext_resource type="Texture2D" uid="uid://b6h0ihc2tcxhm" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/godot file 3.png" id="15_yc1ld"]
+[ext_resource type="PackedScene" uid="uid://bocu6nvxn404x" path="res://addons/dragonforge_game_template/ui/user_interface.tscn" id="16_eorsx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t62yp"]
+font_size = 72
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xn6h"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfiyl"]
+bg_color = Color(0.133333, 0.270588, 0.403922, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_nuw6w"]
+font_size = 72
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+
+[node name="Main" type="Node"]
+script = ExtResource("1_31n8c")
+starting_level = "uid://bluou3no6spkg"
+
+[node name="Game State Machine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+process_mode = 3
+script = ExtResource("2_kgc3d")
+starting_state = NodePath("Splash Screen")
+metadata/_custom_type_script = "uid://i0o4sv7i7cp0"
+
+[node name="Splash Screen" type="Node" parent="Game State Machine" node_paths=PackedStringArray("active_splash_screens")]
+script = ExtResource("3_1veka")
+active_splash_screens = [NodePath("GodotSplash"), NodePath("Dragonforge Splash")]
+metadata/_custom_type_script = "uid://diddwe2khtlx7"
+
+[node name="GodotSplash" parent="Game State Machine/Splash Screen" instance=ExtResource("4_n3vhu")]
+
+[node name="Godot Splash B&W" parent="Game State Machine/Splash Screen" instance=ExtResource("5_0qvyo")]
+
+[node name="Dragonforge Splash" parent="Game State Machine/Splash Screen" instance=ExtResource("6_vrydu")]
+
+[node name="WildJamSplash" parent="Game State Machine/Splash Screen" instance=ExtResource("7_cspph")]
+
+[node name="GameDevTVSplash" parent="Game State Machine/Splash Screen" instance=ExtResource("8_nreix")]
+
+[node name="Metroidvania Month Splash" parent="Game State Machine/Splash Screen" instance=ExtResource("9_6uy3o")]
+
+[node name="Loading" type="Node" parent="Game State Machine"]
+script = ExtResource("10_swt0j")
+metadata/_custom_type_script = "uid://7h7dfu4itm5m"
+
+[node name="Loading Screen" type="CanvasLayer" parent="Game State Machine/Loading"]
+visible = false
+
+[node name="Background" type="ColorRect" parent="Game State Machine/Loading/Loading Screen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0852618, 0.209337, 0.303794, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Game State Machine/Loading/Loading Screen/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="BackgroundImage" type="TextureRect" parent="Game State Machine/Loading/Loading Screen/Background/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("11_x0fqb")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game State Machine/Loading/Loading Screen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoadingLabel" type="Label" parent="Game State Machine/Loading/Loading Screen/VBoxContainer"]
+layout_mode = 2
+text = "LOADING..."
+label_settings = SubResource("LabelSettings_t62yp")
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Game State Machine/Loading/Loading Screen/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 75)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_7xn6h")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gfiyl")
+max_value = 1.0
+step = 0.0
+value = 0.5
+show_percentage = false
+
+[node name="PrecentageLabel" type="Label" parent="Game State Machine/Loading/Loading Screen/VBoxContainer/ProgressBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -49.5
+offset_right = 72.0
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "50%"
+label_settings = SubResource("LabelSettings_nuw6w")
+horizontal_alignment = 1
+
+[node name="Gameplay" type="Node" parent="Game State Machine"]
+script = ExtResource("12_8cqqc")
+metadata/_custom_type_script = "uid://jd2223iicj5q"
+
+[node name="Action Display" parent="Game State Machine/Gameplay" instance=ExtResource("13_yiuch")]
+visible = false
+
+[node name="Main Menu" type="Node" parent="Game State Machine"]
+script = ExtResource("14_u1j32")
+metadata/_custom_type_script = "uid://b716hier1tnm7"
+
+[node name="Background" type="ColorRect" parent="Game State Machine/Main Menu"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Game State Machine/Main Menu/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="BackgroundImage" type="TextureRect" parent="Game State Machine/Main Menu/Background/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("15_yc1ld")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="UserInterface" parent="Game State Machine/Main Menu" instance=ExtResource("16_eorsx")]
+unique_name_in_owner = true
