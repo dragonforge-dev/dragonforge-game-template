@@ -3,6 +3,13 @@
 A Godot game template for game jams.
 # Version 0.3.3
 For use with **Godot 4.4.1-stable** and later.
+## Dependencies
+The following dependencies are included in the addons folder and are required for the template to function.
+- [Dragonforge Controller 0.11](https://github.com/dragonforge-dev/dragonforge-controller)
+- [Dragonforge Disk (Save/Load) 0.4.2](https://github.com/dragonforge-dev/dragonforge-disk)
+- [Dragonforge Display 0.12](https://github.com/dragonforge-dev/dragonforge-display)
+- [Dragonforge Sound 0.10](https://github.com/dragonforge-dev/dragonforge-sound)
+- [Dragonforge State Machine 0.2](https://github.com/dragonforge-dev/dragonforge-state-machine)
 # Installation Instructions
 1. Copy the **dragonforge_game_template** folder from the **addons** folder into your project's **addons** folder.
 2. In your project go to **Project -> Project Settings...**
@@ -29,8 +36,50 @@ Extends **Node2D** (can easily be changed to extend **Node3D**.) It can be used 
 - `spawn_point: Node2D` A **Node2D** that is used for spawning the player if they do not have one. (Typically the starting point for the game. This can easily be changed to a **Node3D**. and used the exact same way.
 - `level_music: Song` A **Song** can be added here and will automatically begin playing when the level loads, and paused when the game is paused. Note **Song** is a **Resource** in the **Sound** plugin. This can easily be changed to an **AudioStream**.
 
+## Game Configuration
+Located in `res://addons/dragonforge_game_template/`, this node is just an interface to make it easy to change your game's **Game** autoload and **Main** scene. Both of these default to the versions in `res://addons/dragonforge_game_template/`.
+
+### Game
+To update the **Game** autoload and customize it do the following:
+
+1. Following the installation instructions and reload the project.
+2. Copy `game.tscn` and `game.gd` from `res://addons/dragonforge_game_template/` into your project.
+3. Open `game.tscn`.
+4. Click one the **Game** node.
+5. Click the **Detach the script from the selected node.** button. (Icon is a script with a little red x on it.)
+6. Click the **Attach a new or existing script to the selected node.** button. (It's the same button, but now the icon is a script with a little green plus on it.)
+7. Select the `game.gd` script you copied. (If you don't do this changes to the script will get overwritten when you update.)
+8. Open `res://addons/dragonforge_game_template/game_configuration.tscn`
+9. In the **Inspector** under **GameConfiguration** select the **File** button next to **Game Scene**.
+10. Browse to the location where you put _your_ version of `game.tscn` and select it.
+11. Press **Ok**.
+12. Go to **Project -> Project Settings...**
+13. Select the **Plugins** tab.
+14. Uncheck the **On checkbox** under **Enabled** for **Dragonforge Game Template**
+15. Check the **On checkbox** under **Enabled** for **Dragonforge Game Template**
+16. Press the **Close** button.
+17. Save your project. (You do not need to reload the project at this time despite the warning message.)
+
+### Main
+To update the **Main** scene that is started with the game and customize it, follow the instructions below. Note that you can do the same thing if you have your own scene you want to use as the start of your game instead, just skip to step 8. This will allow you to use that scene and ignore the scene the plugin tries to set.
+
+1. Following the installation instructions and reload the project.
+2. Copy `main.tscn` and `main.gd` from `res://addons/dragonforge_game_template/` into your project.
+3. Open `main.tscn`.
+4. Click one the **Main** node.
+5. Click the **Detach the script from the selected node.** button. (Icon is a script with a little red x on it.)
+6. Click the **Attach a new or existing script to the selected node.** button. (It's the same button, but now the icon is a script with a little green plus on it.)
+7. Select the `main.gd` script you copied. (If you don't do this changes to the script will get overwritten when you update.)
+8. Open `res://addons/dragonforge_game_template/game_configuration.tscn`
+9. In the **Inspector** under **GameConfiguration** select the **File** button next to **Main Scene**.
+10. Browse to the location where you put _your_ version of `main.tscn` and select it.
+11. Press **Ok**.
+12. Save your project. (You do not need to reload the project at this time despite the warning message.)
+
+**NOTE:** This is no different than setting the value in **Project Settings -> Run**, however setting it here will retain the value if you update or disable/re-enable the plugin.
+
 ## Game (Autoload)
-By default, the **Game** autoload scene is loaded from the example folder. (res://addons/dragonforge_game_template/examples/game.tscn) This template inherits from **GameBase**. The reason for this is you will likely want to add your own custom signals, variables and even functions to **Game**. You can either put them right into the example folder version, or make your own version and put it somewhere else. In that case, you need to add a **Project Setting** for `application/config/autoload_game_scene` Through code you do this with the line: `ProjectSettings.set_setting("application/config/autoload_game_scene", "res://addons/dragonforge_game_template/example/game.tscn")` replacing the second argument with the path of *your* scene.
+By default, the **Game** autoload scene is loaded from the addon folder. `res://addons/dragonforge_game_template/game.tscn` This template inherits from **GameBase**. The reason for this is you will likely want to add your own custom signals, variables and even functions to **Game**. You can do this by copying the scene and script to somewhere in your project, and editing them. See **Game Configuration** for how to load your custom **Game** scene as the autoload..
 #### Signals
 - `signal splash_screens_complete` Splash screens have completed or been skipped.
 - `signal start_cutscene(cutscene: String)` Tell a cutsene to start.
@@ -48,7 +97,7 @@ Most of these functions are convenience methods, as they just call `get_tree()`.
 - `is_paused() -> bool` Returns whether or not the game is paused. (*Convenience method.*)
 
 ## Main
-This scene, found at `res://addons/dragonforge_game_template/main.tscn`, is intended to be made the Main Scene. The plugin does this automatically. To load your main game scene, add it to the `starting_level` export variable. **NOTE:** You may want to copy this scene or inherit from it and place it somewhere else so that future changes you make are not overwritten by new versions of this plugin.
+This scene, found at `res://addons/dragonforge_game_template/main.tscn`, is intended to be made the Main Scene. The plugin does this automatically. To load your main game scene, add it to the `starting_level` export variable. **NOTE:** You may want to copy this scene or inherit from it and place it somewhere else so that future changes you make are not overwritten by new versions of this plugin. See **Game Configuration** for how to load your custom **Main** scene to be compatible with plugin updates.
 #### Export Variables
 - `starting_level: String` The first game level to load and attach to the UI's start button. You can either paste in a path to the scene, or press the **Open a File** dialog button to the right of the text field and browse to the starting scene.
 - `bypass_splash_screens_during_debug: bool = false` This is here in case we aren't allowing the player to skip the splash screens but we want to do so for testing. (See also GameStateSplashScreen.splash_screens_are_skippable.) It only affects debug builds of the game.
