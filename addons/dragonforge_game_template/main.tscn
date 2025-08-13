@@ -155,6 +155,7 @@ grow_vertical = 2
 text = "50%"
 label_settings = SubResource("LabelSettings_nuw6w")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Gameplay" type="Node" parent="Game State Machine"]
 script = ExtResource("10_scl5m")

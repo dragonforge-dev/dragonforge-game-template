@@ -1,6 +1,6 @@
 class_name GameStateMainMenu extends State
 
-@onready var background: ColorRect = %Background
+@onready var background = %Background
 @onready var user_interface: UserInterface = %UserInterface
 
 

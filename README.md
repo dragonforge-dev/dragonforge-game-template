@@ -66,7 +66,7 @@ To update the **Main** scene that is started with the game and customize it, fol
 1. Following the installation instructions and reload the project.
 2. Copy `main.tscn` and `main.gd` from `res://addons/dragonforge_game_template/` into your project.
 3. Open `main.tscn`.
-4. Click one the **Main** node.
+4. Click on the **Main** node.
 5. Click the **Detach the script from the selected node.** button. (Icon is a script with a little red x on it.)
 6. Click the **Attach a new or existing script to the selected node.** button. (It's the same button, but now the icon is a script with a little green plus on it.)
 7. Select the `main.gd` script you copied. (If you don't do this changes to the script will get overwritten when you update.)
