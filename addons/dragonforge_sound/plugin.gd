@@ -17,6 +17,12 @@ func _enable_plugin() -> void:
 	add_custom_type(SONG, RESOURCE, preload("res://addons/dragonforge_sound/resources/song.gd"), preload("res://addons/dragonforge_sound/assets/icons/song.svg"))
 	add_custom_type(SFX_PROJECT, RESOURCE, preload("res://addons/dragonforge_sound/resources/sfx_project.gd"), preload("res://addons/dragonforge_sound/assets/icons/crate.svg"))
 	add_custom_type(SOUND_EFFECT, RESOURCE, preload("res://addons/dragonforge_sound/resources/sound_effect.gd"), preload("res://addons/dragonforge_sound/assets/icons/sound-effect.svg"))
+	ProjectSettings.set_setting(
+		"audio/buses/default_bus_layout",
+		"res://addons/dragonforge_sound/resources/sound_component_bus_layout.tres",
+	)
+	ProjectSettings.save()
+	print_rich("[color=yellow][b]WARNING[/b][/color]: Project must be reloaded for Audio Bus changes to appear. [color=ivory][b]Project -> Reload Current Project[/b][/color]")
 
 
 func _disable_plugin() -> void:
@@ -26,3 +32,9 @@ func _disable_plugin() -> void:
 	remove_custom_type(SONG)
 	remove_custom_type(SFX_PROJECT)
 	remove_custom_type(SOUND_EFFECT)
+	ProjectSettings.set_setting(
+		"audio/buses/default_bus_layout",
+		"res://addons/dragonforge_sound/resources/default_audio_bus_layout.tres",
+	)
+	ProjectSettings.save()
+	print_rich("[color=yellow][b]WARNING[/b][/color]: Project must be reloaded for Audio Bus changes to be removed. [color=ivory][b]Project -> Reload Current Project[/b][/color]")

@@ -26,8 +26,8 @@ const DEFAULT_AUTOLOAD_MAIN_SCENE = "res://addons/dragonforge_game_template/main
 ## Select the scene as the main_scene variable, and the plugin will use your scene
 ## instead of the default scene. Clearing this field will set it back to the default Main
 ## scene.
-## [br][br][b]NOTE:[/b] This is no different than setting the value in [b]Project Settings -> Run[/b], however
-## setting it here will retain the value if you update or disable/re-enable the plugin.
+## [br][br][b]NOTE:[/b] This is no different than setting the value in [b]Project Settings -> Run[/b], 
+## however setting it here will retain the value if you update or disable/re-enable the plugin.
 @export_file("*.tscn") var main_scene:
 	set(value):
 		if value and not value.contains("null"):

@@ -1,1 +1,0 @@
-class_name MapLevel extends MapLevel2D

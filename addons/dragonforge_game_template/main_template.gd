@@ -1,5 +1,4 @@
-# Main
-extends Node
+class_name MainTemplate extends Node
 
 ## The first game level to load and attach to the UI's start button. You can
 ## either paste in a path to the scene, or press the [b]Open a File[/b] dialog

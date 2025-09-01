@@ -10,14 +10,16 @@ config_version=5
 
 [application]
 
-config/name="Dragonforge Game Template v0.4.1"
+config/name="Dragonforge Game Template v0.5"
 config/description="A game template for game jams."
-config/version="0.4.1"
-run/main_scene="res://addons/dragonforge_game_template/main.tscn"
+config/version="0.5"
+run/main_scene="res://example_2d/game_template_files/main.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="res://addons/dragonforge_game_template/assets/textures/logo/icon_monochrome_dark.svg"
+config/autoload_main_scene="res://example_2d/game_template_files/main.tscn"
+config/autoload_game_scene="res://example_2d/game_template_files/game.tscn"
 
 [autoload]
 
@@ -29,7 +31,7 @@ Display="*res://addons/dragonforge_display/display.tscn"
 Sound="*res://addons/dragonforge_sound/sound.tscn"
 Music="*res://addons/dragonforge_sound/music.tscn"
 Disk="*res://addons/dragonforge_disk/disk.tscn"
-Game="*res://addons/dragonforge_game_template/game.tscn"
+Game="*res://example_2d/game_template_files/game.tscn"
 
 [editor_plugins]
 

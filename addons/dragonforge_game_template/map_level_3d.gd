@@ -1,9 +1,11 @@
-class_name MapLevel2D extends Node2D
+class_name MapLevel3D extends Node3D
 
-@export var spawn_point: Node2D
+@export var player_scene: CharacterBody3D
+
+@export var spawn_point: Node3D
 @export var level_music: Song
 
-var player: CharacterBody2D
+var player: Node
 
 
 func _ready() -> void:
@@ -13,7 +15,7 @@ func _ready() -> void:
 func start(incoming_player: Node, incoming_spawn_position: String) -> void:
 	show()
 	if incoming_player == null:
-		player = Game.player_scene.instantiate()
+		player = player_scene.instantiate()
 		player.set_physics_process(false)
 		add_child(player)
 	else:
@@ -26,7 +28,7 @@ func start(incoming_player: Node, incoming_spawn_position: String) -> void:
 				print(incoming_spawn_position + " Found!")
 				spawn_point = node
 				break
-	player.position = Vector2(spawn_point.position.x, spawn_point.position.y)
+	player.position = spawn_point.position
 	player.set_physics_process(true)
 	if level_music:
 		level_music.play()

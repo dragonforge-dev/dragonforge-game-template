@@ -1,6 +1,9 @@
 class_name GameStateMainMenu extends State
 
-@onready var background = %Background
+## Music that plays whenever the main menu is visible.
+@export var main_menu_music: Song
+@export var background: Control
+
 @onready var user_interface: UserInterface = %UserInterface
 
 
@@ -15,6 +18,8 @@ func _activate_state() -> void:
 func _enter_state() -> void:
 	super()
 	Game.pause()
+	if not Music.is_playing():
+		main_menu_music.play()
 	if not Game.is_loaded:
 		background.show()
 	user_interface.start()

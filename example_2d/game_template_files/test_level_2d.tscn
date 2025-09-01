@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://bluou3no6spkg"]
 
 [ext_resource type="Texture2D" uid="uid://dcf5kxmahsco7" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/PNG_Godot Font 1 Circle Cloud.png" id="1_7rdr6"]
-[ext_resource type="Script" uid="uid://b6xvq7d7sd0kx" path="res://addons/dragonforge_game_template/example/map_level.gd" id="1_uotcx"]
-[ext_resource type="Resource" uid="uid://sv75l1ihxgwm" path="res://addons/dragonforge_game_template/assets/sound/music/songs/hero_theme.tres" id="2_hhdgi"]
+[ext_resource type="Script" uid="uid://d3v8do706twot" path="res://addons/dragonforge_game_template/map_level_2d.gd" id="1_iifpw"]
+[ext_resource type="Resource" uid="uid://cc7b2koxhbs1p" path="res://addons/dragonforge_game_template/assets/sound/music/songs/pairie_theme.tres" id="2_rrdtb"]
 
-[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("spawn_point")]
-script = ExtResource("1_uotcx")
+[node name="TestLevel2D" type="Node2D" node_paths=PackedStringArray("spawn_point")]
+script = ExtResource("1_iifpw")
 spawn_point = NodePath("Marker2D")
-level_music = ExtResource("2_hhdgi")
+level_music = ExtResource("2_rrdtb")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, -60)

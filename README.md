@@ -1,14 +1,14 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.4.1.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 # Dragonforge Game Template
 A Godot game template for game jams.
-# Version 0.4.1
+# Version 0.5
 For use with **Godot 4.4.1-stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
 - [Dragonforge Controller 0.11](https://github.com/dragonforge-dev/dragonforge-controller)
 - [Dragonforge Disk (Save/Load) 0.4.2](https://github.com/dragonforge-dev/dragonforge-disk)
 - [Dragonforge Display 0.12](https://github.com/dragonforge-dev/dragonforge-display)
-- [Dragonforge Sound 0.10](https://github.com/dragonforge-dev/dragonforge-sound)
+- [Dragonforge Sound 0.11](https://github.com/dragonforge-dev/dragonforge-sound)
 - [Dragonforge State Machine 0.3](https://github.com/dragonforge-dev/dragonforge-state-machine)
 # Installation Instructions
 1. Copy the **dragonforge_game_template** folder from the **addons** folder into your project's **addons** folder.
@@ -64,7 +64,7 @@ To update the **Game** autoload and customize it do the following:
 To update the **Main** scene that is started with the game and customize it, follow the instructions below. Note that you can do the same thing if you have your own scene you want to use as the start of your game instead, just skip to step 8. This will allow you to use that scene and ignore the scene the plugin tries to set.
 
 1. Following the installation instructions and reload the project.
-2. Copy `main.tscn` and `main.gd` from `res://addons/dragonforge_game_template/` into your project.
+2. Copy `main.tscn` and `main.gd` from `res://addons/dragonforge_game_template/` into your project. (We suggest `res://game_template_files/`)
 3. Open `main.tscn`.
 4. Click on the **Main** node.
 5. Click the **Detach the script from the selected node.** button. (Icon is a script with a little red x on it.)
@@ -77,6 +77,23 @@ To update the **Main** scene that is started with the game and customize it, fol
 12. Save your project. (You do not need to reload the project at this time despite the warning message.)
 
 **NOTE:** This is no different than setting the value in **Project Settings -> Run**, however setting it here will retain the value if you update or disable/re-enable the plugin.
+
+### Configuring Splash Screens
+1. Open up your copied version of `main.tscn`.
+2. Select the **Splash Screen** state node under **Game State Machine**.
+3. In the **Inspector**, expand the **Active Splash Screens** array.
+4. Add or remove **SplashScreen** nodes and/or change the order in which they appear.
+5. To make your own custom splash screen, copy any of the existing screens and add them.
+6. Delete any splash screens not needed. (They won't show up, but deleting them reduces the footprint of your initial load.)
+
+## Configuring Main Menu Background
+1. Open up your copied version of `main.tscn`.
+2. Select the **Main Menu** state node under **Game State Machine**.
+3. Add a new background using **Control** (UI) nodes.
+3. In the **Inspector**, replace the **Background** variable with a reference to the root of your new background.
+
+
+# Class Descriptions
 
 ## Game (Autoload)
 By default, the **Game** autoload scene is loaded from the addon folder. `res://addons/dragonforge_game_template/game.tscn` This template inherits from **GameBase**. The reason for this is you will likely want to add your own custom signals, variables and even functions to **Game**. You can do this by copying the scene and script to somewhere in your project, and editing them. See **Game Configuration** for how to load your custom **Game** scene as the autoload..
