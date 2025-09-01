@@ -1,7 +1,7 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.4.1.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 # Dragonforge Game Template
 A Godot game template for game jams.
-# Version 0.5
+# Version 0.5.1
 For use with **Godot 4.4.1-stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
@@ -64,17 +64,20 @@ To update the **Game** autoload and customize it do the following:
 To update the **Main** scene that is started with the game and customize it, follow the instructions below. Note that you can do the same thing if you have your own scene you want to use as the start of your game instead, just skip to step 8. This will allow you to use that scene and ignore the scene the plugin tries to set.
 
 1. Following the installation instructions and reload the project.
-2. Copy `main.tscn` and `main.gd` from `res://addons/dragonforge_game_template/` into your project. (We suggest `res://game_template_files/`)
-3. Open `main.tscn`.
-4. Click on the **Main** node.
-5. Click the **Detach the script from the selected node.** button. (Icon is a script with a little red x on it.)
-6. Click the **Attach a new or existing script to the selected node.** button. (It's the same button, but now the icon is a script with a little green plus on it.)
-7. Select the `main.gd` script you copied. (If you don't do this changes to the script will get overwritten when you update.)
-8. Open `res://addons/dragonforge_game_template/game_configuration.tscn`
-9. In the **Inspector** under **GameConfiguration** select the **File** button next to **Main Scene**.
-10. Browse to the location where you put _your_ version of `main.tscn` and select it.
-11. Press **Ok**.
-12. Save your project. (You do not need to reload the project at this time despite the warning message.)
+2. Copy `main_template.tscn` from `res://addons/dragonforge_game_template/` into your project. (We suggest `res://game_template_files/`)
+3. Rename `main_template.tscn` to `main.tscn`.
+4. Open `main.tscn`.
+5. Rename the root node from **MainTemplate** node to **Main**.
+6. Click on the **Main** node.
+7. Click the **Detach the script from the selected node.** button. (Icon is a script with a little red x on it.)
+8. Click the **Attach a new or existing script to the selected node.** button. (It's the same button, but now the icon is a script with a little green plus on it.)
+9. Create a `main.gd` script. (If you don't do this changes to the script will get overwritten when you update.)
+10. Add the following code to the script: `class_name Main extends MainTemplate`. (Delete all other code.)
+11. Open `res://addons/dragonforge_game_template/game_configuration.tscn`
+12. In the **Inspector** under **GameConfiguration** select the **File** button next to **Main Scene**.
+13. Browse to the location where you put _your_ version of `main.tscn` and select it.
+14. Press **Ok**.
+15. Save your project. (You do not need to reload the project at this time despite the warning message.)
 
 **NOTE:** This is no different than setting the value in **Project Settings -> Run**, however setting it here will retain the value if you update or disable/re-enable the plugin.
 
