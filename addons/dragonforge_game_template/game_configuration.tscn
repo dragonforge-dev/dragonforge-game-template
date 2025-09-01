@@ -4,5 +4,4 @@
 
 [node name="Game Configuration" type="Node"]
 script = ExtResource("1_ix3ps")
-game_scene = "res://example_2d/game_template_files/game.tscn"
-main_scene = "res://example_2d/game_template_files/main.tscn"
+main_scene = "res://addons/dragonforge_game_template/main_template.tscn"

@@ -164,8 +164,9 @@ metadata/_custom_type_script = "uid://jd2223iicj5q"
 [node name="Action Display" parent="Game State Machine/Gameplay" instance=ExtResource("13_00kis")]
 visible = false
 
-[node name="Main Menu" type="Node" parent="Game State Machine"]
+[node name="Main Menu" type="Node" parent="Game State Machine" node_paths=PackedStringArray("background")]
 script = ExtResource("14_8dr0g")
+background = NodePath("Background")
 metadata/_custom_type_script = "uid://b716hier1tnm7"
 
 [node name="Background" type="ColorRect" parent="Game State Machine/Main Menu"]
