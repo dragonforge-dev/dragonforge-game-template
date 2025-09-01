@@ -52,7 +52,6 @@ outline_size = 10
 
 [node name="MainTemplate" type="Node"]
 script = ExtResource("1_p2r3b")
-starting_level = "uid://bluou3no6spkg"
 
 [node name="Game State Machine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
 process_mode = 3
@@ -170,7 +169,6 @@ background = NodePath("Background")
 metadata/_custom_type_script = "uid://b716hier1tnm7"
 
 [node name="Background" type="ColorRect" parent="Game State Machine/Main Menu"]
-unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
