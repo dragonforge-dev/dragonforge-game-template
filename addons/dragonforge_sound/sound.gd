@@ -44,31 +44,48 @@ func _ready() -> void:
 	ui_playback = ui_sound_player.get_stream_playback()
 
 
-## Plays an AudioStream through the SFX (Sound Effects) Channel.
+## Plays an AudioStream through the SFX (Sound Effects) bus.
 ## Returns the UID of the playback stream as an int.
 func play_sound_effect(sound: Resource) -> int:
 	return play(sound, sfx_bus_name)
 
 
-## Plays an AudioStream through the UI Channel.
+## Plays an AudioStream through the UI bus.
 ## Returns the UID of the playback stream as an int.
 func play_ui_sound(sound: Resource) -> int:
 	return play(sound, ui_bus_name)
 
 
-## Plays the default click sound through the UI Channel.
+## Plays the default click sound through the UI bus.
 ## Returns the UID of the playback stream as an int.
 func play_button_pressed_sound() -> int:
 	return play_ui_sound(button_pressed_sound)
 
 
-## Plays an AudioStream through the Ambient Channel.
+## Plays the default volume confirm sound therough the passed bus.
+## Used for confirming volume changes in a settings menu.
+func play_volume_confirm_sound(bus_name: String = ui_bus_name) -> void:
+	# TODO: Making a new AudioStreamPlayer each time because when it is passed
+	# through the UISoundPlayer it only seems to use the Master or UI bus...
+	# Failing code: return _play_polyphonic(ui_playback, volume_confirm_sound, bus_name)
+	# Since polyphonice is causing other problems, a pooling solution for
+	# AudioStreamPlayers may be necessary.
+	var audio_stream_player: AudioStreamPlayer = AudioStreamPlayer.new()
+	add_child(audio_stream_player)
+	audio_stream_player.bus = bus_name
+	audio_stream_player.stream = volume_confirm_sound
+	audio_stream_player.play()
+	await audio_stream_player.finished
+	audio_stream_player.queue_free()
+
+
+## Plays an AudioStream through the Ambient bus.
 ## Returns the UID of the playback stream as an int.
 func play_ambient_sound(sound: Resource) -> int:
 	return play(sound, ambient_bus_name)
 
 
-## Plays an AudioStream through the Dialogue Channel.
+## Plays an AudioStream through the Dialogue bus.
 func play_dialogue(sound: AudioStream) -> void:
 	if sound == null:
 			return
@@ -77,16 +94,16 @@ func play_dialogue(sound: AudioStream) -> void:
 
 
 ## Returns the UID of the playback stream it uses to play the passed AudioStream
-## on the given CHANNEL.
-func play(sound: Resource, channel: String) -> int:
-	if channel == ui_bus_name:
-		return _play_polyphonic(ui_playback, sound, channel)
+## on the given bus.
+func play(sound: Resource, bus_name: String) -> int:
+	if bus_name == ui_bus_name:
+		return _play_polyphonic(ui_playback, sound, bus_name)
 	else:
-		return _play_polyphonic(sound_playback, sound, channel)
+		return _play_polyphonic(sound_playback, sound, bus_name)
 
 
 ## Returns the UID of the playback stream it uses to play the passed AudioStream
-## on the given CHANNEL using the passed AudioStreamPlaybackPolyphonic object.
+## on the given bus using the passed AudioStreamPlaybackPolyphonic object.
 func _play_polyphonic(playback: AudioStreamPlaybackPolyphonic, sound: Resource, bus: String) -> int:
 	if sound is SoundEffect:
 		return sound.play(bus)
@@ -96,13 +113,12 @@ func _play_polyphonic(playback: AudioStreamPlaybackPolyphonic, sound: Resource, 
 	if sound == null:
 		push_error("Cannot play sound %s. AudioStream is null." % [sound])
 		ERROR_MISSING_SOUND_EFFECT.play()
-	var channel_name = bus
 	return playback.play_stream(sound,
 								0.0,
 								0.0,
 								1.0,
 								AudioServer.PLAYBACK_TYPE_DEFAULT,
-								channel_name
+								bus
 	)
 
 

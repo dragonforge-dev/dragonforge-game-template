@@ -25,13 +25,11 @@ func _notification(what) -> void:
 				save_game()
 
 
-## To add a value to be saved, add a node to the "Persist" Global Group on
-## the Nodes tab. Then implement save_node() and load_node() functions.
-## The first function should return a value to store, and the second should
-## use that value to load the information. Make sure the load function has a
-## await Signal(self, "ready") line at the top so it doesn't try to load values
-## before the node exists. If you need to store multiple values, use a
-## dictionary or changes later will result in save/load errors.
+## Returns true if the save was successful, otherwise false.
+## Calls every node added to the Persist Global Group to save data. Works by
+## calling every node in the group and running its `save_node()` function, then
+## storing everything in the save file. If a node is in the group, but didn't
+## implement the `save_node()` function, it is skipped.
 func save_game() -> bool:
 	var saved_nodes = get_tree().get_nodes_in_group("Persist")
 	for node in saved_nodes:
@@ -45,6 +43,9 @@ func save_game() -> bool:
 	return _save_file(game_information, SAVE_GAME_PATH)
 
 
+## Call this to call the `load_node()` function for every node in the Persist
+## Global Group. The save game, if it exists, will be loaded from disk and the
+## values propagated to the game objects.
 func load_game() -> void:
 	game_information = _load_file(SAVE_GAME_PATH)
 	if game_information.is_empty():
@@ -61,21 +62,13 @@ func load_game() -> void:
 			node.load_node(game_information[node.name])
 
 
-## To add a setting to be saved, implement save_setting() functions. It should
-## return a value to store. If you need to store multiple values, use a
-## dictionary or any later changes will result in save/load errors.
-## Call this function using Setting.save_setting(self)
-## NOTE: The node name must be unique or settings will get overwritten.
+## Stores the passed data under the indicated setting catergory.
 func save_setting(data: Variant, category: String) -> void:
 	configuration_settings[category] = data
 	_save_file(configuration_settings, SETTINGS_PATH)
 
 
-## To add a setting to be loaded, implement a load_setting() function. It should
-## use the passed value(s) to configure the node. Make sure the load function
-## has an await Signal(self, "ready") line at the top so it doesn't try to load 
-## values before the node exists.
-## Call this function using Setting.load_setting(self)
+## Returns the stored data for the passed setting category.
 func load_setting(category: String) -> Variant:
 	if !is_ready:
 		if FileAccess.file_exists(SETTINGS_PATH):

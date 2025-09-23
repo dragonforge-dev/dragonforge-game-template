@@ -1,24 +1,33 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.4.1.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 # Dragonforge Game Template
 A Godot game template for game jams.
-# Version 0.5.1
-For use with **Godot 4.4.1-stable** and later.
+# Version 0.6
+For use with **Godot 4.5-stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
-- [Dragonforge Controller 0.11](https://github.com/dragonforge-dev/dragonforge-controller)
-- [Dragonforge Disk (Save/Load) 0.4.2](https://github.com/dragonforge-dev/dragonforge-disk)
-- [Dragonforge Display 0.12](https://github.com/dragonforge-dev/dragonforge-display)
-- [Dragonforge Sound 0.11](https://github.com/dragonforge-dev/dragonforge-sound)
+- [Dragonforge Controller 0.12](https://github.com/dragonforge-dev/dragonforge-controller)
+- [Dragonforge Disk (Save/Load) 0.5](https://github.com/dragonforge-dev/dragonforge-disk)
+- [Dragonforge Display 0.13](https://github.com/dragonforge-dev/dragonforge-display)
+- [Dragonforge Sound 0.13](https://github.com/dragonforge-dev/dragonforge-sound)
 - [Dragonforge State Machine 0.3](https://github.com/dragonforge-dev/dragonforge-state-machine)
 # Installation Instructions
-1. Copy the **dragonforge_game_template** folder from the **addons** folder into your project's **addons** folder.
-2. In your project go to **Project -> Project Settings...**
-3. Select the **Plugins** tab.
-4. Check the **On checkbox** under **Enabled** for **Dragonforge Game Template**
-5. Press the **Close** button.
-6. Save your project.
-7. In your project go to **Project -> Reload Current Project**.
-8. Wait for the project to reload.
+1. Copy all the folders from the `addons` folder into your project's `addons` folder.
+2. Ignore the following errors (they are appearing because the component is not yet enabled):
+  * ERROR: res://addons/dragonforge_controller/controller.gd:54 - Parse Error: Identifier "Keyboard" not declared in the current scope.
+  * ERROR: res://addons/dragonforge_controller/controller.gd:56 - Parse Error: Identifier "Mouse" not declared in the current scope.
+  * ERROR: res://addons/dragonforge_controller/controller.gd:59 - Parse Error: Identifier "Gamepad" not declared in the current scope.
+  * ERROR: modules/gdscript/gdscript.cpp:3022 - Failed to load script "res://addons/dragonforge_controller/controller.gd" with error "Parse error".
+3. In your project go to **Project -> Project Settings...**
+4. Select the **Plugins** tab.
+5. Check the **On checkbox** under **Enabled** for **Dragonforge Disk** (must be enabled **before** the Display and Sound plugins or you will get errors).
+6. Check the **On checkbox** under **Enabled** for **Dragonforge Display**.
+7. Check the **On checkbox** under **Enabled** for **Dragonforge Sound**.
+8. Check the **On checkbox** under **Enabled** for **Dragonforge Controller**
+9. Check the **On checkbox** under **Enabled** for **Dragonforge Game Template**
+10. Press the **Close** button.
+11. Save your project.
+12. In your project go to **Project -> Reload Current Project**.
+13. Wait for the project to reload.
 
 **NOTE:** It's important to reload the project after running the plugin because it updates the `ui_accpet` action, and creates three new actions: `back_button`, `skip`, and `pause`. Once you reboot, you can edit these actions as you wish, but disabling and re-enabling them will reset them.
 
@@ -26,7 +35,7 @@ The following dependencies are included in the addons folder and are required fo
 ## Why a plugin?
 I felt it was important to be able to update existing games with new features from this code. The easiest way to do that is to create an addon/plugin because then it is clear how to use it and makes it easy to upgrade. If this was a template to start a game that you modified, then any further updates would be much harder to add in.
 
-# Usage
+# Usage Instructions
 There is an example folder that contains an example level and player for loading a level. This is what will load when you first import the template. Note that while it loads a 2D level and charcter, this template works with 3D games as well.
 ## Example Folder
 This folder is found at `res://addons/dragonforge_game_template/example/` and contains example code.

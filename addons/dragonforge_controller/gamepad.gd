@@ -1,5 +1,6 @@
 extends Node
 
+# Enumerates the types of controllers that we have button images for.
 enum Type {
 	XBox,
 	Playstation,
@@ -7,13 +8,6 @@ enum Type {
 	Unknown
 }
 
-## Processes gamepad right stick movement for a 3D camera look feature when it
-## is on.[br]
-## Turn this off if you are not using it to save processing cycles.
-@export var right_stick_look: bool = true:
-	set(value):
-		right_stick_look = value
-		set_process_unhandled_input(value)
 ## Right stick horizontal look sensitivity modifier for 3D camera controls.
 @export var horizontal_look_sensitivity: float = 0.075
 ## Right stick vertical look sensitivity modifier for 3D camera controls.
@@ -109,7 +103,7 @@ enum Type {
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventJoypadMotion:
+	if Controller.enable_3d_look and event is InputEventJoypadMotion:
 		if event.axis == JOY_AXIS_RIGHT_X:
 			Controller.look = Vector2(-event.axis_value * horizontal_look_sensitivity, Controller.look.y)
 		if event.axis == JOY_AXIS_RIGHT_Y:

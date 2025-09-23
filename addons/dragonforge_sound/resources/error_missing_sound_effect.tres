@@ -13,6 +13,4 @@ stream_1 = ExtResource("3_21ayg")
 [resource]
 script = ExtResource("1_4rxsa")
 stream = SubResource("AudioStreamPlaylist_lpl4u")
-play_only_one_sound = false
-title = ""
 metadata/_custom_type_script = "uid://b7r30kknqypxw"

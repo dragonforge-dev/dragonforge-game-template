@@ -106,6 +106,6 @@ func scale_zoom(zoom: float) -> void:
 	Disk.save_setting(zoom, "Scale Zoom")
 
 
-### Get 3D scaling value.
+## Get 3D scaling value.
 func get_scaling() -> float:
 	return get_viewport().scaling_3d_scale

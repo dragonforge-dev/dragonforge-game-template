@@ -21,8 +21,14 @@ enum LastInput {
 	GAMEPAD
 }
 
+## When true, 3D look is on for the game. The right stick will look, as well
+## as the mouse. In addition the mouse will be captured when the game is
+## playing and freed when the game is paused. Defaults to `false` (off).
+@export var enable_3d_look = false
+
 ## Stores the amount of movement in the x/y direction that the player is trying
-## to look in a 3D game.
+## to look in a 3D game. The export variable enable_3d_look must be set to true
+## for this to have any value. (See dragonforge-character-3d for usage example.)
 var look := Vector2.ZERO
 ## Stores the last input used by the player for UI interaction hint updates.
 ## Private so that it cannot be modified extrenally. This is a read-only value
@@ -51,6 +57,17 @@ func _input(event: InputEvent) -> void:
 		if _last_input_type != LastInput.GAMEPAD:
 			input_method_changed.emit(LastInput.GAMEPAD)
 		_last_input_type = LastInput.GAMEPAD
+
+
+func _notification(what: int) -> void:
+	if not enable_3d_look:
+		return
+	
+	match what:
+		NOTIFICATION_PAUSED:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		NOTIFICATION_UNPAUSED:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 ## Returns the last input type used by the player.

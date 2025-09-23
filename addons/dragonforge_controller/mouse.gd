@@ -1,12 +1,5 @@
 extends Node
 
-## Processes mouse movement for a 3D camera look feature when it is on and 
-## Input.mouse_mode == Input.MOUSE_MODE_CAPTURED[br]
-## Turn this off if you are not using it to save processing cycles.
-@export var mouse_look: bool = true:
-	set(value):
-		mouse_look = value
-		set_process_unhandled_input(value)
 ## Look sensitivity modifier for 3D camera controls
 @export var sensitivity: float = 0.0075
 ## ● MOUSE_BUTTON_NONE = 0[br]
@@ -29,13 +22,13 @@ extends Node
 ##Extra mouse button 1. This is sometimes present, usually to the sides of the mouse.[br]
 ##● MOUSE_BUTTON_XBUTTON2 = 9[br]
 ##Extra mouse button 2. This is sometimes present, usually to the sides of the mouse.[br]
+## Stores mouse button icons based on the list above.
 @export var mouse_button_images: Array[Texture2D]
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		if event is InputEventMouseMotion:
-			Controller.look = -event.relative * sensitivity
+	if Controller.enable_3d_look and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and event is InputEventMouseMotion:
+		Controller.look = -event.relative * sensitivity
 
 
 ## Returns the Texture2D representation of the mouse button event passed.
