@@ -8,7 +8,7 @@ The following dependencies are included in the addons folder and are required fo
 - [Dragonforge Controller 0.12](https://github.com/dragonforge-dev/dragonforge-controller)
 - [Dragonforge Disk (Save/Load) 0.5](https://github.com/dragonforge-dev/dragonforge-disk)
 - [Dragonforge Display 0.13](https://github.com/dragonforge-dev/dragonforge-display)
-- [Dragonforge Sound 0.13](https://github.com/dragonforge-dev/dragonforge-sound)
+- [Dragonforge Sound 0.13.1](https://github.com/dragonforge-dev/dragonforge-sound)
 - [Dragonforge State Machine 0.3](https://github.com/dragonforge-dev/dragonforge-state-machine)
 # Installation Instructions
 1. Copy all the folders from the `addons` folder into your project's `addons` folder.
@@ -63,7 +63,7 @@ The folder found at `res://example_2d/` contains example code for a 2D game. The
 4. The main screen should load and the **Dragonforge Theme Song** should play.
 5. Press the New Game button.
 6. A game scene will load with the Godot background and a red Godot logo. You should also hear game msuic.
-7. Using the **WASD** keys or gamepad **left joystick** will move the red Godot logo.
+7. Using the **arrow keys** or gamepad **left joystick** will move the red Godot logo.
 8. Pressing the **Escape** key or **Start** button on your gamepad will pause the game and show the main menu.
 
 ## Example 3D

@@ -2,6 +2,8 @@ extends Node
 
 signal now_playing(song: Song)
 signal add_song_to_playlist(song: Song)
+signal song_finished()
+signal pause_song_finished()
 
 enum Fade {
 	##Not intended to be used, but will function the same as NONE.
@@ -29,6 +31,8 @@ var music_player: AudioStreamPlayer
 
 func _ready() -> void:
 	now_playing.connect(_on_now_playing)
+	game_music_player.finished.connect(func(): song_finished.emit())
+	paused_game_music_player.finished.connect(func(): pause_song_finished.emit())
 	if get_tree().is_paused():
 		music_player = paused_game_music_player
 	else:
