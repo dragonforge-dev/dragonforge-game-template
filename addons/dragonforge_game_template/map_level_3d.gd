@@ -1,11 +1,9 @@
 class_name MapLevel3D extends Node3D
 
-@export var player_scene: CharacterBody3D
-
 @export var spawn_point: Node3D
 @export var level_music: Song
 
-var player: Node
+var player: CharacterBody3D
 
 
 func _ready() -> void:
@@ -15,7 +13,7 @@ func _ready() -> void:
 func start(incoming_player: Node, incoming_spawn_position: String) -> void:
 	show()
 	if incoming_player == null:
-		player = player_scene.instantiate()
+		player = Game.player_scene.instantiate()
 		player.set_physics_process(false)
 		add_child(player)
 	else:

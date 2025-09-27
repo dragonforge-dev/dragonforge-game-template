@@ -51,7 +51,7 @@ font_size = 72
 font_color = Color(0, 0, 0, 1)
 outline_size = 10
 
-[node name="Main" type="Node"]
+[node name="Main2D" type="Node"]
 script = ExtResource("1_70bte")
 starting_level = "uid://bluou3no6spkg"
 

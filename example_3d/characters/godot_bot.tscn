@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://1mguormc5vrc"]
+
+[ext_resource type="PackedScene" uid="uid://dsh8jc6kh3br3" path="res://example_3d/assets/godotbot_3/robot_delivery.fbx" id="1_8dl4f"]
+
+[node name="GodotBot" instance=ExtResource("1_8dl4f")]

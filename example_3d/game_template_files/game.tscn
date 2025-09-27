@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://x62t8cao8nhd"]
+
+[ext_resource type="Script" uid="uid://clfgpfumpa5bu" path="res://example_3d/game_template_files/game.gd" id="1_xtqyu"]
+[ext_resource type="PackedScene" uid="uid://y80ubo54xv1u" path="res://example_3d/characters/test_character_3d.tscn" id="2_rocvn"]
+
+[node name="Game" type="Node" groups=["Persist"]]
+script = ExtResource("1_xtqyu")
+player_scene = ExtResource("2_rocvn")

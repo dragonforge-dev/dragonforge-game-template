@@ -1,0 +1,2 @@
+#Game Autoload
+extends GameBase

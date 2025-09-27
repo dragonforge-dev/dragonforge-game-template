@@ -9,6 +9,9 @@ signal cutscene_finished
 ## Load the passed level
 signal load_level(level_name: String, player: Node, target_transition_area: String)
 
+## The scene that stores a new player reference.
+@export var player_scene: PackedScene
+
 ## Whether or not game is loaded.
 var is_loaded: bool = false
 ## Starts out false. Becomes true when a new game is started, or a game is loaded. Saved to disk.

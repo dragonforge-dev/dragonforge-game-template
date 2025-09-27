@@ -1,7 +1,7 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.5.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 # Dragonforge Game Template
 A Godot game template for game jams.
-# Version 0.6.1
+# Version 0.7
 For use with **Godot 4.5-stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
@@ -62,12 +62,36 @@ The folder found at `res://example_2d/` contains example code for a 2D game. The
 3. You should see and hear the Dragonforge splash screen. (You can delete this later.)
 4. The main screen should load and the **Dragonforge Theme Song** should play.
 5. Press the New Game button.
-6. A game scene will load with the Godot background and a red Godot logo. You should also hear game msuic.
+6. A game scene will load with the Godot background and a red Godot logo. You should also hear game music.
 7. Using the **arrow keys** or gamepad **left joystick** will move the red Godot logo.
 8. Pressing the **Escape** key or **Start** button on your gamepad will pause the game and show the main menu.
 
 ## Example 3D
 The folder found at `res://example_3d/` contains example code for a 3D game.
+1. Copy the `example_3d` folder from the root of this project to your project.
+2. **In your project** open `res://addons/dragonforge_game_template/game_configuration.tscn` (You should have already copied this over during installation.)
+3. In the **Inspector** under **GameConfiguration** select the **File** button next to **Main Scene**.
+4. **In your project** browse to `res://example_3d/game_template_files/main.tscn` and select it.
+5. Press **Ok**.
+6. In the **Inspector** under **GameConfiguration** select the **File** button next to **Game Scene**.
+7. **In your project** browse to `res://example_3d/game_template_files/game.tscn` and select it.
+8. Press **Ok**.
+9. Go to **Project -> Project Settings...**
+10. Select the **Plugins** tab.
+11. Uncheck the **On checkbox** under **Enabled** for **Dragonforge Game Template**
+12. Check the **On checkbox** under **Enabled** for **Dragonforge Game Template**
+13. Press the **Close** button.
+14. Save your project. (You do not need to reload the project at this time despite the warning message.)
+
+### Test the 2D Installation
+1. Press the **Run Project** button (or use F5). The game will start.
+2. You should see and hear the template default Godot splash screen video. (You can change or delete this later.)
+3. You should see and hear the Dragonforge splash screen. (You can delete this later.)
+4. The main screen should load and the **Dragonforge Theme Song** should play.
+5. Press the New Game button.
+6. A game scene will load with an box of grey and brown, and a 3D Godot logo robot. You should also hear game music.
+7. Using the **arrow keys** or gamepad **left joystick** will move the Godot robot. (There are no animations.)
+8. Pressing the **Escape** key or **Start** button on your gamepad will pause the game and show the main menu.
 
 ### map_level.gd
 Extends **Node2D** (can easily be changed to extend **Node3D**.) It can be used as a base for your own levels.

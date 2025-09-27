@@ -1,0 +1,104 @@
+[gd_scene load_steps=12 format=3 uid="uid://df4qtq20r0vn2"]
+
+[ext_resource type="Script" uid="uid://blge5rlwqwbry" path="res://addons/dragonforge_game_template/map_level_3d.gd" id="1_ljfik"]
+[ext_resource type="Resource" uid="uid://sv75l1ihxgwm" path="res://addons/dragonforge_game_template/assets/sound/music/songs/hero_theme.tres" id="2_2dy4o"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fr335"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_pqbiu"]
+sky_material = SubResource("ProceduralSkyMaterial_fr335")
+
+[sub_resource type="Environment" id="Environment_fxeoa"]
+background_mode = 2
+sky = SubResource("Sky_pqbiu")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dy4o"]
+albedo_color = Color(0.26962602, 0.20386663, 0.0974149, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rcmwp"]
+material = SubResource("StandardMaterial3D_2dy4o")
+size = Vector3(20, 0.5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fr335"]
+size = Vector3(20, 0.5, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcmwp"]
+albedo_color = Color(0.53303695, 0.53303665, 0.5330366, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fr335"]
+material = SubResource("StandardMaterial3D_rcmwp")
+size = Vector3(20, 5.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pqbiu"]
+size = Vector3(20, 5, 0.5)
+
+[node name="TestLevel3D" type="Node3D" node_paths=PackedStringArray("spawn_point")]
+script = ExtResource("1_ljfik")
+spawn_point = NodePath("Marker3D")
+level_music = ExtResource("2_2dy4o")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+gizmo_extents = 3.97
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fxeoa")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_rcmwp")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_fr335")
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="Wall" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -10)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall"]
+mesh = SubResource("BoxMesh_fr335")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall"]
+shape = SubResource("BoxShape3D_pqbiu")
+
+[node name="Wall2" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 10)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall2"]
+mesh = SubResource("BoxMesh_fr335")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall2"]
+shape = SubResource("BoxShape3D_pqbiu")
+
+[node name="Wall3" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, 3, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall3"]
+mesh = SubResource("BoxMesh_fr335")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall3"]
+shape = SubResource("BoxShape3D_pqbiu")
+
+[node name="Wall4" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, 3, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall4"]
+mesh = SubResource("BoxMesh_fr335")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall4"]
+shape = SubResource("BoxShape3D_pqbiu")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 9, 10)

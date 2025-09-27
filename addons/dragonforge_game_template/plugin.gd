@@ -7,7 +7,7 @@ const BACK_BUTTON_ACTION = "back_button"
 const SKIP_ACTION = "skip"
 const PAUSE_ACTION = "pause"
 const MAIN_SCENE_SETTING = "application/run/main_scene"
-const DEFAULT_AUTOLOAD_GAME_SCENE = "res://addons/dragonforge_game_template/game.tscn"
+const DEFAULT_AUTOLOAD_GAME_SCENE = "res://addons/dragonforge_game_template/game_base.tscn"
 const DEFAULT_AUTOLOAD_MAIN_SCENE = "res://addons/dragonforge_game_template/main_template.tscn"
 
 

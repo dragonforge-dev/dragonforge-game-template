@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hox7guprntrc"]
+
+[ext_resource type="Script" uid="uid://gr0jxq025cgw" path="res://addons/dragonforge_game_template/game_base.gd" id="1_kuxvw"]
+
+[node name="GameBase" type="Node" groups=["Persist"]]
+script = ExtResource("1_kuxvw")
