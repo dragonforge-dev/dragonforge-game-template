@@ -45,4 +45,5 @@ func _input(event: InputEvent) -> void:
 
 func _on_pause_song_finished() -> void:
 	await get_tree().create_timer(replay_countdown_time).timeout
-	main_menu_music.play()
+	if Game.is_paused():
+		main_menu_music.play()
