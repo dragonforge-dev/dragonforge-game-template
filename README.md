@@ -35,10 +35,12 @@ The following dependencies are included in the addons folder and are required fo
 ## Why a plugin?
 I felt it was important to be able to update existing games with new features from this code. The easiest way to do that is to create an addon/plugin because then it is clear how to use it and makes it easy to upgrade. If this was a template to start a game that you modified, then any further updates would be much harder to add in.
 
+A plugin also helps in game jams where one may decide tlater to add these features in. When you don't have a lot of time, it's good for using something like this to be as seamless as possible.
+
 # Usage Instructions
 There is an example folder that contains an example level and player for loading a level. This is what will load when you first import the template. Note that while it loads a 2D level and charcter, this template works with 3D games as well.
 ## Example 2D
-The folder found at `res://example_2d/` contains example code for a 2D game. These instructions assume you have already followe3d the installation instructions above.
+The folder found at `res://example_2d/` contains example code for a 2D game. These instructions assume you have already followed the installation instructions above.
 1. Copy the `example_2d` folder from the root of this project to your project.
 2. **In your project** open `res://addons/dragonforge_game_template/game_configuration.tscn` (You should have already copied this over during installation.)
 3. In the **Inspector** under **GameConfiguration** select the **File** button next to **Main Scene**.
@@ -53,6 +55,16 @@ The folder found at `res://example_2d/` contains example code for a 2D game. The
 12. Check the **On checkbox** under **Enabled** for **Dragonforge Game Template**
 13. Press the **Close** button.
 14. Save your project. (You do not need to reload the project at this time despite the warning message.)
+
+### Test the 2D Installation
+1. Press the **Run Project** button (or use F5). The game will start.
+2. You should see and hear the template default Godot splash screen video. (You can change or delete this later.)
+3. You should see and hear the Dragonforge splash screen. (You can delete this later.)
+4. The main screen should load and the **Dragonforge Theme Song** should play.
+5. Press the New Game button.
+6. A game scene will load with the Godot background and a red Godot logo. You should also hear game msuic.
+7. Using the **WASD** keys or gamepad **left joystick** will move the red Godot logo.
+8. Pressing the **Escape** key or **Start** button on your gamepad will pause the game and show the main menu.
 
 ## Example 3D
 The folder found at `res://example_3d/` contains example code for a 3D game.
