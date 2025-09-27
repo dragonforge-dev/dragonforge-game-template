@@ -17,7 +17,7 @@ run/main_scene="res://addons/dragonforge_game_template/main_template.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
-config/icon="res://addons/dragonforge_game_template/assets/textures/logo/icon_monochrome_dark.svg"
+config/icon="res://assets/textures/logo/icon_monochrome_dark.svg"
 
 [autoload]
 
