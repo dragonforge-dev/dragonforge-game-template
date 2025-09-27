@@ -1,7 +1,7 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.4.1.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 # Dragonforge Game Template
 A Godot game template for game jams.
-# Version 0.6
+# Version 0.6.1
 For use with **Godot 4.5-stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
@@ -37,8 +37,26 @@ I felt it was important to be able to update existing games with new features fr
 
 # Usage Instructions
 There is an example folder that contains an example level and player for loading a level. This is what will load when you first import the template. Note that while it loads a 2D level and charcter, this template works with 3D games as well.
-## Example Folder
-This folder is found at `res://addons/dragonforge_game_template/example/` and contains example code.
+## Example 2D
+The folder found at `res://example_2d/` contains example code for a 2D game. These instructions assume you have already followe3d the installation instructions above.
+1. Copy the `example_2d` folder from the root of this project to your project.
+2. **In your project** open `res://addons/dragonforge_game_template/game_configuration.tscn` (You should have already copied this over during installation.)
+3. In the **Inspector** under **GameConfiguration** select the **File** button next to **Main Scene**.
+4. **In your project** browse to `res://example_2d/game_template_files/main.tscn` and select it.
+5. Press **Ok**.
+6. In the **Inspector** under **GameConfiguration** select the **File** button next to **Game Scene**.
+7. **In your project** browse to `res://example_2d/game_template_files/game.tscn` and select it.
+8. Press **Ok**.
+9. Go to **Project -> Project Settings...**
+10. Select the **Plugins** tab.
+11. Uncheck the **On checkbox** under **Enabled** for **Dragonforge Game Template**
+12. Check the **On checkbox** under **Enabled** for **Dragonforge Game Template**
+13. Press the **Close** button.
+14. Save your project. (You do not need to reload the project at this time despite the warning message.)
+
+## Example 3D
+The folder found at `res://example_3d/` contains example code for a 3D game.
+
 ### map_level.gd
 Extends **Node2D** (can easily be changed to extend **Node3D**.) It can be used as a base for your own levels.
 #### Export Variables

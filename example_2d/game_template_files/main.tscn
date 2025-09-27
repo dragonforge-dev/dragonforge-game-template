@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://jd2223iicj5q" path="res://addons/dragonforge_game_template/game_states/game_state_gameplay.gd" id="12_0vq47"]
 [ext_resource type="PackedScene" uid="uid://dw00qvyib81gf" path="res://addons/dragonforge_game_template/ui/screens/action_display.tscn" id="13_8i4xq"]
 [ext_resource type="Script" uid="uid://b716hier1tnm7" path="res://addons/dragonforge_game_template/game_states/game_state_main_menu.gd" id="14_1m55f"]
-[ext_resource type="Resource" uid="uid://depjkulihxsao" path="res://assets/sound/music/dragoneforge_theme_song.tres" id="15_6mu6r"]
+[ext_resource type="Resource" uid="uid://depjkulihxsao" path="res://example_2d/assets/sound/music/dragonforge_theme_song.tres" id="15_6mu6r"]
 [ext_resource type="Texture2D" uid="uid://b6h0ihc2tcxhm" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/godot file 3.png" id="15_xbe4m"]
 [ext_resource type="PackedScene" uid="uid://bocu6nvxn404x" path="res://addons/dragonforge_game_template/ui/user_interface.tscn" id="16_kyo4d"]
 

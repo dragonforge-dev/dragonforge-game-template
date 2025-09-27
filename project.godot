@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Dragonforge Game Template v0.6"
+config/name="Dragonforge Game Template v0.6.1"
 config/description="A game template for game jams."
-config/version="0.6"
-run/main_scene="res://addons/dragonforge_game_template/main.tscn"
+config/version="0.6.1"
+run/main_scene="uid://bmjp6xtpoyhg2"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
