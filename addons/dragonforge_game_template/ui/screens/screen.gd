@@ -66,7 +66,7 @@ func _onVisibilityChanged():
 			Music.play(background_music)
 	if visible == false:
 		if hide_sound != null:
-			Sound.play(show_sound, "UI")
+			Sound.play(hide_sound, "UI")
 		if background_music != null:
 			Music.pause()
 
