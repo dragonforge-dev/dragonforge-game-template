@@ -1,8 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbwis4cvtrlxp"]
+[gd_scene load_steps=8 format=3 uid="uid://bbwis4cvtrlxp"]
 
 [ext_resource type="Script" uid="uid://dkhjdypn3iqga" path="res://addons/dragonforge_sound/sound.gd" id="1_qkf74"]
 [ext_resource type="AudioStream" uid="uid://cpeki2se3tx20" path="res://addons/dragonforge_sound/assets/sound/sfx/click/UI2_Button_1.wav" id="2_bmmo0"]
 [ext_resource type="AudioStream" uid="uid://cdrf2huw86f18" path="res://addons/dragonforge_sound/assets/sound/sfx/confirm/UI2_Accept_2.wav" id="3_a4m8v"]
+[ext_resource type="Script" uid="uid://byl24usjgcm7p" path="res://addons/dragonforge_sound/resources/ui_sounds.gd" id="4_vlef6"]
+
+[sub_resource type="Resource" id="Resource_1yto7"]
+script = ExtResource("4_vlef6")
+sounds = Dictionary[String, AudioStream]({
+"button_pressed": ExtResource("2_bmmo0"),
+"volume_confirm": ExtResource("3_a4m8v")
+})
+metadata/_custom_type_script = "uid://byl24usjgcm7p"
 
 [sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_xiywv"]
 
@@ -10,8 +19,7 @@
 
 [node name="Sound" type="Node"]
 script = ExtResource("1_qkf74")
-button_pressed_sound = ExtResource("2_bmmo0")
-volume_confirm_sound = ExtResource("3_a4m8v")
+ui_sounds = SubResource("Resource_1yto7")
 
 [node name="DialoguePlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 1

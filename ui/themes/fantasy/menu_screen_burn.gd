@@ -48,7 +48,7 @@ func hide_screen() -> void:
 		tween.tween_property(_buttons[0], "material:shader_parameter/Integrity", 0, burn_time)
 
 	tween.tween_property(self, "material:shader_parameter/Integrity", 0, burn_time)
-	Sound.play_ui_sound(burn_sound)
+	Sound.play(burn_sound, "UI")
 	# Wait until the end of the effect, then reset everything.
 	await get_tree().create_timer(burn_time).timeout
 	_reset_screen()

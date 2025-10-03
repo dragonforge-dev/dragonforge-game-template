@@ -4,10 +4,8 @@ signal volume_changed(audio_bus: String, new_value: float)
 
 const ERROR_MISSING_SOUND_EFFECT = preload("res://addons/dragonforge_sound/resources/error_missing_sound_effect.tres")
 
-## Default sound for when a button is pressed.
-@export var button_pressed_sound: AudioStream
-## Default sound for when the volume level is changed in the UI.
-@export var volume_confirm_sound: AudioStream
+## Stores custom sounds for the UI Player that can be saved to a resource.
+@export var ui_sounds: UISounds
 ## This bus must be created, or you must choose a different bus for music to play using Music.
 @export var music_bus_name = "Music"
 ## This bus must be created, or you must choose a different bus for sound effects to work.
@@ -52,14 +50,20 @@ func play_sound_effect(sound: Resource) -> int:
 
 ## Plays an AudioStream through the UI bus.
 ## Returns the UID of the playback stream as an int.
-func play_ui_sound(sound: Resource) -> int:
-	return play(sound, ui_bus_name)
+func play_ui_sound(sound_name: String, pitch: float = 1.0) -> void:
+	var audio_stream_player: AudioStreamPlayer = AudioStreamPlayer.new()
+	add_child(audio_stream_player)
+	audio_stream_player.bus = ui_bus_name
+	audio_stream_player.stream = ui_sounds.get_sound(sound_name)
+	audio_stream_player.play()
+	await audio_stream_player.finished
+	audio_stream_player.queue_free()
 
 
 ## Plays the default click sound through the UI bus.
 ## Returns the UID of the playback stream as an int.
-func play_button_pressed_sound() -> int:
-	return play_ui_sound(button_pressed_sound)
+func play_button_pressed_sound() -> void:
+	play_ui_sound("button_pressed")
 
 
 ## Plays the default volume confirm sound therough the passed bus.
@@ -73,7 +77,7 @@ func play_volume_confirm_sound(bus_name: String = ui_bus_name) -> void:
 	var audio_stream_player: AudioStreamPlayer = AudioStreamPlayer.new()
 	add_child(audio_stream_player)
 	audio_stream_player.bus = bus_name
-	audio_stream_player.stream = volume_confirm_sound
+	audio_stream_player.stream = ui_sounds.get_sound("volume_confirm")
 	audio_stream_player.play()
 	await audio_stream_player.finished
 	audio_stream_player.queue_free()

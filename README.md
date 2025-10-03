@@ -1,14 +1,14 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.5.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 # Dragonforge Game Template
 A Godot game template for game jams.
-# Version 0.7
+# Version 0.7.1
 For use with **Godot 4.5-stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
 - [Dragonforge Controller 0.12](https://github.com/dragonforge-dev/dragonforge-controller)
 - [Dragonforge Disk (Save/Load) 0.5](https://github.com/dragonforge-dev/dragonforge-disk)
 - [Dragonforge Display 0.13](https://github.com/dragonforge-dev/dragonforge-display)
-- [Dragonforge Sound 0.13.1](https://github.com/dragonforge-dev/dragonforge-sound)
+- [Dragonforge Sound 0.14](https://github.com/dragonforge-dev/dragonforge-sound)
 - [Dragonforge State Machine 0.3](https://github.com/dragonforge-dev/dragonforge-state-machine)
 # Installation Instructions
 1. Copy all the folders from the `addons` folder into your project's `addons` folder.

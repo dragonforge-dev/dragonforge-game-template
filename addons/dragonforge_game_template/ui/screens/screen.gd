@@ -61,12 +61,12 @@ func _onVisibilityChanged():
 	if visible == true:
 		_set_focus()
 		if show_sound != null:
-			Sound.play_ui_sound(show_sound)
+			Sound.play(show_sound, "UI")
 		if background_music != null:
 			Music.play(background_music)
 	if visible == false:
 		if hide_sound != null:
-			Sound.play_ui_sound(hide_sound)
+			Sound.play(show_sound, "UI")
 		if background_music != null:
 			Music.pause()
 
