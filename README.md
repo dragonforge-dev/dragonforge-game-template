@@ -24,11 +24,12 @@ The following dependencies are included in the addons folder and are required fo
 6. Check the **On checkbox** under **Enabled** for **Dragonforge Display**.
 7. Check the **On checkbox** under **Enabled** for **Dragonforge Sound**.
 8. Check the **On checkbox** under **Enabled** for **Dragonforge Controller**
-9. Check the **On checkbox** under **Enabled** for **Dragonforge Game Template**
-10. Press the **Close** button.
-11. Save your project.
-12. In your project go to **Project -> Reload Current Project**.
-13. Wait for the project to reload.
+9. Check the **On checkbox** under **Enabled** for **Dragonforge User Interface**
+10. Check the **On checkbox** under **Enabled** for **Dragonforge Game Template**
+11. Press the **Close** button.
+12. Save your project.
+13. In your project go to **Project -> Reload Current Project**.
+14. Wait for the project to reload.
 
 **NOTE:** It's important to reload the project after running the plugin because it updates the `ui_accpet` action, and creates three new actions: `back_button`, `skip`, and `pause`. Once you reboot, you can edit these actions as you wish, but disabling and re-enabling them will reset them.
 
@@ -40,6 +41,9 @@ A plugin also helps in game jams where one may decide tlater to add these featur
 
 # Usage Instructions
 There is an example folder that contains an example level and player for loading a level. This is what will load when you first import the template. Note that while it loads a 2D level and charcter, this template works with 3D games as well.
+## Themes
+Version 0.8 introduced themes. There are two, `default` and `fantasy`, Applying them to the **Theme** node in `main.tscn` under the **Main Menu Game State**. They are located in `res://ui/themes/`
+
 ## Example 2D
 The folder found at `res://example_2d/` contains example code for a 2D game. These instructions assume you have already followed the installation instructions above.
 1. Copy the `example_2d` folder from the root of this project to your project.
