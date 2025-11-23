@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biuf06gfpfjn"
-path="res://.godot/imported/Panel_ornaments.png-fcbab6f0af56de1c5c49633b06434c57.ctex"
+uid="uid://bnelluvhxljr2"
+path="res://.godot/imported/PanelSmall_parts_color1_connected.png-acf2fe0141e2cc086835e83c871faa6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/themes/fantasy/fonts/textures/Panel_ornaments.png"
-dest_files=["res://.godot/imported/Panel_ornaments.png-fcbab6f0af56de1c5c49633b06434c57.ctex"]
+source_file="res://ui/themes/fantasy/textures/PanelSmall_parts_color1_connected.png"
+dest_files=["res://.godot/imported/PanelSmall_parts_color1_connected.png-acf2fe0141e2cc086835e83c871faa6c.ctex"]
 
 [params]
 

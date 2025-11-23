@@ -1,7 +1,7 @@
 [gd_resource type="VisualShader" load_steps=25 format=3 uid="uid://dqqbbhj2tg8fy"]
 
-[ext_resource type="Script" uid="uid://bnhf70oyjuskt" path="res://assets/materials/dissolve_fire/inverse_lerp.gd" id="1_31v8u"]
-[ext_resource type="Script" uid="uid://dir3rnk5w8n58" path="res://assets/materials/dissolve_fire/dissolve_direction.gd" id="2_01fx6"]
+[ext_resource type="Script" uid="uid://bnhf70oyjuskt" path="res://ui/themes/fantasy_burn_old/materials/dissolve_fire/inverse_lerp.gd" id="1_31v8u"]
+[ext_resource type="Script" uid="uid://dir3rnk5w8n58" path="res://ui/themes/fantasy_burn_old/materials/dissolve_fire/dissolve_direction.gd" id="2_01fx6"]
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_l840x"]
 expanded_output_ports = [0]

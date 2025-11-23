@@ -2,9 +2,9 @@
 
 [ext_resource type="FontFile" uid="uid://cff1o8ac4ru56" path="res://ui/themes/fantasy/fonts/Augusta.ttf" id="1_h5lvs"]
 [ext_resource type="StyleBox" uid="uid://cn882cn4nkrt3" path="res://ui/themes/fantasy/decorations/bottom_scrollwork.stylebox" id="1_mpqbf"]
-[ext_resource type="Texture2D" uid="uid://vjcc83hk42u2" path="res://ui/themes/fantasy/fonts/textures/blue_gem_button_small_32x32_001.png" id="2_pwbqi"]
+[ext_resource type="Texture2D" uid="uid://vjcc83hk42u2" path="res://ui/themes/fantasy/textures/blue_gem_button_small_32x32_001.png" id="2_pwbqi"]
 [ext_resource type="StyleBox" uid="uid://c8cldvlmlhe7o" path="res://ui/themes/fantasy/styleboxes/paper_panel.stylebox" id="4_pwbqi"]
-[ext_resource type="Texture2D" uid="uid://biuf06gfpfjn" path="res://ui/themes/fantasy/fonts/textures/Panel_ornaments.png" id="4_rjq3y"]
+[ext_resource type="Texture2D" uid="uid://biuf06gfpfjn" path="res://ui/themes/fantasy/textures/Panel_ornaments.png" id="4_rjq3y"]
 [ext_resource type="StyleBox" uid="uid://c7xrvcpe0ffqq" path="res://ui/themes/fantasy/styleboxes/wood_panel_large_001.stylebox" id="5_pwbqi"]
 [ext_resource type="StyleBox" uid="uid://1gqyv730tiim" path="res://ui/themes/fantasy/decorations/top_scrollwork.stylebox" id="7_rjq3y"]
 

@@ -2,22 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgfk8lt6tcxhl"
-path="res://.godot/imported/ButtonsSmall_ornaments.png-b112c265e393075cffc1db518f89a187.ctex"
+uid="uid://bmnrmun68juqf"
+path="res://.godot/imported/blue_gem_button_small_001.png-94aa3e73955d0ea898b78cda10271a89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ButtonsSmall_ornaments.png"
-dest_files=["res://.godot/imported/ButtonsSmall_ornaments.png-b112c265e393075cffc1db518f89a187.ctex"]
+source_file="res://ui/themes/fantasy/textures/blue_gem_button_small_001.png"
+dest_files=["res://.godot/imported/blue_gem_button_small_001.png-94aa3e73955d0ea898b78cda10271a89.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

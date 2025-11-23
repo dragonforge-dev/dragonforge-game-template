@@ -6,7 +6,9 @@ class_name GameStateMainMenu extends State
 @export_range(0.0, 300.0, 0.1, "suffix:seconds") var replay_countdown_time: float = 30.0
 ## The background to display whenever the main menu is visible.
 @export var main_menu_background: Control
+## The screen to load when the game is first launched and when a game isn't loaded.
 @export var main_menu: Screen
+## The screen to load when the game is paused.
 @export var pause_menu: Screen
 
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsghihhkrrby"
-path="res://.godot/imported/PanelLarge_parts_color1_connected.png-69af2d7e904bca42d0a07338eec2ab3f.ctex"
+path="res://.godot/imported/PanelLarge_parts_color1_connected.png-2b2e1e7a4c539ae9f0c0cbab5807551a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/themes/fantasy/fonts/textures/PanelLarge_parts_color1_connected.png"
-dest_files=["res://.godot/imported/PanelLarge_parts_color1_connected.png-69af2d7e904bca42d0a07338eec2ab3f.ctex"]
+source_file="res://ui/themes/fantasy/textures/PanelLarge_parts_color1_connected.png"
+dest_files=["res://.godot/imported/PanelLarge_parts_color1_connected.png-2b2e1e7a4c539ae9f0c0cbab5807551a.ctex"]
 
 [params]
 

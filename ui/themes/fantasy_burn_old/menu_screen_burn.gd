@@ -6,9 +6,9 @@ var _original_position
 var burn_time: float = 1.0
 
 
-var burn_material: ShaderMaterial = preload("res://assets/materials/dissolve_fire/dissolve_fire_2d.material")
-var button_burn_material: ShaderMaterial = preload("res://assets/materials/dissolve_fire/dissolve_fire_2d_button.material")
-var burn_sound: AudioStream = preload("res://assets/sound/sfx/burn/Fire Punch.wav")
+var burn_material: ShaderMaterial = preload("res://ui/themes/fantasy_burn_old/materials/dissolve_fire/dissolve_fire_2d.material")
+var button_burn_material: ShaderMaterial = preload("res://ui/themes/fantasy_burn_old/materials/dissolve_fire/dissolve_fire_2d_button.material")
+var burn_sound: AudioStream = preload("res://ui/themes/fantasy_burn_old/sound/sfx/burn/Fire Punch.wav")
 
 
 func _onVisibilityChanged():

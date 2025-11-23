@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c6qjm6udf1rdk"
-path="res://.godot/imported/Fire Punch.wav-e424abd9117a44dc432b9f326ca2f807.sample"
+path="res://.godot/imported/Fire Punch.wav-2f66fe4ab8792340e36700da4da63396.sample"
 
 [deps]
 
-source_file="res://assets/sound/sfx/burn/Fire Punch.wav"
-dest_files=["res://.godot/imported/Fire Punch.wav-e424abd9117a44dc432b9f326ca2f807.sample"]
+source_file="res://ui/themes/fantasy_burn_old/sound/sfx/burn/Fire Punch.wav"
+dest_files=["res://.godot/imported/Fire Punch.wav-2f66fe4ab8792340e36700da4da63396.sample"]
 
 [params]
 

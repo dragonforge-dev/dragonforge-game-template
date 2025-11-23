@@ -1,27 +1,26 @@
-[gd_scene load_steps=27 format=3 uid="uid://dbrt4a6u3f3gr"]
+[gd_scene load_steps=26 format=3 uid="uid://6fjdmh7oedwc"]
 
-[ext_resource type="Script" uid="uid://buyjpwl0flpta" path="res://example_3d/game_template_files/main.gd" id="1_xhj7e"]
-[ext_resource type="Script" uid="uid://i0o4sv7i7cp0" path="res://addons/dragonforge_state_machine/state_machine.gd" id="2_3i8ir"]
-[ext_resource type="Script" uid="uid://diddwe2khtlx7" path="res://addons/dragonforge_game_template/game_states/game_state_splash_screen.gd" id="3_gdu7p"]
-[ext_resource type="PackedScene" uid="uid://dpypwgpnlx0kb" path="res://addons/dragonforge_user_interface/splash_screens/godot/godot_color_splash_screen.tscn" id="4_koeg1"]
-[ext_resource type="PackedScene" uid="uid://1mevm3fut3t0" path="res://addons/dragonforge_user_interface/splash_screens/godot/godot_black_and_white_splash_screen.tscn" id="5_4pkpb"]
-[ext_resource type="PackedScene" uid="uid://iujsdfhqqv4o" path="res://addons/dragonforge_user_interface/splash_screens/dragonforge_dev/dragonforge_dev_splash_screen.tscn" id="6_7iu8b"]
-[ext_resource type="Script" uid="uid://7h7dfu4itm5m" path="res://addons/dragonforge_game_template/game_states/game_state_loading.gd" id="7_84rl8"]
-[ext_resource type="Texture2D" uid="uid://dcf5kxmahsco7" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/PNG_Godot Font 1 Circle Cloud.png" id="8_6plyf"]
-[ext_resource type="Script" uid="uid://jd2223iicj5q" path="res://addons/dragonforge_game_template/game_states/game_state_gameplay.gd" id="9_2hfvx"]
-[ext_resource type="PackedScene" uid="uid://dw00qvyib81gf" path="res://addons/dragonforge_game_template/ui/screens/action_display.tscn" id="10_nelau"]
-[ext_resource type="Script" uid="uid://b716hier1tnm7" path="res://addons/dragonforge_game_template/game_states/game_state_main_menu.gd" id="11_2u3rc"]
-[ext_resource type="Resource" uid="uid://b4dxepx0gnspa" path="res://example_3d/assets/sound/music/dragonforge_theme_song.tres" id="12_xhj7e"]
-[ext_resource type="Texture2D" uid="uid://b6h0ihc2tcxhm" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/godot file 3.png" id="13_6t1b8"]
-[ext_resource type="Theme" uid="uid://dgrbdoc82fx7l" path="res://ui/themes/fantasy/fantasy_theme_001.tres" id="14_86kyo"]
-[ext_resource type="PackedScene" uid="uid://d2gujmw182d4w" path="res://addons/dragonforge_game_template/ui/screens/audio.tscn" id="14_xr8be"]
-[ext_resource type="PackedScene" uid="uid://dqfau8pvhksue" path="res://addons/dragonforge_game_template/ui/screens/controls.tscn" id="15_bgdeg"]
-[ext_resource type="PackedScene" uid="uid://dy26phguentl8" path="res://addons/dragonforge_game_template/ui/screens/credits.tscn" id="16_5g70c"]
-[ext_resource type="PackedScene" uid="uid://d4noq3j0hsh2b" path="res://addons/dragonforge_game_template/ui/screens/music_display.tscn" id="17_hp4sp"]
-[ext_resource type="PackedScene" uid="uid://cqqvy1p3pt5m6" path="res://addons/dragonforge_game_template/ui/screens/quit.tscn" id="18_b0cnr"]
-[ext_resource type="PackedScene" uid="uid://dkwlgg3reqv6p" path="res://addons/dragonforge_game_template/ui/screens/settings.tscn" id="19_1l385"]
-[ext_resource type="PackedScene" uid="uid://ddhbqcble1nun" path="res://addons/dragonforge_game_template/ui/screens/start.tscn" id="20_qjdfu"]
-[ext_resource type="PackedScene" uid="uid://c2ybebltrbfne" path="res://addons/dragonforge_game_template/ui/screens/video.tscn" id="21_ueaud"]
+[ext_resource type="Script" uid="uid://buyjpwl0flpta" path="res://example_3d/game_template_files/main.gd" id="1_1fed4"]
+[ext_resource type="Script" uid="uid://i0o4sv7i7cp0" path="res://addons/dragonforge_state_machine/state_machine.gd" id="2_0k747"]
+[ext_resource type="Script" uid="uid://diddwe2khtlx7" path="res://addons/dragonforge_game_template/game_states/game_state_splash_screen.gd" id="3_3fsx3"]
+[ext_resource type="PackedScene" uid="uid://dpypwgpnlx0kb" path="res://addons/dragonforge_user_interface/splash_screens/godot/godot_color_splash_screen.tscn" id="4_d7ehc"]
+[ext_resource type="PackedScene" uid="uid://1mevm3fut3t0" path="res://addons/dragonforge_user_interface/splash_screens/godot/godot_black_and_white_splash_screen.tscn" id="5_3150d"]
+[ext_resource type="PackedScene" uid="uid://iujsdfhqqv4o" path="res://addons/dragonforge_user_interface/splash_screens/dragonforge_dev/dragonforge_dev_splash_screen.tscn" id="6_wnhy6"]
+[ext_resource type="Script" uid="uid://7h7dfu4itm5m" path="res://addons/dragonforge_game_template/game_states/game_state_loading.gd" id="7_7jr54"]
+[ext_resource type="Texture2D" uid="uid://dcf5kxmahsco7" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/PNG_Godot Font 1 Circle Cloud.png" id="8_gburs"]
+[ext_resource type="Script" uid="uid://jd2223iicj5q" path="res://addons/dragonforge_game_template/game_states/game_state_gameplay.gd" id="9_lyh6f"]
+[ext_resource type="PackedScene" uid="uid://dw00qvyib81gf" path="res://addons/dragonforge_game_template/ui/screens/action_display.tscn" id="10_vci2x"]
+[ext_resource type="Script" uid="uid://b716hier1tnm7" path="res://addons/dragonforge_game_template/game_states/game_state_main_menu.gd" id="11_eawnr"]
+[ext_resource type="Resource" uid="uid://b4dxepx0gnspa" path="res://example_3d/assets/sound/music/dragonforge_theme_song.tres" id="12_66yja"]
+[ext_resource type="Texture2D" uid="uid://b6h0ihc2tcxhm" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/godot file 3.png" id="13_2nh0k"]
+[ext_resource type="PackedScene" uid="uid://d2gujmw182d4w" path="res://addons/dragonforge_game_template/ui/screens/audio.tscn" id="14_de6d3"]
+[ext_resource type="PackedScene" uid="uid://dqfau8pvhksue" path="res://addons/dragonforge_game_template/ui/screens/controls.tscn" id="15_voa1y"]
+[ext_resource type="PackedScene" uid="uid://dy26phguentl8" path="res://addons/dragonforge_game_template/ui/screens/credits.tscn" id="16_syjoj"]
+[ext_resource type="PackedScene" uid="uid://d4noq3j0hsh2b" path="res://addons/dragonforge_game_template/ui/screens/music_display.tscn" id="17_guj4h"]
+[ext_resource type="PackedScene" uid="uid://cqqvy1p3pt5m6" path="res://addons/dragonforge_game_template/ui/screens/quit.tscn" id="18_4jktj"]
+[ext_resource type="PackedScene" uid="uid://dkwlgg3reqv6p" path="res://addons/dragonforge_game_template/ui/screens/settings.tscn" id="19_jam7r"]
+[ext_resource type="PackedScene" uid="uid://ddhbqcble1nun" path="res://addons/dragonforge_game_template/ui/screens/start.tscn" id="20_ear1b"]
+[ext_resource type="PackedScene" uid="uid://c2ybebltrbfne" path="res://addons/dragonforge_game_template/ui/screens/video.tscn" id="21_mrcob"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t62yp"]
 font_size = 72
@@ -56,29 +55,28 @@ font_size = 72
 font_color = Color(0, 0, 0, 1)
 outline_size = 10
 
-[node name="Main 3D" type="Node"]
-script = ExtResource("1_xhj7e")
-starting_level = "uid://df4qtq20r0vn2"
+[node name="Main" type="Node"]
+script = ExtResource("1_1fed4")
 
 [node name="Game State Machine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
 process_mode = 3
-script = ExtResource("2_3i8ir")
+script = ExtResource("2_0k747")
 starting_state = NodePath("Splash Screen")
 metadata/_custom_type_script = "uid://i0o4sv7i7cp0"
 
 [node name="Splash Screen" type="Node" parent="Game State Machine" node_paths=PackedStringArray("active_splash_screens")]
-script = ExtResource("3_gdu7p")
+script = ExtResource("3_3fsx3")
 active_splash_screens = [NodePath("Godot Color Splash Screen"), NodePath("Dragonforge Dev Splash Screen")]
 metadata/_custom_type_script = "uid://diddwe2khtlx7"
 
-[node name="Godot Color Splash Screen" parent="Game State Machine/Splash Screen" instance=ExtResource("4_koeg1")]
+[node name="Godot Color Splash Screen" parent="Game State Machine/Splash Screen" instance=ExtResource("4_d7ehc")]
 
-[node name="Godot Black and White Splash Screen" parent="Game State Machine/Splash Screen" instance=ExtResource("5_4pkpb")]
+[node name="Godot Black and White Splash Screen" parent="Game State Machine/Splash Screen" instance=ExtResource("5_3150d")]
 
-[node name="Dragonforge Dev Splash Screen" parent="Game State Machine/Splash Screen" instance=ExtResource("6_7iu8b")]
+[node name="Dragonforge Dev Splash Screen" parent="Game State Machine/Splash Screen" instance=ExtResource("6_wnhy6")]
 
 [node name="Loading" type="Node" parent="Game State Machine"]
-script = ExtResource("7_84rl8")
+script = ExtResource("7_7jr54")
 metadata/_custom_type_script = "uid://7h7dfu4itm5m"
 
 [node name="Loading Screen" type="CanvasLayer" parent="Game State Machine/Loading"]
@@ -104,7 +102,7 @@ theme_override_constants/margin_right = 20
 
 [node name="BackgroundImage" type="TextureRect" parent="Game State Machine/Loading/Loading Screen/Background/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("8_6plyf")
+texture = ExtResource("8_gburs")
 expand_mode = 5
 stretch_mode = 5
 
@@ -158,15 +156,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Gameplay" type="Node" parent="Game State Machine"]
-script = ExtResource("9_2hfvx")
+script = ExtResource("9_lyh6f")
 metadata/_custom_type_script = "uid://jd2223iicj5q"
 
-[node name="Action Display" parent="Game State Machine/Gameplay" instance=ExtResource("10_nelau")]
+[node name="Action Display" parent="Game State Machine/Gameplay" instance=ExtResource("10_vci2x")]
 visible = false
 
 [node name="Main Menu" type="Node" parent="Game State Machine" node_paths=PackedStringArray("main_menu_background", "main_menu", "pause_menu")]
-script = ExtResource("11_2u3rc")
-main_menu_music = ExtResource("12_xhj7e")
+script = ExtResource("11_eawnr")
+main_menu_music = ExtResource("12_66yja")
 main_menu_background = NodePath("Background")
 main_menu = NodePath("CanvasLayer/Theme/Start")
 pause_menu = NodePath("CanvasLayer/Theme/Start")
@@ -192,7 +190,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="BackgroundImage" type="TextureRect" parent="Game State Machine/Main Menu/Background/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("13_6t1b8")
+texture = ExtResource("13_2nh0k")
 expand_mode = 3
 stretch_mode = 5
 
@@ -205,25 +203,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("14_86kyo")
 
-[node name="Audio" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("14_xr8be")]
+[node name="Audio" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("14_de6d3")]
 visible = false
 layout_mode = 1
 
-[node name="Controls" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("15_bgdeg")]
+[node name="Controls" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("15_voa1y")]
 visible = false
 layout_mode = 1
 
-[node name="Credits" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("16_5g70c")]
+[node name="Credits" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("16_syjoj")]
 visible = false
 layout_mode = 1
 
-[node name="Music Display" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("17_hp4sp")]
+[node name="Music Display" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("17_guj4h")]
 visible = false
 layout_mode = 1
 
-[node name="Quit" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("18_b0cnr")]
+[node name="Quit" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("18_4jktj")]
 visible = false
 layout_mode = 1
 offset_left = -100.0
@@ -231,14 +228,14 @@ offset_top = -50.0
 offset_right = 100.0
 offset_bottom = 50.0
 
-[node name="Settings" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("19_1l385")]
+[node name="Settings" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("19_jam7r")]
 visible = false
 layout_mode = 1
 
-[node name="Start" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("20_qjdfu")]
+[node name="Start" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("20_ear1b")]
 visible = false
 layout_mode = 1
 
-[node name="Video" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("21_ueaud")]
+[node name="Video" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("21_mrcob")]
 visible = false
 layout_mode = 1

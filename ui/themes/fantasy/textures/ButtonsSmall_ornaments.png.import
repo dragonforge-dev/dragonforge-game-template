@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjvam7p5huugc"
-path="res://.godot/imported/blue_gem_down_arrow_small_32x16_001.png-95423eb08322c645f39b74706e478e00.ctex"
+uid="uid://dgfk8lt6tcxhl"
+path="res://.godot/imported/ButtonsSmall_ornaments.png-f7150b47f604140145109c95e6360228.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/themes/fantasy/fonts/textures/blue_gem_down_arrow_small_32x16_001.png"
-dest_files=["res://.godot/imported/blue_gem_down_arrow_small_32x16_001.png-95423eb08322c645f39b74706e478e00.ctex"]
+source_file="res://ui/themes/fantasy/textures/ButtonsSmall_ornaments.png"
+dest_files=["res://.godot/imported/ButtonsSmall_ornaments.png-f7150b47f604140145109c95e6360228.ctex"]
 
 [params]
 

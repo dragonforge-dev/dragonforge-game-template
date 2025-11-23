@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vjcc83hk42u2"
-path="res://.godot/imported/blue_gem_button_small_32x32_001.png-34dbce86c11e0d27aec723ed43ed406b.ctex"
+path="res://.godot/imported/blue_gem_button_small_32x32_001.png-0cfd665fed5bd0398310f2435e911af4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/themes/fantasy/fonts/textures/blue_gem_button_small_32x32_001.png"
-dest_files=["res://.godot/imported/blue_gem_button_small_32x32_001.png-34dbce86c11e0d27aec723ed43ed406b.ctex"]
+source_file="res://ui/themes/fantasy/textures/blue_gem_button_small_32x32_001.png"
+dest_files=["res://.godot/imported/blue_gem_button_small_32x32_001.png-0cfd665fed5bd0398310f2435e911af4.ctex"]
 
 [params]
 

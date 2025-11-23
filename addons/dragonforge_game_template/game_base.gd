@@ -9,7 +9,13 @@ signal cutscene_finished
 ## Load the passed level
 signal load_level(level_name: String, player: Node, target_transition_area: String)
 
-## The scene that stores a new player reference.
+## The first game level to load and attach to the UI's start button. You can
+## either paste in a path to the scene, or press the [b]Open a File[/b] dialog
+## button to the right of the text field and browse to the starting scene.
+@export_file var starting_level: String
+## The scene that stores a new player reference. You can
+## either paste in a path to the scene, or press the [b]Open a File[/b] dialog
+## button to the right of the text field and browse to the starting scene.
 @export var player_scene: PackedScene
 
 ## Whether or not game is loaded.
@@ -24,6 +30,10 @@ var level_path: String
 # saves this won't work, but for this game jam (Craftpix 1 - 2025) it will work.
 func _ready() -> void:
 	Disk.load_game()
+	# Check to see if a level was loaded from the save file.
+	# If not, use the default level for a new game.
+	if not level_path:
+		level_path = starting_level
 
 
 # Save game in progress status.

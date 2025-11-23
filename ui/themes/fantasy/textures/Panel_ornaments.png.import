@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmnrmun68juqf"
-path="res://.godot/imported/blue_gem_button_small_001.png-ca952db1f00ff7e624e9a237fab70840.ctex"
+uid="uid://biuf06gfpfjn"
+path="res://.godot/imported/Panel_ornaments.png-a5529a84087ebfe3eb562646d30c9679.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/themes/fantasy/fonts/textures/blue_gem_button_small_001.png"
-dest_files=["res://.godot/imported/blue_gem_button_small_001.png-ca952db1f00ff7e624e9a237fab70840.ctex"]
+source_file="res://ui/themes/fantasy/textures/Panel_ornaments.png"
+dest_files=["res://.godot/imported/Panel_ornaments.png-a5529a84087ebfe3eb562646d30c9679.ctex"]
 
 [params]
 
