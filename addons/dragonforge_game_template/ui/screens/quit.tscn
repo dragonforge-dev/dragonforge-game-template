@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqqvy1p3pt5m6"]
+
+[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/screen.gd" id="1_uxdwy"]
+[ext_resource type="Script" uid="uid://1e5jknrhaq58" path="res://addons/dragonforge_game_template/ui/buttons/button_quit.gd" id="2_k0hcj"]
+[ext_resource type="Script" uid="uid://dbx17g06kde6w" path="res://addons/dragonforge_game_template/ui/buttons/button_open_screen.gd" id="3_k0hcj"]
+
+[node name="Quit" type="Control"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uxdwy")
+metadata/_custom_type_script = "uid://cprxft1lx8m4j"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -73.0
+offset_right = 119.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TopDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_type_variation = &"TopDecoration"
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Quit to Desktop?"
+horizontal_alignment = 1
+
+[node name="BottomDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_type_variation = &"BottomDecoration"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/separation = 20
+
+[node name="Ok" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Ok"
+script = ExtResource("2_k0hcj")
+
+[node name="Cancel" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Cancel"
+script = ExtResource("3_k0hcj")
+screen_to_open = "Start"
+
+[node name="TopDecoration2" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_type_variation = &"TopDecoration"

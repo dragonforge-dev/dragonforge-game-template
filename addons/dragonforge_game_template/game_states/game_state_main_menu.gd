@@ -5,9 +5,9 @@ class_name GameStateMainMenu extends State
 ## The number of seconds after the song ends before it starts again.
 @export_range(0.0, 300.0, 0.1, "suffix:seconds") var replay_countdown_time: float = 30.0
 ## The background to display whenever the main menu is visible.
-@export var background: Control
-
-@onready var user_interface: UserInterface = %UserInterface
+@export var main_menu_background: Control
+@export var main_menu: Screen
+@export var pause_menu: Screen
 
 
 func _activate_state() -> void:
@@ -15,8 +15,7 @@ func _activate_state() -> void:
 	Game.splash_screens_complete.connect(switch_state)
 	Music.pause_song_finished.connect(_on_pause_song_finished)
 	set_process_input(true)
-	user_interface.hide_ui()
-	background.hide()
+	main_menu_background.hide()
 
 
 func _enter_state() -> void:
@@ -24,15 +23,17 @@ func _enter_state() -> void:
 	Game.pause()
 	if not Music.is_playing() and main_menu_music:
 		main_menu_music.play()
-	if not Game.is_loaded:
-		background.show()
-	user_interface.start()
+	if Game.is_loaded:
+		UI.open_screen(pause_menu)
+	else:
+		main_menu_background.show()
+		UI.open_screen(main_menu)
 
 
 func _exit_state() -> void:
 	super()
-	user_interface.hide_ui()
-	background.hide()
+	UI._current_screen.hide()
+	main_menu_background.hide()
 
 
 func _input(event: InputEvent) -> void:

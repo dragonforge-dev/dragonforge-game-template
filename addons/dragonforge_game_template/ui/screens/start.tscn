@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddhbqcble1nun"]
+
+[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/screen.gd" id="1_tx22b"]
+[ext_resource type="Script" uid="uid://dutfwuvpmtiu1" path="res://addons/dragonforge_game_template/ui/buttons/button_new_or_resume_game.gd" id="2_gnymt"]
+[ext_resource type="Script" uid="uid://dbx17g06kde6w" path="res://addons/dragonforge_game_template/ui/buttons/button_open_screen.gd" id="3_kk3ea"]
+[ext_resource type="Script" uid="uid://cvefjrirkydyn" path="res://addons/dragonforge_game_template/ui/buttons/button_toggle_screen.gd" id="4_5ter5"]
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_tx22b")
+metadata/_custom_type_script = "uid://cprxft1lx8m4j"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -130.5
+offset_right = 119.0
+offset_bottom = 130.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TopDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_type_variation = &"TopDecoration"
+
+[node name="New or Resume Game" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "New Game"
+script = ExtResource("2_gnymt")
+
+[node name="Settings" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+script = ExtResource("3_kk3ea")
+screen_to_open = "Settings"
+
+[node name="MusicDisplay" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "Music Display"
+script = ExtResource("4_5ter5")
+screen_to_toggle = "Music Display"
+
+[node name="Credits" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+script = ExtResource("3_kk3ea")
+screen_to_open = "Credits"
+
+[node name="Quit" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit Game"
+script = ExtResource("3_kk3ea")
+screen_to_open = "Quit"
+
+[node name="BottomDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_type_variation = &"BottomDecoration"

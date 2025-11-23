@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://1mevm3fut3t0"]
+
+[ext_resource type="Script" uid="uid://duw1rutluws5t" path="res://addons/dragonforge_user_interface/splash_screen.gd" id="1_v2750"]
+[ext_resource type="VideoStream" uid="uid://btraukd8q1y12" path="res://addons/dragonforge_user_interface/splash_screens/godot/stayathomedev_logo-animation-white-log.ogv" id="2_v2750"]
+
+[node name="Godot Black and White Splash Screen" type="Control" node_paths=PackedStringArray("video_player")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v2750")
+display_time = 4.5
+video_player = NodePath("VideoStreamPlayer")
+metadata/_custom_type_script = "uid://duw1rutluws5t"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_v2750")
+expand = true

@@ -1,10 +1,10 @@
-extends Button
+class_name QuitButton extends Button
 
 
 func _ready() -> void:
-	self.connect("pressed", _onButtonPressed)
+	pressed.connect(_on_button_pressed)
 
 
-func _onButtonPressed() -> void:
+func _on_button_pressed() -> void:
 	await get_tree().create_timer(0.25).timeout # Just enough time to hear the click sound.
-	%ConfirmationQuitDialog.show()
+	Game.quit()

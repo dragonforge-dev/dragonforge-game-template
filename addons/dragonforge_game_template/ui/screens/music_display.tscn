@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4noq3j0hsh2b"]
+
+[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/screen.gd" id="1_ivb5t"]
+[ext_resource type="Script" uid="uid://dti4alui5qqx1" path="res://addons/dragonforge_game_template/ui/labels/label_song_title.gd" id="2_6sg22"]
+[ext_resource type="Script" uid="uid://doynbyugfibdl" path="res://addons/dragonforge_game_template/ui/labels/label_song_artist.gd" id="3_75617"]
+[ext_resource type="Script" uid="uid://d3ife8jqx1668" path="res://addons/dragonforge_game_template/ui/labels/label_rich_text_song_album.gd" id="4_a64f1"]
+[ext_resource type="Script" uid="uid://dh7sfof8h6qlu" path="res://addons/dragonforge_game_template/ui/containers/hbox_music_player.gd" id="5_syka1"]
+
+[node name="Music Display" type="Control"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -308.0
+offset_top = -132.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_ivb5t")
+metadata/_custom_type_script = "uid://cprxft1lx8m4j"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Song Title Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Song Title: "
+horizontal_alignment = 2
+
+[node name="Artisit Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Artist:"
+horizontal_alignment = 2
+
+[node name="Album Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Album:"
+horizontal_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="SongTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Song Title"
+script = ExtResource("2_6sg22")
+
+[node name="Artist" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Artist"
+script = ExtResource("3_75617")
+
+[node name="Album" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(200, 23)
+layout_mode = 2
+bbcode_enabled = true
+text = "[url=\"www.dragonforge.dev\"]Album Name[/url]"
+script = ExtResource("4_a64f1")
+
+[node name="MusicPlayer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+script = ExtResource("5_syka1")
+
+[node name="PlayPauseButton" type="Button" parent="VBoxContainer/MusicPlayer"]
+layout_mode = 2
+toggle_mode = true
+text = "Play"
+
+[node name="NextSongButton" type="Button" parent="VBoxContainer/MusicPlayer"]
+layout_mode = 2
+text = "Next"
+
+[node name="PreviousSongButton" type="Button" parent="VBoxContainer/MusicPlayer"]
+layout_mode = 2
+text = "Previous"
+
+[connection signal="toggled" from="VBoxContainer/MusicPlayer/PlayPauseButton" to="VBoxContainer/MusicPlayer" method="_on_play_pause_button_toggled"]
+[connection signal="pressed" from="VBoxContainer/MusicPlayer/NextSongButton" to="VBoxContainer/MusicPlayer" method="_on_next_song_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MusicPlayer/PreviousSongButton" to="VBoxContainer/MusicPlayer" method="_on_previous_song_button_pressed"]

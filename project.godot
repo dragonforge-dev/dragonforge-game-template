@@ -10,14 +10,16 @@ config_version=5
 
 [application]
 
-config/name="Dragonforge Game Template v0.7.1"
+config/name="Dragonforge Game Template v0.8"
 config/description="A game template for game jams."
-config/version="0.7.1"
-run/main_scene="res://addons/dragonforge_game_template/main_template.tscn"
+config/version="0.8"
+run/main_scene="res://example_3d/game_template_files/main_3d.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="res://assets/textures/logo/icon_monochrome_dark.svg"
+config/autoload_game_scene="res://example_3d/game_template_files/game.tscn"
+config/autoload_main_scene="res://example_3d/game_template_files/main_3d.tscn"
 
 [autoload]
 
@@ -29,16 +31,18 @@ Display="*res://addons/dragonforge_display/display.tscn"
 Sound="*res://addons/dragonforge_sound/sound.tscn"
 Music="*res://addons/dragonforge_sound/music.tscn"
 Disk="*res://addons/dragonforge_disk/disk.tscn"
-Game="*res://addons/dragonforge_game_template/game_base.tscn"
+UI="*res://addons/dragonforge_user_interface/ui.tscn"
+Game="*res://example_3d/game_template_files/game.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dragonforge_controller/plugin.cfg", "res://addons/dragonforge_disk/plugin.cfg", "res://addons/dragonforge_display/plugin.cfg", "res://addons/dragonforge_game_template/plugin.cfg", "res://addons/dragonforge_sound/plugin.cfg")
+enabled=PackedStringArray("res://addons/dragonforge_controller/plugin.cfg", "res://addons/dragonforge_disk/plugin.cfg", "res://addons/dragonforge_display/plugin.cfg", "res://addons/dragonforge_game_template/plugin.cfg", "res://addons/dragonforge_sound/plugin.cfg", "res://addons/dragonforge_user_interface/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
-"res://addons/dragonforge_game_template/": "red"
+"res://addons/dragonforge_game_template/": "red",
+"res://addons/dragonforge_user_interface/": "yellow"
 }
 
 [global_group]

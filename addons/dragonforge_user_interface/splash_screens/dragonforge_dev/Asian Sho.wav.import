@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cslvxevoonx7j"
+path="res://.godot/imported/Asian Sho.wav-9899feecf5d6dad174409a8c7af01383.sample"
+
+[deps]
+
+source_file="res://addons/dragonforge_user_interface/splash_screens/dragonforge_dev/Asian Sho.wav"
+dest_files=["res://.godot/imported/Asian Sho.wav-9899feecf5d6dad174409a8c7af01383.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

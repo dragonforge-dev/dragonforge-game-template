@@ -74,13 +74,15 @@ func play_volume_confirm_sound(bus_name: String = ui_bus_name) -> void:
 	# Failing code: return _play_polyphonic(ui_playback, volume_confirm_sound, bus_name)
 	# Since polyphonice is causing other problems, a pooling solution for
 	# AudioStreamPlayers may be necessary.
-	var audio_stream_player: AudioStreamPlayer = AudioStreamPlayer.new()
-	add_child(audio_stream_player)
-	audio_stream_player.bus = bus_name
-	audio_stream_player.stream = ui_sounds.get_sound("volume_confirm")
-	audio_stream_player.play()
-	await audio_stream_player.finished
-	audio_stream_player.queue_free()
+	_play_polyphonic(ui_playback, ui_sounds.get_sound("volume_confirm"), bus_name)
+	# TODO: This doesn't work for web in 4.5.1
+	#var audio_stream_player: AudioStreamPlayer = AudioStreamPlayer.new()
+	#add_child(audio_stream_player)
+	#audio_stream_player.bus = bus_name
+	#audio_stream_player.stream = ui_sounds.get_sound("volume_confirm")
+	#audio_stream_player.play()
+	#await audio_stream_player.finished
+	#audio_stream_player.queue_free()
 
 
 ## Plays an AudioStream through the Ambient bus.

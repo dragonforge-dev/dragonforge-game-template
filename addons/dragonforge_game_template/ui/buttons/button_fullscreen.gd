@@ -1,9 +1,8 @@
-extends CheckButton
-class_name CheckButtonFullscreen
+class_name FullscreenCheckButton extends CheckButton
 
 
 func _ready() -> void:
-	self.connect("toggled", _on_fullscreen_button_toggled)
+	toggled.connect(_on_fullscreen_button_toggled)
 	if Display.is_fullscreen():
 		set_pressed_no_signal(true)
 

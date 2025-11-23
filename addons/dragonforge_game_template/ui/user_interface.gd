@@ -1,10 +1,10 @@
-class_name UserInterface extends CanvasLayer
+class_name UserInterfaceOld extends CanvasLayer
 
 
 @export var override_button_press_sound: AudioStream
 
 var _screens: Dictionary
-var _current_screen: Screen.Type
+var _current_screen: ScreenOld.Type
 
 
 func _ready() -> void:
@@ -18,12 +18,12 @@ func _ready() -> void:
 
 
 func start() -> void:
-	_screens[Screen.Type.Start].visible = true
-	_current_screen = Screen.Type.Start
+	_screens[ScreenOld.Type.Start].visible = true
+	_current_screen = ScreenOld.Type.Start
 
 
 func hide_ui() -> void:
-	_screens[Screen.Type.Start].visible = false
+	_screens[ScreenOld.Type.Start].visible = false
 
 
 func _input(event: InputEvent) -> void:
@@ -41,8 +41,8 @@ func _connect_butttons(parent: Node):
 		_connect_butttons(node)
 
 
-func _onScreenOpenRequest(screen: Screen.Type) -> void:
-	if screen == Screen.Type.MusicDisplay:
+func _onScreenOpenRequest(screen: ScreenOld.Type) -> void:
+	if screen == ScreenOld.Type.MusicDisplay:
 		_screens[screen].show() #These just pop up
 		return
 	var current_screen = _screens[_current_screen]
@@ -54,11 +54,11 @@ func _onScreenOpenRequest(screen: Screen.Type) -> void:
 	_current_screen = screen
 
 
-func _onScreenCloseRequest(screen: Screen.Type = Screen.Type.None) -> void:
-	if _current_screen == Screen.Type.Splash:
+func _onScreenCloseRequest(screen: ScreenOld.Type = ScreenOld.Type.None) -> void:
+	if _current_screen == ScreenOld.Type.Splash:
 		return
 	var current_screen = _screens[_current_screen]
-	if screen != Screen.Type.None: # We're overriding the default functionality here for Toggles
+	if screen != ScreenOld.Type.None: # We're overriding the default functionality here for Toggles
 		current_screen = _screens[screen]
 		current_screen.hide_screen()
 		return

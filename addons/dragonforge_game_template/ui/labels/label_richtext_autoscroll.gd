@@ -5,14 +5,15 @@ const DEFAULT_FONT_SIZE = 16
 const HEIGHT_IN_LINES_AT_600 = 40
 
 @export var autoscroll_speed = 40
+@export var credits_song: AudioStream
 
 @onready var original_text = text
 @onready var original_height = size.y
 
 func _ready() -> void:
-	get_parent().connect("visibility_changed", _on_visibility_changed)
-	self.connect("meta_clicked", _on_meta_clicked)
-	self.visible = true
+	get_parent().visibility_changed.connect(_on_visibility_changed)
+	meta_clicked.connect(_on_meta_clicked)
+	show()
 	set_process(false)
 
 
@@ -28,6 +29,8 @@ func _process(delta: float) -> void:
 
 func _on_visibility_changed():
 	if get_parent().visible == true:
+		if credits_song:
+			Music.play(credits_song)
 		self.visible = true
 		print("Start scroll")
 		text = original_text
@@ -44,6 +47,7 @@ func _on_visibility_changed():
 		set_process(true)
 	else:
 		set_process(false)
+		Music.stop(true, 2.0)
 
 
 func _on_meta_clicked(meta: Variant):

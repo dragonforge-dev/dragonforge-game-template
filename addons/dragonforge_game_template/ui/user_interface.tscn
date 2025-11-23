@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=3 uid="uid://bocu6nvxn404x"]
 
 [ext_resource type="Script" uid="uid://dt6uhbxhhsg5o" path="res://addons/dragonforge_game_template/ui/user_interface.gd" id="1_c77r1"]
-[ext_resource type="PackedScene" uid="uid://cqj74t73rs4bm" path="res://addons/dragonforge_game_template/ui/themes/plain/start_menu.tscn" id="12_bsxny"]
-[ext_resource type="PackedScene" uid="uid://c0hrf4hhhs6ce" path="res://addons/dragonforge_game_template/ui/themes/plain/settings_menu.tscn" id="13_6eyr5"]
-[ext_resource type="PackedScene" uid="uid://dh4mxnah0vdkm" path="res://addons/dragonforge_game_template/ui/themes/plain/video_menu.tscn" id="14_1qtf3"]
-[ext_resource type="PackedScene" uid="uid://b18v4qfpxln1t" path="res://addons/dragonforge_game_template/ui/themes/plain/audio_menu.tscn" id="15_tdpav"]
-[ext_resource type="PackedScene" uid="uid://brk0pye2sgsww" path="res://addons/dragonforge_game_template/ui/themes/plain/music_display.tscn" id="16_rkb3j"]
-[ext_resource type="PackedScene" uid="uid://cbdby6nhdihtr" path="res://addons/dragonforge_game_template/ui/themes/plain/credits_screen_scrolling.tscn" id="17_s6n7i"]
-[ext_resource type="PackedScene" uid="uid://jkxeyd7qjn6" path="res://addons/dragonforge_game_template/ui/themes/plain/controls_menu.tscn" id="18_awd41"]
-[ext_resource type="PackedScene" uid="uid://cafpr86jr14t2" path="res://addons/dragonforge_game_template/ui/screens/confirmation_quit_dialog.tscn" id="19_5h2d4"]
+[ext_resource type="PackedScene" uid="uid://cqj74t73rs4bm" path="res://addons/dragonforge_game_template/ui/themes_delete/plain/start_menu.tscn" id="12_bsxny"]
+[ext_resource type="PackedScene" uid="uid://c0hrf4hhhs6ce" path="res://addons/dragonforge_game_template/ui/themes_delete/plain/settings_menu.tscn" id="13_6eyr5"]
+[ext_resource type="PackedScene" uid="uid://dh4mxnah0vdkm" path="res://addons/dragonforge_game_template/ui/themes_delete/plain/video_menu.tscn" id="14_1qtf3"]
+[ext_resource type="PackedScene" uid="uid://b18v4qfpxln1t" path="res://addons/dragonforge_game_template/ui/themes_delete/plain/audio_menu.tscn" id="15_tdpav"]
+[ext_resource type="PackedScene" uid="uid://brk0pye2sgsww" path="res://addons/dragonforge_game_template/ui/themes_delete/plain/music_display.tscn" id="16_rkb3j"]
+[ext_resource type="PackedScene" uid="uid://cbdby6nhdihtr" path="res://addons/dragonforge_game_template/ui/themes_delete/plain/credits_screen_scrolling.tscn" id="17_s6n7i"]
+[ext_resource type="PackedScene" uid="uid://jkxeyd7qjn6" path="res://addons/dragonforge_game_template/ui/themes_delete/plain/controls_menu.tscn" id="18_awd41"]
+[ext_resource type="PackedScene" uid="uid://cafpr86jr14t2" path="res://addons/dragonforge_game_template/ui/screens_delete/confirmation_quit_dialog.tscn" id="19_5h2d4"]
 [ext_resource type="Script" uid="uid://jlvx3ci4rbmi" path="res://addons/dragonforge_game_template/ui/control_hint.gd" id="20_grx48"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rt2tl"]
@@ -83,11 +83,9 @@ script = ExtResource("1_c77r1")
 
 [node name="Plain Start" parent="." instance=ExtResource("12_bsxny")]
 visible = false
-screen_type = 2
 
 [node name="Plain Settings" parent="." instance=ExtResource("13_6eyr5")]
 visible = false
-screen_type = 7
 
 [node name="Plain  Video" parent="." instance=ExtResource("14_1qtf3")]
 visible = false

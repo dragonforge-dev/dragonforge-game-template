@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkwlgg3reqv6p"]
+
+[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/screen.gd" id="1_of76a"]
+[ext_resource type="Script" uid="uid://dbx17g06kde6w" path="res://addons/dragonforge_game_template/ui/buttons/button_open_screen.gd" id="2_r2p5j"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_of76a")
+metadata/_custom_type_script = "uid://cprxft1lx8m4j"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -130.5
+offset_right = 119.0
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TopDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_type_variation = &"TopDecoration"
+
+[node name="Video" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+text = "Video"
+script = ExtResource("2_r2p5j")
+screen_to_open = "Video"
+
+[node name="Audio" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+text = "Audio"
+script = ExtResource("2_r2p5j")
+screen_to_open = "Audio"
+
+[node name="Controls" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+text = "Controls"
+script = ExtResource("2_r2p5j")
+screen_to_open = "Controls"
+
+[node name="Back" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+expand_icon = true
+script = ExtResource("2_r2p5j")
+screen_to_open = "Start"
+
+[node name="BottomDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_type_variation = &"BottomDecoration"

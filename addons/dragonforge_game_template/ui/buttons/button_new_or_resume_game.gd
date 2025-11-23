@@ -2,12 +2,12 @@ extends Button
 
 
 func _ready() -> void:
-	self.connect("pressed", _onButtonPressed)
+	pressed.connect(_on_button_pressed)
 	if Game.in_progress:
 		text = "Resume Saved Game"
 
 
-func _onButtonPressed() -> void:
+func _on_button_pressed() -> void:
 	if Game.is_loaded:
 		# We are creating an action and sending it to be processed here so that
 		# It will be processed by GameStateMainMenu. In effect we are sending
