@@ -1,6 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://6fjdmh7oedwc"]
+[gd_scene load_steps=25 format=3 uid="uid://6fjdmh7oedwc"]
 
-[ext_resource type="Script" uid="uid://buyjpwl0flpta" path="res://example_3d/game_template_files/main.gd" id="1_1fed4"]
+[ext_resource type="Script" uid="uid://cbdygxoaqt4fh" path="res://addons/dragonforge_game_template/main.gd" id="1_j1w7p"]
 [ext_resource type="Script" uid="uid://i0o4sv7i7cp0" path="res://addons/dragonforge_state_machine/state_machine.gd" id="2_0k747"]
 [ext_resource type="Script" uid="uid://diddwe2khtlx7" path="res://addons/dragonforge_game_template/game_states/game_state_splash_screen.gd" id="3_3fsx3"]
 [ext_resource type="PackedScene" uid="uid://dpypwgpnlx0kb" path="res://addons/dragonforge_user_interface/splash_screens/godot/godot_color_splash_screen.tscn" id="4_d7ehc"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://jd2223iicj5q" path="res://addons/dragonforge_game_template/game_states/game_state_gameplay.gd" id="9_lyh6f"]
 [ext_resource type="PackedScene" uid="uid://dw00qvyib81gf" path="res://addons/dragonforge_game_template/ui/screens/action_display.tscn" id="10_vci2x"]
 [ext_resource type="Script" uid="uid://b716hier1tnm7" path="res://addons/dragonforge_game_template/game_states/game_state_main_menu.gd" id="11_eawnr"]
-[ext_resource type="Resource" uid="uid://b4dxepx0gnspa" path="res://example_3d/assets/sound/music/dragonforge_theme_song.tres" id="12_66yja"]
 [ext_resource type="Texture2D" uid="uid://b6h0ihc2tcxhm" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/godot file 3.png" id="13_2nh0k"]
 [ext_resource type="PackedScene" uid="uid://d2gujmw182d4w" path="res://addons/dragonforge_game_template/ui/screens/audio.tscn" id="14_de6d3"]
 [ext_resource type="PackedScene" uid="uid://dqfau8pvhksue" path="res://addons/dragonforge_game_template/ui/screens/controls.tscn" id="15_voa1y"]
@@ -56,7 +55,7 @@ font_color = Color(0, 0, 0, 1)
 outline_size = 10
 
 [node name="Main" type="Node"]
-script = ExtResource("1_1fed4")
+script = ExtResource("1_j1w7p")
 
 [node name="Game State Machine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
 process_mode = 3
@@ -164,7 +163,6 @@ visible = false
 
 [node name="Main Menu" type="Node" parent="Game State Machine" node_paths=PackedStringArray("main_menu_background", "main_menu", "pause_menu")]
 script = ExtResource("11_eawnr")
-main_menu_music = ExtResource("12_66yja")
 main_menu_background = NodePath("Background")
 main_menu = NodePath("CanvasLayer/Theme/Start")
 pause_menu = NodePath("CanvasLayer/Theme/Start")
