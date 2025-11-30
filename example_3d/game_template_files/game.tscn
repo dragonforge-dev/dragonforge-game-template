@@ -5,4 +5,5 @@
 
 [node name="Game" type="Node" groups=["Persist"]]
 script = ExtResource("1_xtqyu")
+starting_level = "uid://df4qtq20r0vn2"
 player_scene = ExtResource("2_rocvn")
