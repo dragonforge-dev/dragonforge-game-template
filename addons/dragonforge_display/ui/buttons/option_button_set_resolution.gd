@@ -1,6 +1,5 @@
 class_name ResolutionSelectionOptionButton extends OptionButton
 
-
 var supported_resolutions: Array[Vector2i]
 var current_resolution: Vector2i:
 	set(value):
@@ -28,7 +27,8 @@ func _ready() -> void:
 
 
 func _on_resolution_selected(index: int) -> void:
-	Display.set_resolution(supported_resolutions[index])
+	var resolution: Vector2 = supported_resolutions[index]
+	Display.set_resolution(resolution)
 
 
 func _on_resolution_changed(new_resolution: Vector2i) -> void:

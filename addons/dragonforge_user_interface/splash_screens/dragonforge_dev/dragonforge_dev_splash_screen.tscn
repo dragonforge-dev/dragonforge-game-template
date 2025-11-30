@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://iujsdfhqqv4o"]
 
-[ext_resource type="Script" uid="uid://duw1rutluws5t" path="res://addons/dragonforge_user_interface/splash_screen.gd" id="1_nvt6o"]
+[ext_resource type="Script" uid="uid://duw1rutluws5t" path="res://addons/dragonforge_user_interface/ui/screens/splash_screen.gd" id="1_nvt6o"]
 [ext_resource type="Texture2D" uid="uid://b8rvftwg2jdic" path="res://addons/dragonforge_user_interface/splash_screens/dragonforge_dev/Dragonforge Development Logo - Cropped.png" id="2_qip5e"]
 [ext_resource type="AudioStream" uid="uid://cslvxevoonx7j" path="res://addons/dragonforge_user_interface/splash_screens/dragonforge_dev/Asian Sho.wav" id="3_y68wf"]
 

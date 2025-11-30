@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dpypwgpnlx0kb"]
 
-[ext_resource type="Script" uid="uid://duw1rutluws5t" path="res://addons/dragonforge_user_interface/splash_screen.gd" id="1_se2xu"]
-[ext_resource type="VideoStream" path="res://addons/dragonforge_user_interface/splash_screens/godot/stayathomedev_logo-animation.ogv" id="2_otsj5"]
+[ext_resource type="Script" uid="uid://duw1rutluws5t" path="res://addons/dragonforge_user_interface/ui/screens/splash_screen.gd" id="1_se2xu"]
+[ext_resource type="VideoStream" uid="uid://rdhb3l6ainv2" path="res://addons/dragonforge_user_interface/splash_screens/godot/stayathomedev_logo-animation.ogv" id="2_otsj5"]
 
 [node name="Godot Color Splash Screen" type="Control" node_paths=PackedStringArray("video_player")]
 visible = false

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqqvy1p3pt5m6"]
 
-[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/screen.gd" id="1_uxdwy"]
+[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/ui/screens/screen.gd" id="1_uxdwy"]
 [ext_resource type="Script" uid="uid://1e5jknrhaq58" path="res://addons/dragonforge_game_template/ui/buttons/button_quit.gd" id="2_k0hcj"]
-[ext_resource type="Script" uid="uid://dbx17g06kde6w" path="res://addons/dragonforge_game_template/ui/buttons/button_open_screen.gd" id="3_k0hcj"]
+[ext_resource type="Script" uid="uid://bq1x7qgsp1es6" path="res://addons/dragonforge_user_interface/ui/buttons/button_open_screen.gd" id="3_k0hcj"]
 
 [node name="Quit" type="Control"]
 custom_minimum_size = Vector2(200, 100)

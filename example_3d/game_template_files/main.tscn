@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dbrt4a6u3f3gr"]
+[gd_scene load_steps=27 format=3 uid="uid://dbrt4a6u3f3gr"]
 
 [ext_resource type="Script" uid="uid://buyjpwl0flpta" path="res://example_3d/game_template_files/main.gd" id="1_xhj7e"]
 [ext_resource type="Script" uid="uid://i0o4sv7i7cp0" path="res://addons/dragonforge_state_machine/state_machine.gd" id="2_3i8ir"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://b716hier1tnm7" path="res://addons/dragonforge_game_template/game_states/game_state_main_menu.gd" id="11_2u3rc"]
 [ext_resource type="Resource" uid="uid://b4dxepx0gnspa" path="res://example_3d/assets/sound/music/dragonforge_theme_song.tres" id="12_xhj7e"]
 [ext_resource type="Texture2D" uid="uid://b6h0ihc2tcxhm" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/godot file 3.png" id="13_6t1b8"]
+[ext_resource type="Theme" uid="uid://bchymdnuuadoh" path="res://ui/themes/default/default.theme" id="14_2idnb"]
 [ext_resource type="PackedScene" uid="uid://d2gujmw182d4w" path="res://addons/dragonforge_game_template/ui/screens/audio.tscn" id="14_xr8be"]
 [ext_resource type="PackedScene" uid="uid://dqfau8pvhksue" path="res://addons/dragonforge_game_template/ui/screens/controls.tscn" id="15_bgdeg"]
 [ext_resource type="PackedScene" uid="uid://dy26phguentl8" path="res://addons/dragonforge_game_template/ui/screens/credits.tscn" id="16_5g70c"]
@@ -20,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cqqvy1p3pt5m6" path="res://addons/dragonforge_game_template/ui/screens/quit.tscn" id="18_b0cnr"]
 [ext_resource type="PackedScene" uid="uid://dkwlgg3reqv6p" path="res://addons/dragonforge_game_template/ui/screens/settings.tscn" id="19_1l385"]
 [ext_resource type="PackedScene" uid="uid://ddhbqcble1nun" path="res://addons/dragonforge_game_template/ui/screens/start.tscn" id="20_qjdfu"]
-[ext_resource type="PackedScene" uid="uid://c2ybebltrbfne" path="res://addons/dragonforge_game_template/ui/screens/video.tscn" id="21_ueaud"]
+[ext_resource type="PackedScene" uid="uid://c2ybebltrbfne" path="res://addons/dragonforge_display/ui/screens/display.tscn" id="21_yag5t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t62yp"]
 font_size = 72
@@ -203,6 +204,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("14_2idnb")
 
 [node name="Audio" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("14_xr8be")]
 visible = false
@@ -236,6 +238,5 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="Video" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("21_ueaud")]
-visible = false
+[node name="Display" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("21_yag5t")]
 layout_mode = 1

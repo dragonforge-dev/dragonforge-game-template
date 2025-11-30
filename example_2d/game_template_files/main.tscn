@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cqqvy1p3pt5m6" path="res://addons/dragonforge_game_template/ui/screens/quit.tscn" id="18_5qffr"]
 [ext_resource type="PackedScene" uid="uid://dkwlgg3reqv6p" path="res://addons/dragonforge_game_template/ui/screens/settings.tscn" id="19_5w44v"]
 [ext_resource type="PackedScene" uid="uid://ddhbqcble1nun" path="res://addons/dragonforge_game_template/ui/screens/start.tscn" id="20_u40l7"]
-[ext_resource type="PackedScene" uid="uid://c2ybebltrbfne" path="res://addons/dragonforge_game_template/ui/screens/video.tscn" id="21_fudbb"]
+[ext_resource type="PackedScene" uid="uid://c2ybebltrbfne" path="res://addons/dragonforge_display/ui/screens/display.tscn" id="21_fudbb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t62yp"]
 font_size = 72
@@ -216,6 +216,9 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="Display" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("21_fudbb")]
+layout_mode = 1
+
 [node name="Music Display" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("17_jkyvn")]
 visible = false
 layout_mode = 1
@@ -233,9 +236,5 @@ visible = false
 layout_mode = 1
 
 [node name="Start" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("20_u40l7")]
-visible = false
-layout_mode = 1
-
-[node name="Video" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("21_fudbb")]
 visible = false
 layout_mode = 1

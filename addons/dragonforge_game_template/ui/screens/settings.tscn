@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dkwlgg3reqv6p"]
 
-[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/screen.gd" id="1_of76a"]
-[ext_resource type="Script" uid="uid://dbx17g06kde6w" path="res://addons/dragonforge_game_template/ui/buttons/button_open_screen.gd" id="2_r2p5j"]
+[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/ui/screens/screen.gd" id="1_of76a"]
+[ext_resource type="Script" uid="uid://bq1x7qgsp1es6" path="res://addons/dragonforge_user_interface/ui/buttons/button_open_screen.gd" id="2_r2p5j"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -43,12 +43,12 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_type_variation = &"TopDecoration"
 
-[node name="Video" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="Display" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
-text = "Video"
+text = "Display"
 script = ExtResource("2_r2p5j")
-screen_to_open = "Video"
+screen_to_open = "Display"
 
 [node name="Audio" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2

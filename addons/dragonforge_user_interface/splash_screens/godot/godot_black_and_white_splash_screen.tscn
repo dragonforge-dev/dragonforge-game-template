@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://1mevm3fut3t0"]
 
-[ext_resource type="Script" uid="uid://duw1rutluws5t" path="res://addons/dragonforge_user_interface/splash_screen.gd" id="1_v2750"]
+[ext_resource type="Script" uid="uid://duw1rutluws5t" path="res://addons/dragonforge_user_interface/ui/screens/splash_screen.gd" id="1_v2750"]
 [ext_resource type="VideoStream" uid="uid://btraukd8q1y12" path="res://addons/dragonforge_user_interface/splash_screens/godot/stayathomedev_logo-animation-white-log.ogv" id="2_v2750"]
 
 [node name="Godot Black and White Splash Screen" type="Control" node_paths=PackedStringArray("video_player")]

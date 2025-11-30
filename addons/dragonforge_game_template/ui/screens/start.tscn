@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ddhbqcble1nun"]
 
-[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/screen.gd" id="1_tx22b"]
+[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/ui/screens/screen.gd" id="1_tx22b"]
 [ext_resource type="Script" uid="uid://dutfwuvpmtiu1" path="res://addons/dragonforge_game_template/ui/buttons/button_new_or_resume_game.gd" id="2_gnymt"]
-[ext_resource type="Script" uid="uid://dbx17g06kde6w" path="res://addons/dragonforge_game_template/ui/buttons/button_open_screen.gd" id="3_kk3ea"]
+[ext_resource type="Script" uid="uid://bq1x7qgsp1es6" path="res://addons/dragonforge_user_interface/ui/buttons/button_open_screen.gd" id="3_kk3ea"]
 [ext_resource type="Script" uid="uid://cvefjrirkydyn" path="res://addons/dragonforge_game_template/ui/buttons/button_toggle_screen.gd" id="4_5ter5"]
 
 [node name="Start" type="Control"]

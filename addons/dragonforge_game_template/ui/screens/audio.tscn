@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://d2gujmw182d4w"]
 
-[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/screen.gd" id="1_wsbg0"]
+[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/ui/screens/screen.gd" id="1_wsbg0"]
 [ext_resource type="Script" uid="uid://cqao8q4dibouu" path="res://addons/dragonforge_game_template/ui/hsliders/hslider_volume_control.gd" id="2_6m25d"]
 [ext_resource type="Script" uid="uid://cxggtho4256ep" path="res://addons/dragonforge_game_template/ui/labels/label_volume_percentage.gd" id="3_4pu6q"]
-[ext_resource type="Script" uid="uid://dbx17g06kde6w" path="res://addons/dragonforge_game_template/ui/buttons/button_open_screen.gd" id="4_wsbg0"]
+[ext_resource type="Script" uid="uid://bq1x7qgsp1es6" path="res://addons/dragonforge_user_interface/ui/buttons/button_open_screen.gd" id="4_wsbg0"]
 
 [node name="Audio" type="Control"]
 layout_mode = 3

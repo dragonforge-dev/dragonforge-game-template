@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Dragonforge Game Template v0.8"
+config/name="Dragonforge Game Template v0.8.1"
 config/description="A game template for game jams."
-config/version="0.8"
+config/version="0.8.1"
 run/main_scene="res://addons/dragonforge_game_template/main_template.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -25,12 +25,12 @@ Display="*res://addons/dragonforge_display/display.tscn"
 Sound="*res://addons/dragonforge_sound/sound.tscn"
 Music="*res://addons/dragonforge_sound/music.tscn"
 Disk="*res://addons/dragonforge_disk/disk.tscn"
-UI="*res://addons/dragonforge_user_interface/ui.tscn"
 Gamepad="*res://addons/dragonforge_controller/gamepad.tscn"
 Mouse="*res://addons/dragonforge_controller/mouse.tscn"
 Keyboard="*res://addons/dragonforge_controller/keyboard.tscn"
 Controller="*res://addons/dragonforge_controller/controller.tscn"
 Game="*res://addons/dragonforge_game_template/game_base.tscn"
+UI="*res://addons/dragonforge_user_interface/ui.tscn"
 
 [editor_plugins]
 
