@@ -1,5 +1,6 @@
-# Game Configuration
 @tool
+@icon("res://addons/dragonforge_game_template/assets/textures/icons/gears.svg")
+# Game Configuration
 class_name GameConfiguration extends Node
 
 const MAIN_SCENE_SETTING = "application/run/main_scene"

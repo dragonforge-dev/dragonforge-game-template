@@ -1,9 +1,14 @@
 #TODO: Add unit tests.
+@icon("res://addons/dragonforge_disk/assets/textures/icons/floppy-disk-red.svg")
 extends Node
 
-const SETTINGS_PATH = "user://configuration.settings"
-const SAVE_GAME_PATH = "user://game.save"
+const DEFAULT_SETTINGS_PATH = "user://configuration.settings"
+const DEFAULT_SAVE_GAME_PATH = "user://game.save"
 
+## The path to save all settings.
+@export var settings_path: String = DEFAULT_SETTINGS_PATH
+## The path to save all game data.
+@export var save_game_path: String = DEFAULT_SAVE_GAME_PATH
 ## If this value is On, save_game() will be called when the player quits the game.
 @export var save_on_quit: bool = false
 
@@ -13,8 +18,8 @@ var is_ready = false
 
 
 func _ready() -> void:
-	if FileAccess.file_exists(SETTINGS_PATH):
-		configuration_settings = _load_file(SETTINGS_PATH)
+	if FileAccess.file_exists(settings_path):
+		configuration_settings = _load_file(settings_path)
 	ready.connect(func(): is_ready = true)
 
 
@@ -40,14 +45,14 @@ func save_game() -> bool:
 		
 		game_information[node.name] = node.save_node()
 		print("Saving Info for %s: %s" % [node.name, game_information[node.name]])
-	return _save_file(game_information, SAVE_GAME_PATH)
+	return _save_file(game_information, save_game_path)
 
 
 ## Call this to call the `load_node()` function for every node in the Persist
 ## Global Group. The save game, if it exists, will be loaded from disk and the
 ## values propagated to the game objects.
 func load_game() -> void:
-	game_information = _load_file(SAVE_GAME_PATH)
+	game_information = _load_file(save_game_path)
 	if game_information.is_empty():
 		return
 	var saved_nodes = get_tree().get_nodes_in_group("Persist")
@@ -65,17 +70,18 @@ func load_game() -> void:
 ## Stores the passed data under the indicated setting catergory.
 func save_setting(data: Variant, category: String) -> void:
 	configuration_settings[category] = data
-	_save_file(configuration_settings, SETTINGS_PATH)
+	_save_file(configuration_settings, settings_path)
 
 
 ## Returns the stored data for the passed setting category.
+## Returns null if nothing is found.
 func load_setting(category: String) -> Variant:
 	if !is_ready:
-		if FileAccess.file_exists(SETTINGS_PATH):
-			configuration_settings = _load_file(SETTINGS_PATH)
+		if FileAccess.file_exists(settings_path):
+			configuration_settings = _load_file(settings_path)
 	if configuration_settings.has(category):
 		return configuration_settings[category]
-	return ERR_DOES_NOT_EXIST
+	return null
 
 
 ## Takes data and serializes it for saving.

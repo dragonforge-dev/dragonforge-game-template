@@ -1,3 +1,5 @@
+@icon("res://addons/dragonforge_controller/assets/textures/icons/keyboard.svg")
+## Keyboard Autoload
 extends Node
 
 const icon_path = "res://addons/dragonforge_controller/assets/key_icons/"

@@ -1,3 +1,5 @@
+@icon("res://addons/dragonforge_sound/assets/icons/music.svg")
+## Music Autoload
 extends Node
 
 signal now_playing(song: Song)

@@ -1,3 +1,4 @@
+@icon("res://addons/dragonforge_display/assets/textures/icons/monitor.svg")
 extends Node
 
 signal fullscreen(fullscreen_on: bool)
@@ -31,11 +32,11 @@ var active_monitor: int:
 func _ready() -> void:
 	# Monitor Selection
 	var returned_value = Disk.load_setting("Monitor Number")
-	if returned_value == ERR_DOES_NOT_EXIST:
-		active_monitor = DisplayServer.window_get_current_screen()
-	else:
+	if returned_value:
 		active_monitor = returned_value
 		select_monitor(active_monitor)
+	else:
+		active_monitor = DisplayServer.window_get_current_screen()
 	
 	# Resolution Functionality
 	var current_resolution = Disk.load_setting("Current Resolution")

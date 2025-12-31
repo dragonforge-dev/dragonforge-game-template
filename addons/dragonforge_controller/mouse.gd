@@ -1,3 +1,5 @@
+@icon("res://addons/dragonforge_controller/assets/textures/icons/mouse.svg")
+## Mouse Autoload
 extends Node
 
 ## Look sensitivity modifier for 3D camera controls

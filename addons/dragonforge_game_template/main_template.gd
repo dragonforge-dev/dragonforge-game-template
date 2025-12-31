@@ -1,3 +1,4 @@
+@icon("res://addons/dragonforge_game_template/assets/textures/icons/icon_monochrome_dark_16x16.png")
 class_name MainTemplate extends Node
 
 ## This is here in case we aren't allowing the player to skip the splash

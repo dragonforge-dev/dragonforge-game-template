@@ -1,3 +1,5 @@
+@icon("res://addons/dragonforge_controller/assets/textures/icons/device-controller.svg")
+## Gamepad Autoload
 extends Node
 
 # Enumerates the types of controllers that we have button images for.

@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://c2ybebltrbfne"]
 
 [ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/ui/screens/screen.gd" id="1_6ir5c"]
-[ext_resource type="Script" uid="uid://dnnu0sc2v25s3" path="res://addons/dragonforge_display/ui/buttons/option_button_monitor_selection.gd" id="2_3ned3"]
+[ext_resource type="Script" path="res://addons/dragonforge_display/ui/buttons/option_button_monitor_selection.gd" id="2_3ned3"]
 [ext_resource type="Script" uid="uid://bk02n10symmj7" path="res://addons/dragonforge_display/ui/buttons/button_fullscreen.gd" id="3_cxkc2"]
 [ext_resource type="Script" uid="uid://0gegjhvbrn7" path="res://addons/dragonforge_display/ui/buttons/option_button_set_resolution.gd" id="4_mbiyb"]
-[ext_resource type="Script" uid="uid://851d5ffw8aar" path="res://addons/dragonforge_display/ui/hsliders/hslider_scale_zoom.gd" id="5_6mccf"]
-[ext_resource type="Script" uid="uid://crvtlm7xwcjcf" path="res://addons/dragonforge_display/ui/labels/label_scale_zoom_percentage.gd" id="6_06ily"]
+[ext_resource type="Script" path="res://addons/dragonforge_display/ui/hsliders/hslider_scale_zoom.gd" id="5_6mccf"]
+[ext_resource type="Script" path="res://addons/dragonforge_display/ui/labels/label_scale_zoom_percentage.gd" id="6_06ily"]
 [ext_resource type="Script" uid="uid://bq1x7qgsp1es6" path="res://addons/dragonforge_user_interface/ui/buttons/button_open_screen.gd" id="7_6ir5c"]
 
 [node name="Display" type="Control" node_paths=PackedStringArray("default_focused_control")]

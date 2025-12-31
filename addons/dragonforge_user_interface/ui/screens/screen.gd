@@ -81,4 +81,4 @@ func _disconnect_buttons(node: Node) -> void:
 				_default_button_focus_fall_back = null
 			subnode.pressed.disconnect(_on_button_pressed)
 			subnode.focus_entered.disconnect(_on_button_focused.bind(subnode))
-		_connect_buttons(subnode)
+		_disconnect_buttons(subnode)

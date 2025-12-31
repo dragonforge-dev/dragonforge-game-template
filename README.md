@@ -1,16 +1,16 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.5.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 # Dragonforge Game Template
 A Godot game template for game jams.
-# Version 0.8.1
+# Version 0.8.2
 For use with **Godot 4.5-stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
-- [Dragonforge Controller 0.12](https://github.com/dragonforge-dev/dragonforge-controller)
-- [Dragonforge Disk (Save/Load) 0.5](https://github.com/dragonforge-dev/dragonforge-disk)
-- [Dragonforge Display 0.14](https://github.com/dragonforge-dev/dragonforge-display)
-- [Dragonforge Sound 0.14.1](https://github.com/dragonforge-dev/dragonforge-sound)
-- [Dragonforge State Machine 0.4](https://github.com/dragonforge-dev/dragonforge-state-machine)
-- [Dragonforge User Interface 0.1.1](https://github.com/dragonforge-dev/dragonforge-user-interface)
+- [Dragonforge Controller 0.12.1](https://github.com/dragonforge-dev/dragonforge-controller)
+- [Dragonforge Disk (Save/Load) 0.6](https://github.com/dragonforge-dev/dragonforge-disk)
+- [Dragonforge Display 0.14.1](https://github.com/dragonforge-dev/dragonforge-display)
+- [Dragonforge Sound 0.14.2](https://github.com/dragonforge-dev/dragonforge-sound)
+- [Dragonforge State Machine 0.5](https://github.com/dragonforge-dev/dragonforge-state-machine)
+- [Dragonforge User Interface 0.1.3](https://github.com/dragonforge-dev/dragonforge-user-interface)
 # Installation Instructions
 1. Copy all the folders from the `addons` folder into your project's `addons` folder.
 2. Ignore the following errors (they are appearing because the component is not yet enabled):

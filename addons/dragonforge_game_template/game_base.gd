@@ -1,3 +1,4 @@
+@icon("res://addons/dragonforge_game_template/assets/textures/icons/generic_joystick_left.png")
 class_name GameBase extends Node
 
 ## Splash screens have completed or been skipped.

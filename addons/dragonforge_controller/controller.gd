@@ -1,3 +1,5 @@
+@icon("res://addons/dragonforge_controller/assets/textures/icons/generic_joystick_red_right.svg")
+## Controller Autoload
 extends Node
 
 ## Signal that there is a request to load the default keybindings shipped
