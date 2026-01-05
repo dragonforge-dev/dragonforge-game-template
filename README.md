@@ -1,4 +1,8 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.5.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
+[![License](https://img.shields.io/github/license/dragonforge-dev/dragonforge-game-template?logo=mit)](https://github.com/dragonforge-dev/dragonforge-game-template/blob/main/LICENSE)
+[![GitHub release badge](https://badgen.net/github/release/dragonforge-dev/dragonforge-game-template/latest)](https://github.com/dragonforge-dev/dragonforge-game-template/releases/latest)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dragonforge-dev/dragonforge-game-template)](https://img.shields.io/github/languages/code-size/dragonforge-dev/dragonforge-game-template)
+
 # Dragonforge Game Template
 A Godot game template for game jams.
 # Version 0.8.2
