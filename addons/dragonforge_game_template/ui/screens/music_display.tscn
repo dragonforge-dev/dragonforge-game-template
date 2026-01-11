@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d4noq3j0hsh2b"]
 
-[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/screen.gd" id="1_ivb5t"]
+[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/ui/screens/screen.gd" id="1_ivb5t"]
 [ext_resource type="Script" uid="uid://dti4alui5qqx1" path="res://addons/dragonforge_game_template/ui/labels/label_song_title.gd" id="2_6sg22"]
 [ext_resource type="Script" uid="uid://doynbyugfibdl" path="res://addons/dragonforge_game_template/ui/labels/label_song_artist.gd" id="3_75617"]
 [ext_resource type="Script" uid="uid://d3ife8jqx1668" path="res://addons/dragonforge_game_template/ui/labels/label_rich_text_song_album.gd" id="4_a64f1"]
@@ -31,20 +31,49 @@ size_flags_horizontal = 4
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Song Title Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Song Title: "
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Song Title Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "SONG_TITLE"
 horizontal_alignment = 2
 
-[node name="Artisit Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Colon" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Artist:"
+text = ":"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Artisit Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "ARTIST"
 horizontal_alignment = 2
 
-[node name="Album Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Colon" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "Album:"
+size_flags_horizontal = 8
+text = ":"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Album Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "ALBUM"
 horizontal_alignment = 2
+
+[node name="Colon" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = ":"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -74,15 +103,15 @@ script = ExtResource("5_syka1")
 [node name="PlayPauseButton" type="Button" parent="VBoxContainer/MusicPlayer"]
 layout_mode = 2
 toggle_mode = true
-text = "Play"
+text = "PLAY"
 
 [node name="NextSongButton" type="Button" parent="VBoxContainer/MusicPlayer"]
 layout_mode = 2
-text = "Next"
+text = "NEXT"
 
 [node name="PreviousSongButton" type="Button" parent="VBoxContainer/MusicPlayer"]
 layout_mode = 2
-text = "Previous"
+text = "PREVIOUS"
 
 [connection signal="toggled" from="VBoxContainer/MusicPlayer/PlayPauseButton" to="VBoxContainer/MusicPlayer" method="_on_play_pause_button_toggled"]
 [connection signal="pressed" from="VBoxContainer/MusicPlayer/NextSongButton" to="VBoxContainer/MusicPlayer" method="_on_next_song_button_pressed"]

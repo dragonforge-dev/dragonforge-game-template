@@ -1,11 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://d2gujmw182d4w"]
 
 [ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/ui/screens/screen.gd" id="1_wsbg0"]
-[ext_resource type="Script" uid="uid://cqao8q4dibouu" path="res://addons/dragonforge_game_template/ui/hsliders/hslider_volume_control.gd" id="2_6m25d"]
-[ext_resource type="Script" uid="uid://cxggtho4256ep" path="res://addons/dragonforge_game_template/ui/labels/label_volume_percentage.gd" id="3_4pu6q"]
+[ext_resource type="Script" uid="uid://cqao8q4dibouu" path="res://addons/dragonforge_sound/ui/hsliders/hslider_volume_control.gd" id="2_6m25d"]
+[ext_resource type="Script" uid="uid://cxggtho4256ep" path="res://addons/dragonforge_sound/ui/labels/label_volume_percentage.gd" id="3_4pu6q"]
 [ext_resource type="Script" uid="uid://bq1x7qgsp1es6" path="res://addons/dragonforge_user_interface/ui/buttons/button_open_screen.gd" id="4_wsbg0"]
 
 [node name="Audio" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,7 +57,7 @@ theme_type_variation = &"TopDecoration"
 use_parent_material = true
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Volume"
+text = "VOLUME"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer2"]
 layout_mode = 2
@@ -68,22 +69,22 @@ layout_mode = 2
 [node name="MainLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/VBoxLabelContainer"]
 use_parent_material = true
 layout_mode = 2
-text = "Main"
+text = "MAIN"
 
 [node name="MusicLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/VBoxLabelContainer"]
 use_parent_material = true
 layout_mode = 2
-text = "Music"
+text = "MUSIC"
 
 [node name="SFXLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/VBoxLabelContainer"]
 use_parent_material = true
 layout_mode = 2
-text = "SFX"
+text = "SOUND_EFFECTS"
 
 [node name="DialogueLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/VBoxLabelContainer"]
 use_parent_material = true
 layout_mode = 2
-text = "Dialogue"
+text = "DIALOGUE"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
@@ -170,7 +171,7 @@ bus = "Dialogue"
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../HBoxContainer/MarginContainer/VBoxSliderContainer/MainVolumeControl")
 focus_next = NodePath("../HBoxContainer/MarginContainer/VBoxSliderContainer/MainVolumeControl")
-text = "Back"
+text = "BACK"
 expand_icon = true
 script = ExtResource("4_wsbg0")
 screen_to_open = "Settings"

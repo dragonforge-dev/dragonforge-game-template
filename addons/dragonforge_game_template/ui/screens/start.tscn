@@ -48,31 +48,31 @@ theme_type_variation = &"TopDecoration"
 
 [node name="New or Resume Game" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "New Game"
+text = "NEW_GAME"
 script = ExtResource("2_gnymt")
 
 [node name="Settings" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Settings"
+text = "SETTINGS"
 script = ExtResource("3_kk3ea")
 screen_to_open = "Settings"
 
 [node name="MusicDisplay" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 toggle_mode = true
-text = "Music Display"
+text = "MUSIC_DISPLAY"
 script = ExtResource("4_5ter5")
 screen_to_toggle = "Music Display"
 
 [node name="Credits" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Credits"
+text = "CREDITS"
 script = ExtResource("3_kk3ea")
 screen_to_open = "Credits"
 
 [node name="Quit" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit Game"
+text = "QUIT_GAME"
 script = ExtResource("3_kk3ea")
 screen_to_open = "Quit"
 

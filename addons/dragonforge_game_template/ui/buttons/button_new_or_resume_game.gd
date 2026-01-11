@@ -4,7 +4,7 @@ extends Button
 func _ready() -> void:
 	pressed.connect(_on_button_pressed)
 	if Game.in_progress:
-		text = "Resume Saved Game"
+		text = "RESUME_SAVED_GAME"
 
 
 func _on_button_pressed() -> void:
@@ -23,5 +23,5 @@ func _on_button_pressed() -> void:
 		Game.load_level.emit(Game.level_path, null, "")
 		Game.in_progress = true
 		Game.is_loaded = true
-		text = "Resume Game"
+		text = "RESUME_GAME"
 		Disk.save_game()
