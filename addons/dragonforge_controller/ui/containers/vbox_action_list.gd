@@ -5,15 +5,7 @@ extends VBoxContainer
 var is_remapping = false
 var action_to_remap = null
 var remapping_button = null
-## Add action names and the text you would like to show up in the UI here.
-## Only actions added to this list will show up in the UI.
-var input_actions = {
-	"move_up": "Move Up",
-	"move_down": "Move Down",
-	"move_left": "Move Left",
-	"move_right": "Move Right",
-	"interact": "Interact"
-}
+
 
 func _ready() -> void:
 	_create_action_list()
@@ -25,7 +17,7 @@ func _create_action_list() -> void:
 		remove_child(item)
 		item.queue_free()
 	
-	for action in input_actions:
+	for action in Controller.customizable_input_actions:
 		var button = input_button_scene.instantiate()
 		
 		_update_action_list_item(button, action)
@@ -60,7 +52,7 @@ func _input(event) -> void:
 
 func _update_action_list_item(button, action) -> void:
 	var action_label = button.find_child("ActionLabel")
-	action_label.text = input_actions[action]
+	action_label.text = Controller.customizable_input_actions[action]
 	
 	var keyboard_input_label  = button.find_child("KeyboardInputLabel")
 	var keyboard_image  = button.find_child("KeyboardTextureRect")

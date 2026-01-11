@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://c2ybebltrbfne"]
 
 [ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/ui/screens/screen.gd" id="1_6ir5c"]
-[ext_resource type="Script" path="res://addons/dragonforge_display/ui/buttons/option_button_monitor_selection.gd" id="2_3ned3"]
+[ext_resource type="Script" uid="uid://dnnu0sc2v25s3" path="res://addons/dragonforge_display/ui/buttons/option_button_monitor_selection.gd" id="2_3ned3"]
 [ext_resource type="Script" uid="uid://bk02n10symmj7" path="res://addons/dragonforge_display/ui/buttons/button_fullscreen.gd" id="3_cxkc2"]
 [ext_resource type="Script" uid="uid://0gegjhvbrn7" path="res://addons/dragonforge_display/ui/buttons/option_button_set_resolution.gd" id="4_mbiyb"]
-[ext_resource type="Script" path="res://addons/dragonforge_display/ui/hsliders/hslider_scale_zoom.gd" id="5_6mccf"]
-[ext_resource type="Script" path="res://addons/dragonforge_display/ui/labels/label_scale_zoom_percentage.gd" id="6_06ily"]
+[ext_resource type="Script" uid="uid://851d5ffw8aar" path="res://addons/dragonforge_display/ui/hsliders/hslider_scale_zoom.gd" id="5_6mccf"]
+[ext_resource type="Script" uid="uid://crvtlm7xwcjcf" path="res://addons/dragonforge_display/ui/labels/label_scale_zoom_percentage.gd" id="6_06ily"]
 [ext_resource type="Script" uid="uid://bq1x7qgsp1es6" path="res://addons/dragonforge_user_interface/ui/buttons/button_open_screen.gd" id="7_6ir5c"]
 
 [node name="Display" type="Control" node_paths=PackedStringArray("default_focused_control")]
@@ -48,7 +48,7 @@ alignment = 1
 
 [node name="Display Settings" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Display Settings"
+text = "DISPLAY_SETTINGS"
 horizontal_alignment = 1
 
 [node name="TopDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer"]
@@ -62,7 +62,7 @@ size_flags_horizontal = 4
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Monitor"
+text = "MONITOR"
 
 [node name="SelectDisplay" type="OptionButton" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -71,7 +71,7 @@ script = ExtResource("2_3ned3")
 [node name="FullscreenButton" type="CheckButton" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Fullscreen"
+text = "FULLSCREEN"
 script = ExtResource("3_cxkc2")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
@@ -80,7 +80,7 @@ size_flags_horizontal = 4
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "Resolution"
+text = "RESOLUTION"
 
 [node name="Resolution" type="OptionButton" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -92,7 +92,7 @@ size_flags_horizontal = 4
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-text = "Zoom/Scale"
+text = "ZOOM_SCALE"
 
 [node name="ScaleZoom" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(150, 0)
@@ -111,7 +111,7 @@ script = ExtResource("6_06ily")
 
 [node name="Back" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Back"
+text = "BACK"
 expand_icon = true
 script = ExtResource("7_6ir5c")
 screen_to_open = "Settings"

@@ -5,14 +5,14 @@
 
 # Dragonforge Game Template
 A Godot game template for game jams.
-# Version 0.8.2
+# Version 0.9
 For use with **Godot 4.5-stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
-- [Dragonforge Controller 0.12.1](https://github.com/dragonforge-dev/dragonforge-controller)
+- [Dragonforge Controller 0.13](https://github.com/dragonforge-dev/dragonforge-controller)
 - [Dragonforge Disk (Save/Load) 0.6](https://github.com/dragonforge-dev/dragonforge-disk)
-- [Dragonforge Display 0.14.1](https://github.com/dragonforge-dev/dragonforge-display)
-- [Dragonforge Sound 0.14.2](https://github.com/dragonforge-dev/dragonforge-sound)
+- [Dragonforge Display 0.14.2](https://github.com/dragonforge-dev/dragonforge-display)
+- [Dragonforge Sound 0.15](https://github.com/dragonforge-dev/dragonforge-sound)
 - [Dragonforge State Machine 0.5](https://github.com/dragonforge-dev/dragonforge-state-machine)
 - [Dragonforge User Interface 0.1.3](https://github.com/dragonforge-dev/dragonforge-user-interface)
 # Installation Instructions
@@ -218,3 +218,36 @@ This **State** starts monitoring when a level is requested to be loaded by emitt
 ### GameStateMainMenu
 This **State** monitors the `Game.splash_screens_complete` signal and takes over immediately. It is also entered when the game is unpaused and the `pause` action is received. In which case the game is paused and this **State** is entered.
 **GameStateMainMenu** contains the game background for when the start menu loads. Changing that allows you to create a dynamic background, or just change it from the Godot logo. It also contains all of the menus as part of the **UserInterace** node.
+
+# Localization
+This project's UI has been created to work with localization. You can easily use localization by using the [Dragonforge Localization](https://github.com/dragonforge-dev/dragonforge-localization) plugin. The following labels exist and should be given translations:
+
+- VOLUME
+- MAIN
+- MUSIC
+- SOUND_EFFECTS
+- DIALOGUE
+- BACK
+- DISPLAY_SETTINGS
+- MONITOR
+- FULLSCREEN
+- RESOLUTION
+- ZOOM_SCALE
+- ACTION
+- KEYBOARD
+- MOUSE
+- RESET
+- SONG_TITLE
+- ARTIST
+- ALBUM
+- PLAY
+- NEXT
+- PREVIOUS
+- PAUSE
+- NEW_GAME
+- SETTINGS
+- MUSIC_DISPLAY
+- CREDITS
+- QUIT_GAME
+- RESUME_GAME
+- RESUME_SAVED_GAME

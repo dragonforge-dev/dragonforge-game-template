@@ -1,20 +1,20 @@
 [gd_scene load_steps=3 format=3 uid="uid://5flkja4oovpi"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umxb0"]
-bg_color = Color(1, 1, 1, 0.392157)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2046"]
 bg_color = Color(0, 0, 0, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umxb0"]
+bg_color = Color(1, 1, 1, 0.392157)
 
 [node name="InputButton" type="Button"]
 custom_minimum_size = Vector2(0, 50)
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_umxb0")
-theme_override_styles/hover = SubResource("StyleBoxFlat_umxb0")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_umxb0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_t2046")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_umxb0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_umxb0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_umxb0")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

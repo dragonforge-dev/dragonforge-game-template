@@ -1,13 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://dqfau8pvhksue"]
 
 [ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/ui/screens/screen.gd" id="1_viu4j"]
-[ext_resource type="Script" uid="uid://df7wv0yurjtap" path="res://addons/dragonforge_game_template/ui/labels/label_controller_name.gd" id="2_g23j3"]
-[ext_resource type="Script" uid="uid://bfsctifk23o82" path="res://addons/dragonforge_game_template/ui/containers/vbox_action_list.gd" id="3_qe2sw"]
-[ext_resource type="PackedScene" uid="uid://5flkja4oovpi" path="res://addons/dragonforge_game_template/ui/screens/button_input.tscn" id="4_gd7sx"]
+[ext_resource type="Script" uid="uid://df7wv0yurjtap" path="res://addons/dragonforge_controller/ui/labels/label_controller_name.gd" id="2_g23j3"]
+[ext_resource type="Script" uid="uid://bfsctifk23o82" path="res://addons/dragonforge_controller/ui/containers/vbox_action_list.gd" id="3_qe2sw"]
+[ext_resource type="PackedScene" uid="uid://5flkja4oovpi" path="res://addons/dragonforge_controller/ui/buttons/button_input.tscn" id="4_gd7sx"]
 [ext_resource type="Script" uid="uid://bq1x7qgsp1es6" path="res://addons/dragonforge_user_interface/ui/buttons/button_open_screen.gd" id="5_viu4j"]
-[ext_resource type="Script" uid="uid://ehcsw5x41dbb" path="res://addons/dragonforge_game_template/ui/buttons/button_reset_action_mappings.gd" id="6_4a51e"]
+[ext_resource type="Script" uid="uid://ehcsw5x41dbb" path="res://addons/dragonforge_controller/ui/buttons/button_reset_action_mappings.gd" id="6_4a51e"]
 
 [node name="Controls" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,7 +59,7 @@ layout_mode = 2
 [node name="Action" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
-text = "Action"
+text = "ACTION"
 
 [node name="Spacer" type="Control" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -66,7 +67,7 @@ size_flags_horizontal = 3
 
 [node name="Keyboard" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Keyboard"
+text = "KEYBOARD"
 
 [node name="Spacer2" type="Control" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -74,7 +75,7 @@ size_flags_horizontal = 3
 
 [node name="Mouse" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Mouse"
+text = "MOUSE"
 
 [node name="Spacer3" type="Control" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -106,7 +107,7 @@ size_flags_horizontal = 3
 [node name="Back" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Reset")
-text = "Back"
+text = "BACK"
 expand_icon = true
 script = ExtResource("5_viu4j")
 screen_to_open = "Settings"
@@ -118,7 +119,7 @@ size_flags_horizontal = 3
 [node name="Reset" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Back")
-text = "Reset"
+text = "RESET"
 script = ExtResource("6_4a51e")
 
 [node name="Spacer5" type="Control" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]

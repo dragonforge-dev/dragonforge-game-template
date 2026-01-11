@@ -28,6 +28,28 @@ enum LastInput {
 ## playing and freed when the game is paused. Defaults to `false` (off).
 @export var enable_3d_look = false
 
+## Only action names listed here will show up in the UI. Some defaults are shown
+## here. The key must exactly match the action name in Project Settings ->
+## Input Map. The name is the text displayed in the customize UI button.
+## [b]NOTE:[.b] The default display text names are all setup to be ready for
+## translation by the [b]Dragonforge Localization[/b] plugin.
+@export var customizable_input_actions: Dictionary[String,String] = {
+	"move_up": "MOVE_UP",
+	"move_down": "MOVE_DOWN",
+	"move_left": "MOVE_LEFT",
+	"move_right": "MOVE_RIGHT",
+	"interact": "INTERACT"
+}
+## Add action names and the text you would like to show up in the UI here.
+## Only actions added to this list will show up in the UI.
+var input_actions = {
+	"move_up": "Move Up",
+	"move_down": "Move Down",
+	"move_left": "Move Left",
+	"move_right": "Move Right",
+	"interact": "Interact"
+}
+
 ## Stores the amount of movement in the x/y direction that the player is trying
 ## to look in a 3D game. The export variable enable_3d_look must be set to true
 ## for this to have any value. (See dragonforge-character-3d for usage example.)
