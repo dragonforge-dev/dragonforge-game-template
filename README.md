@@ -1,27 +1,23 @@
-[![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.5.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
+[![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.6.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 [![License](https://img.shields.io/github/license/dragonforge-dev/dragonforge-game-template?logo=mit)](https://github.com/dragonforge-dev/dragonforge-game-template/blob/main/LICENSE)
 [![GitHub release badge](https://badgen.net/github/release/dragonforge-dev/dragonforge-game-template/latest)](https://github.com/dragonforge-dev/dragonforge-game-template/releases/latest)
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dragonforge-dev/dragonforge-game-template)](https://img.shields.io/github/languages/code-size/dragonforge-dev/dragonforge-game-template)
 
 # Dragonforge Game Template
 A Godot game template for game jams.
-# Version 0.9
-For use with **Godot 4.5-stable** and later.
+# Version 0.10
+For use with **Godot 4.6-stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
-- [Dragonforge Controller 0.13](https://github.com/dragonforge-dev/dragonforge-controller)
-- [Dragonforge Disk (Save/Load) 0.6](https://github.com/dragonforge-dev/dragonforge-disk)
-- [Dragonforge Display 0.14.2](https://github.com/dragonforge-dev/dragonforge-display)
-- [Dragonforge Sound 0.15](https://github.com/dragonforge-dev/dragonforge-sound)
-- [Dragonforge State Machine 0.5](https://github.com/dragonforge-dev/dragonforge-state-machine)
-- [Dragonforge User Interface 0.1.3](https://github.com/dragonforge-dev/dragonforge-user-interface)
+- [Dragonforge Controller 0.14.1](https://github.com/dragonforge-dev/dragonforge-controller)
+- [Dragonforge Disk (Save/Load) 0.7](https://github.com/dragonforge-dev/dragonforge-disk)
+- [Dragonforge Display 0.15](https://github.com/dragonforge-dev/dragonforge-display)
+- [Dragonforge Sound 0.17](https://github.com/dragonforge-dev/dragonforge-sound)
+- [Dragonforge State Machine 0.6](https://github.com/dragonforge-dev/dragonforge-state-machine)
+- [Dragonforge User Interface 0.2.1](https://github.com/dragonforge-dev/dragonforge-user-interface)
 # Installation Instructions
 1. Copy all the folders from the `addons` folder into your project's `addons` folder.
-2. Ignore the following errors (they are appearing because the component is not yet enabled):
-  * ERROR: res://addons/dragonforge_controller/controller.gd:54 - Parse Error: Identifier "Keyboard" not declared in the current scope.
-  * ERROR: res://addons/dragonforge_controller/controller.gd:56 - Parse Error: Identifier "Mouse" not declared in the current scope.
-  * ERROR: res://addons/dragonforge_controller/controller.gd:59 - Parse Error: Identifier "Gamepad" not declared in the current scope.
-  * ERROR: modules/gdscript/gdscript.cpp:3022 - Failed to load script "res://addons/dragonforge_controller/controller.gd" with error "Parse error".
+2. Ignore any errors (they are appearing because the component is not yet enabled):
 3. In your project go to **Project -> Project Settings...**
 4. Select the **Plugins** tab.
 5. Check the **On checkbox** under **Enabled** for **Dragonforge Disk** (must be enabled **before** the Display and Sound plugins or you will get errors).

@@ -1,7 +1,7 @@
 class_name GameStateMainMenu extends State
 
 ## Music that plays whenever the main menu is visible.
-@export var main_menu_music: Song
+@export var main_menu_music: AudioStream
 ## The number of seconds after the song ends before it starts again.
 @export_range(0.0, 300.0, 0.1, "suffix:seconds") var replay_countdown_time: float = 30.0
 ## The background to display whenever the main menu is visible.
@@ -24,7 +24,7 @@ func _enter_state() -> void:
 	super()
 	Game.pause()
 	if not Music.is_playing() and main_menu_music:
-		main_menu_music.play()
+		Music.play(main_menu_music)
 	if Game.is_loaded:
 		UI.open_screen(pause_menu)
 	else:
@@ -49,4 +49,4 @@ func _input(event: InputEvent) -> void:
 func _on_pause_song_finished() -> void:
 	await get_tree().create_timer(replay_countdown_time).timeout
 	if Game.is_paused():
-		main_menu_music.play()
+		Music.play(main_menu_music)

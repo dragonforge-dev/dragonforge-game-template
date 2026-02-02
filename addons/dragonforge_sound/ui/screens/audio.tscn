@@ -1,100 +1,112 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2gujmw182d4w"]
+[gd_scene format=3 uid="uid://d2gujmw182d4w"]
 
 [ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/ui/screens/screen.gd" id="1_wsbg0"]
+[ext_resource type="Script" uid="uid://bsj6muiyxv134" path="res://addons/dragonforge_sound/ui/labels/label_volume_title.gd" id="2_2plib"]
 [ext_resource type="Script" uid="uid://cqao8q4dibouu" path="res://addons/dragonforge_sound/ui/hsliders/hslider_volume_control.gd" id="2_6m25d"]
 [ext_resource type="Script" uid="uid://cxggtho4256ep" path="res://addons/dragonforge_sound/ui/labels/label_volume_percentage.gd" id="3_4pu6q"]
 [ext_resource type="Script" uid="uid://bq1x7qgsp1es6" path="res://addons/dragonforge_user_interface/ui/buttons/button_open_screen.gd" id="4_wsbg0"]
 
-[node name="Audio" type="Control"]
-visible = false
+[node name="Audio" type="Control" unique_id=675487585]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -169.0
-offset_top = -175.0
-offset_right = 169.0
-offset_bottom = 175.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_wsbg0")
 metadata/_custom_type_script = "uid://cprxft1lx8m4j"
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1478995103]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -140.0
-offset_top = -142.0
-offset_right = 140.0
-offset_bottom = 142.0
+offset_left = -167.0
+offset_top = -136.0
+offset_right = 167.0
+offset_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="MarginContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer" unique_id=304525490]
 layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
-layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="TopDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer2"]
+[node name="TopDecoration" type="Panel" parent="PanelContainer/VBoxContainer2" unique_id=1095681805]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_type_variation = &"TopDecoration"
 
-[node name="Volume" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer2"]
+[node name="Volume" type="Label" parent="PanelContainer/VBoxContainer2" unique_id=1530314699]
 use_parent_material = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "VOLUME"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer2" unique_id=770711742]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer" unique_id=950328522]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer" unique_id=490899969]
+custom_minimum_size = Vector2(334, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+alignment = 1
 
-[node name="VBoxLabelContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer"]
+[node name="VBoxLabelContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=347604658]
 layout_mode = 2
 
-[node name="MainLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/VBoxLabelContainer"]
+[node name="MainLabel" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxLabelContainer" unique_id=764160684]
 use_parent_material = true
 layout_mode = 2
 text = "MAIN"
+script = ExtResource("2_2plib")
+bus = "Master"
 
-[node name="MusicLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/VBoxLabelContainer"]
+[node name="MusicLabel" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxLabelContainer" unique_id=221848179]
 use_parent_material = true
 layout_mode = 2
 text = "MUSIC"
+script = ExtResource("2_2plib")
+bus = "Music"
 
-[node name="SFXLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/VBoxLabelContainer"]
+[node name="SFXLabel" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxLabelContainer" unique_id=1113948518]
 use_parent_material = true
 layout_mode = 2
 text = "SOUND_EFFECTS"
+script = ExtResource("2_2plib")
+bus = "SFX"
 
-[node name="DialogueLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/VBoxLabelContainer"]
+[node name="DialogueLabel" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxLabelContainer" unique_id=485099047]
 use_parent_material = true
 layout_mode = 2
 text = "DIALOGUE"
+script = ExtResource("2_2plib")
+bus = "Dialogue"
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=951686890]
 layout_mode = 2
+theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
 
-[node name="VBoxSliderContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/MarginContainer"]
+[node name="VBoxSliderContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=2582878]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="MainVolumeControl" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/MarginContainer/VBoxSliderContainer"]
+[node name="MainVolumeControl" type="HSlider" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxSliderContainer" unique_id=2137783570]
 use_parent_material = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -106,7 +118,7 @@ step = 0.05
 script = ExtResource("2_6m25d")
 bus = "Master"
 
-[node name="MusicVolumeControl" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/MarginContainer/VBoxSliderContainer"]
+[node name="MusicVolumeControl" type="HSlider" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxSliderContainer" unique_id=518993364]
 use_parent_material = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -116,7 +128,7 @@ step = 0.05
 script = ExtResource("2_6m25d")
 bus = "Music"
 
-[node name="SFXVolumeControl" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/MarginContainer/VBoxSliderContainer"]
+[node name="SFXVolumeControl" type="HSlider" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxSliderContainer" unique_id=34837272]
 use_parent_material = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -126,7 +138,7 @@ step = 0.05
 script = ExtResource("2_6m25d")
 bus = "SFX"
 
-[node name="DialogueVolumeControl" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/MarginContainer/VBoxSliderContainer"]
+[node name="DialogueVolumeControl" type="HSlider" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxSliderContainer" unique_id=811428397]
 use_parent_material = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -136,38 +148,40 @@ step = 0.05
 script = ExtResource("2_6m25d")
 bus = "Dialogue"
 
-[node name="VBoxLabelContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer"]
+[node name="VBoxLabelContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1560099410]
+custom_minimum_size = Vector2(28, 0)
 layout_mode = 2
 
-[node name="MainPercentLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/VBoxLabelContainer2"]
+[node name="MainPercentLabel" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxLabelContainer2" unique_id=893029031]
 use_parent_material = true
+custom_minimum_size = Vector2(28, 0)
 layout_mode = 2
 text = "100"
 script = ExtResource("3_4pu6q")
 bus = "Master"
 
-[node name="MusicPercentLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/VBoxLabelContainer2"]
+[node name="MusicPercentLabel" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxLabelContainer2" unique_id=1017607781]
 use_parent_material = true
 layout_mode = 2
 text = "100"
 script = ExtResource("3_4pu6q")
 bus = "Music"
 
-[node name="SFXPercentLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/VBoxLabelContainer2"]
+[node name="SFXPercentLabel" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxLabelContainer2" unique_id=638139231]
 use_parent_material = true
 layout_mode = 2
 text = "100"
 script = ExtResource("3_4pu6q")
 bus = "SFX"
 
-[node name="DialoguePercentLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer2/HBoxContainer/VBoxLabelContainer2"]
+[node name="DialoguePercentLabel" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxLabelContainer2" unique_id=1536913380]
 use_parent_material = true
 layout_mode = 2
 text = "100"
 script = ExtResource("3_4pu6q")
 bus = "Dialogue"
 
-[node name="Back" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer2"]
+[node name="Back" type="Button" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer" unique_id=364147638]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../HBoxContainer/MarginContainer/VBoxSliderContainer/MainVolumeControl")
 focus_next = NodePath("../HBoxContainer/MarginContainer/VBoxSliderContainer/MainVolumeControl")
@@ -176,7 +190,7 @@ expand_icon = true
 script = ExtResource("4_wsbg0")
 screen_to_open = "Settings"
 
-[node name="BottomDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer2"]
+[node name="BottomDecoration" type="Panel" parent="PanelContainer/VBoxContainer2" unique_id=334227581]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_type_variation = &"BottomDecoration"

@@ -6,6 +6,9 @@ var gamepad_timer: Timer
 
 
 func _ready() -> void:
+	if AudioServer.get_bus_index(bus) == -1:
+		hide()
+		return
 	value = Sound.get_bus_volume(bus)
 	self.value_changed.connect(_on_value_changed)
 	self.gui_input.connect(_on_gui_input)

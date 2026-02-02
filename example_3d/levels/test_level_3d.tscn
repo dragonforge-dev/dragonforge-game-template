@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://df4qtq20r0vn2"]
+[gd_scene format=3 uid="uid://df4qtq20r0vn2"]
 
 [ext_resource type="Script" uid="uid://blge5rlwqwbry" path="res://addons/dragonforge_game_template/map_level_3d.gd" id="1_ljfik"]
-[ext_resource type="Resource" uid="uid://sv75l1ihxgwm" path="res://addons/dragonforge_game_template/assets/sound/music/songs/hero_theme.tres" id="2_2dy4o"]
+[ext_resource type="AudioStream" uid="uid://b24taixafrr4l" path="res://example_3d/assets/sound/music/bgm_03_prairie.wav" id="2_2dy4o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fr335"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -36,69 +36,69 @@ size = Vector3(20, 5.5, 0.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_pqbiu"]
 size = Vector3(20, 5, 0.5)
 
-[node name="TestLevel3D" type="Node3D" node_paths=PackedStringArray("spawn_point")]
+[node name="TestLevel3D" type="Node3D" unique_id=1331096112 node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_ljfik")
 spawn_point = NodePath("Marker3D")
 level_music = ExtResource("2_2dy4o")
 
-[node name="Marker3D" type="Marker3D" parent="."]
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1656623517]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 gizmo_extents = 3.97
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=344285283]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 directional_shadow_max_distance = 1.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=435158546]
 environment = SubResource("Environment_fxeoa")
 
-[node name="Floor" type="StaticBody3D" parent="."]
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1664412740]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1483047048]
 mesh = SubResource("BoxMesh_rcmwp")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=121055519]
 shape = SubResource("BoxShape3D_fr335")
 
-[node name="Walls" type="Node3D" parent="."]
+[node name="Walls" type="Node3D" parent="." unique_id=507789936]
 
-[node name="Wall" type="StaticBody3D" parent="Walls"]
+[node name="Wall" type="StaticBody3D" parent="Walls" unique_id=959766923]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -10)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall" unique_id=1593448885]
 mesh = SubResource("BoxMesh_fr335")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall" unique_id=302430428]
 shape = SubResource("BoxShape3D_pqbiu")
 
-[node name="Wall2" type="StaticBody3D" parent="Walls"]
+[node name="Wall2" type="StaticBody3D" parent="Walls" unique_id=972403947]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 10)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall2" unique_id=767474865]
 mesh = SubResource("BoxMesh_fr335")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall2" unique_id=1470848389]
 shape = SubResource("BoxShape3D_pqbiu")
 
-[node name="Wall3" type="StaticBody3D" parent="Walls"]
+[node name="Wall3" type="StaticBody3D" parent="Walls" unique_id=1453433576]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, 3, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall3" unique_id=90731279]
 mesh = SubResource("BoxMesh_fr335")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall3" unique_id=27751971]
 shape = SubResource("BoxShape3D_pqbiu")
 
-[node name="Wall4" type="StaticBody3D" parent="Walls"]
+[node name="Wall4" type="StaticBody3D" parent="Walls" unique_id=416967136]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, 3, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall4" unique_id=1256074421]
 mesh = SubResource("BoxMesh_fr335")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall4" unique_id=1873142237]
 shape = SubResource("BoxShape3D_pqbiu")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=514288879]
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 9, 10)

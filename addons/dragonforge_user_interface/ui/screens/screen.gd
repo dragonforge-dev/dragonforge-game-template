@@ -54,10 +54,11 @@ func _on_button_focused(button: BaseButton) -> void:
 	_button_last_focused = button
 
 
-# Play the default button pressed sound stored in [Sound].
+# Play the default button pressed sound stored in [Sound] (if [Sound] exists).
 func _on_button_pressed() -> void:
 	if get_tree().root.has_node("Sound"):
-		get_tree().root.get_node("Sound").play_button_pressed_sound()
+		var sound: Variant = get_tree().root.get_node("Sound")
+		sound.play_ui_sound(sound.get_sound("button_pressed"))
 
 
 # Connects any button in the passed node for the button click sound and for

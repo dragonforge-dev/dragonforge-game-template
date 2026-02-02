@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpg2go8u75ewp"]
+[gd_scene format=3 uid="uid://bpg2go8u75ewp"]
 
 [ext_resource type="Script" uid="uid://cvah2umjpyuym" path="res://addons/dragonforge_user_interface/ui.gd" id="1_x81ug"]
 
-[node name="UI" type="Node"]
+[node name="UI" type="Node" unique_id=42754019]
 script = ExtResource("1_x81ug")
