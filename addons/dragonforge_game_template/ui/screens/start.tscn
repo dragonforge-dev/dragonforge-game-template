@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddhbqcble1nun"]
+[gd_scene format=3 uid="uid://ddhbqcble1nun"]
 
 [ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/ui/screens/screen.gd" id="1_tx22b"]
 [ext_resource type="Script" uid="uid://dutfwuvpmtiu1" path="res://addons/dragonforge_game_template/ui/buttons/button_new_or_resume_game.gd" id="2_gnymt"]
 [ext_resource type="Script" uid="uid://bq1x7qgsp1es6" path="res://addons/dragonforge_user_interface/ui/buttons/button_open_screen.gd" id="3_kk3ea"]
-[ext_resource type="Script" uid="uid://cvefjrirkydyn" path="res://addons/dragonforge_game_template/ui/buttons/button_toggle_screen.gd" id="4_5ter5"]
 
-[node name="Start" type="Control"]
+[node name="Start" type="Control" unique_id=1541931687]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,7 +15,7 @@ size_flags_horizontal = 4
 script = ExtResource("1_tx22b")
 metadata/_custom_type_script = "uid://cprxft1lx8m4j"
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=727183149]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -30,53 +29,46 @@ offset_bottom = 130.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="MarginContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1975399167]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1873357482]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1706994895]
 layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="TopDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="TopDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1997081763]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_type_variation = &"TopDecoration"
 
-[node name="New or Resume Game" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="New or Resume Game" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=448696934]
 layout_mode = 2
 text = "NEW_GAME"
 script = ExtResource("2_gnymt")
 
-[node name="Settings" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1862198953]
 layout_mode = 2
 text = "SETTINGS"
 script = ExtResource("3_kk3ea")
 screen_to_open = "Settings"
 
-[node name="MusicDisplay" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-toggle_mode = true
-text = "MUSIC_DISPLAY"
-script = ExtResource("4_5ter5")
-screen_to_toggle = "Music Display"
-
-[node name="Credits" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="Credits" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=558524588]
 layout_mode = 2
 text = "CREDITS"
 script = ExtResource("3_kk3ea")
 screen_to_open = "Credits"
 
-[node name="Quit" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1077757888]
 layout_mode = 2
 text = "QUIT_GAME"
 script = ExtResource("3_kk3ea")
 screen_to_open = "Quit"
 
-[node name="BottomDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="BottomDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=505138559]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_type_variation = &"BottomDecoration"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://6fjdmh7oedwc"]
+[gd_scene format=3 uid="uid://6fjdmh7oedwc"]
 
 [ext_resource type="Script" uid="uid://cbdygxoaqt4fh" path="res://addons/dragonforge_game_template/main.gd" id="1_j1w7p"]
 [ext_resource type="Script" uid="uid://i0o4sv7i7cp0" path="res://addons/dragonforge_state_machine/state_machine.gd" id="2_0k747"]
@@ -9,13 +9,11 @@
 [ext_resource type="Script" uid="uid://7h7dfu4itm5m" path="res://addons/dragonforge_game_template/game_states/game_state_loading.gd" id="7_7jr54"]
 [ext_resource type="Texture2D" uid="uid://dcf5kxmahsco7" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/PNG_Godot Font 1 Circle Cloud.png" id="8_gburs"]
 [ext_resource type="Script" uid="uid://jd2223iicj5q" path="res://addons/dragonforge_game_template/game_states/game_state_gameplay.gd" id="9_lyh6f"]
-[ext_resource type="PackedScene" uid="uid://dw00qvyib81gf" path="res://addons/dragonforge_game_template/ui/screens/action_display.tscn" id="10_vci2x"]
+[ext_resource type="PackedScene" uid="uid://dw00qvyib81gf" path="res://addons/dragonforge_controller/ui/screens/action_display.tscn" id="10_vci2x"]
 [ext_resource type="Script" uid="uid://b716hier1tnm7" path="res://addons/dragonforge_game_template/game_states/game_state_main_menu.gd" id="11_eawnr"]
 [ext_resource type="Texture2D" uid="uid://b6h0ihc2tcxhm" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/godot file 3.png" id="13_2nh0k"]
-[ext_resource type="PackedScene" uid="uid://d2gujmw182d4w" path="res://addons/dragonforge_game_template/ui/screens/audio.tscn" id="14_de6d3"]
-[ext_resource type="PackedScene" uid="uid://dqfau8pvhksue" path="res://addons/dragonforge_game_template/ui/screens/controls.tscn" id="15_voa1y"]
-[ext_resource type="PackedScene" uid="uid://dy26phguentl8" path="res://addons/dragonforge_game_template/ui/screens/credits.tscn" id="16_syjoj"]
-[ext_resource type="PackedScene" uid="uid://d4noq3j0hsh2b" path="res://addons/dragonforge_game_template/ui/screens/music_display.tscn" id="17_guj4h"]
+[ext_resource type="PackedScene" uid="uid://d2gujmw182d4w" path="res://addons/dragonforge_sound/ui/screens/audio.tscn" id="14_de6d3"]
+[ext_resource type="PackedScene" uid="uid://dqfau8pvhksue" path="res://addons/dragonforge_controller/ui/screens/controls.tscn" id="15_voa1y"]
 [ext_resource type="PackedScene" uid="uid://cqqvy1p3pt5m6" path="res://addons/dragonforge_game_template/ui/screens/quit.tscn" id="18_4jktj"]
 [ext_resource type="PackedScene" uid="uid://dkwlgg3reqv6p" path="res://addons/dragonforge_game_template/ui/screens/settings.tscn" id="19_jam7r"]
 [ext_resource type="PackedScene" uid="uid://ddhbqcble1nun" path="res://addons/dragonforge_game_template/ui/screens/start.tscn" id="20_ear1b"]
@@ -54,34 +52,34 @@ font_size = 72
 font_color = Color(0, 0, 0, 1)
 outline_size = 10
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=595299587]
 script = ExtResource("1_j1w7p")
 
-[node name="Game State Machine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+[node name="Game State Machine" type="Node" parent="." unique_id=1273663064 node_paths=PackedStringArray("starting_state")]
 process_mode = 3
 script = ExtResource("2_0k747")
 starting_state = NodePath("Splash Screen")
 metadata/_custom_type_script = "uid://i0o4sv7i7cp0"
 
-[node name="Splash Screen" type="Node" parent="Game State Machine" node_paths=PackedStringArray("active_splash_screens")]
+[node name="Splash Screen" type="Node" parent="Game State Machine" unique_id=1947184488 node_paths=PackedStringArray("active_splash_screens")]
 script = ExtResource("3_3fsx3")
 active_splash_screens = [NodePath("Godot Color Splash Screen"), NodePath("Dragonforge Dev Splash Screen")]
 metadata/_custom_type_script = "uid://diddwe2khtlx7"
 
-[node name="Godot Color Splash Screen" parent="Game State Machine/Splash Screen" instance=ExtResource("4_d7ehc")]
+[node name="Godot Color Splash Screen" parent="Game State Machine/Splash Screen" unique_id=417411336 instance=ExtResource("4_d7ehc")]
 
-[node name="Godot Black and White Splash Screen" parent="Game State Machine/Splash Screen" instance=ExtResource("5_3150d")]
+[node name="Godot Black and White Splash Screen" parent="Game State Machine/Splash Screen" unique_id=1730515234 instance=ExtResource("5_3150d")]
 
-[node name="Dragonforge Dev Splash Screen" parent="Game State Machine/Splash Screen" instance=ExtResource("6_wnhy6")]
+[node name="Dragonforge Dev Splash Screen" parent="Game State Machine/Splash Screen" unique_id=162513764 instance=ExtResource("6_wnhy6")]
 
-[node name="Loading" type="Node" parent="Game State Machine"]
+[node name="Loading" type="Node" parent="Game State Machine" unique_id=78000927]
 script = ExtResource("7_7jr54")
 metadata/_custom_type_script = "uid://7h7dfu4itm5m"
 
-[node name="Loading Screen" type="CanvasLayer" parent="Game State Machine/Loading"]
+[node name="Loading Screen" type="CanvasLayer" parent="Game State Machine/Loading" unique_id=1225394466]
 visible = false
 
-[node name="Background" type="ColorRect" parent="Game State Machine/Loading/Loading Screen"]
+[node name="Background" type="ColorRect" parent="Game State Machine/Loading/Loading Screen" unique_id=92942329]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -89,7 +87,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0852618, 0.209337, 0.303794, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="Game State Machine/Loading/Loading Screen/Background"]
+[node name="MarginContainer" type="MarginContainer" parent="Game State Machine/Loading/Loading Screen/Background" unique_id=1661630090]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -99,13 +97,13 @@ grow_vertical = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 
-[node name="BackgroundImage" type="TextureRect" parent="Game State Machine/Loading/Loading Screen/Background/MarginContainer"]
+[node name="BackgroundImage" type="TextureRect" parent="Game State Machine/Loading/Loading Screen/Background/MarginContainer" unique_id=1008632806]
 layout_mode = 2
 texture = ExtResource("8_gburs")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Game State Machine/Loading/Loading Screen"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Game State Machine/Loading/Loading Screen" unique_id=1311366586]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -118,13 +116,13 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LoadingLabel" type="Label" parent="Game State Machine/Loading/Loading Screen/VBoxContainer"]
+[node name="LoadingLabel" type="Label" parent="Game State Machine/Loading/Loading Screen/VBoxContainer" unique_id=1297086046]
 layout_mode = 2
 text = "LOADING..."
 label_settings = SubResource("LabelSettings_t62yp")
 horizontal_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="Game State Machine/Loading/Loading Screen/VBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="Game State Machine/Loading/Loading Screen/VBoxContainer" unique_id=1114485374]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(800, 75)
 layout_mode = 2
@@ -135,7 +133,7 @@ step = 0.0
 value = 0.5
 show_percentage = false
 
-[node name="PrecentageLabel" type="Label" parent="Game State Machine/Loading/Loading Screen/VBoxContainer/ProgressBar"]
+[node name="PrecentageLabel" type="Label" parent="Game State Machine/Loading/Loading Screen/VBoxContainer/ProgressBar" unique_id=308200151]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -154,21 +152,21 @@ label_settings = SubResource("LabelSettings_nuw6w")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Gameplay" type="Node" parent="Game State Machine"]
+[node name="Gameplay" type="Node" parent="Game State Machine" unique_id=1503087949]
 script = ExtResource("9_lyh6f")
 metadata/_custom_type_script = "uid://jd2223iicj5q"
 
-[node name="Action Display" parent="Game State Machine/Gameplay" instance=ExtResource("10_vci2x")]
+[node name="Action Display" parent="Game State Machine/Gameplay" unique_id=957711280 instance=ExtResource("10_vci2x")]
 visible = false
 
-[node name="Main Menu" type="Node" parent="Game State Machine" node_paths=PackedStringArray("main_menu_background", "main_menu", "pause_menu")]
+[node name="Main Menu" type="Node" parent="Game State Machine" unique_id=566528286 node_paths=PackedStringArray("main_menu_background", "main_menu", "pause_menu")]
 script = ExtResource("11_eawnr")
 main_menu_background = NodePath("Background")
 main_menu = NodePath("CanvasLayer/Theme/Start")
 pause_menu = NodePath("CanvasLayer/Theme/Start")
 metadata/_custom_type_script = "uid://b716hier1tnm7"
 
-[node name="Background" type="ColorRect" parent="Game State Machine/Main Menu"]
+[node name="Background" type="ColorRect" parent="Game State Machine/Main Menu" unique_id=2125249843]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -176,7 +174,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="Game State Machine/Main Menu/Background"]
+[node name="MarginContainer" type="MarginContainer" parent="Game State Machine/Main Menu/Background" unique_id=1321631804]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -186,15 +184,15 @@ grow_vertical = 2
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="BackgroundImage" type="TextureRect" parent="Game State Machine/Main Menu/Background/MarginContainer"]
+[node name="BackgroundImage" type="TextureRect" parent="Game State Machine/Main Menu/Background/MarginContainer" unique_id=1231203270]
 layout_mode = 2
 texture = ExtResource("13_2nh0k")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Game State Machine/Main Menu"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Game State Machine/Main Menu" unique_id=1599233160]
 
-[node name="Theme" type="Control" parent="Game State Machine/Main Menu/CanvasLayer"]
+[node name="Theme" type="Control" parent="Game State Machine/Main Menu/CanvasLayer" unique_id=350718410]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -202,26 +200,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Audio" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("14_de6d3")]
+[node name="Audio" parent="Game State Machine/Main Menu/CanvasLayer/Theme" unique_id=958825840 instance=ExtResource("14_de6d3")]
 visible = false
 layout_mode = 1
 
-[node name="Controls" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("15_voa1y")]
-visible = false
+[node name="Controls" parent="Game State Machine/Main Menu/CanvasLayer/Theme" unique_id=600587726 instance=ExtResource("15_voa1y")]
 layout_mode = 1
 
-[node name="Credits" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("16_syjoj")]
-visible = false
+[node name="Display" parent="Game State Machine/Main Menu/CanvasLayer/Theme" unique_id=149570010 instance=ExtResource("21_mrcob")]
 layout_mode = 1
 
-[node name="Display" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("21_mrcob")]
-layout_mode = 1
-
-[node name="Music Display" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("17_guj4h")]
-visible = false
-layout_mode = 1
-
-[node name="Quit" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("18_4jktj")]
+[node name="Quit" parent="Game State Machine/Main Menu/CanvasLayer/Theme" unique_id=1124354931 instance=ExtResource("18_4jktj")]
 visible = false
 layout_mode = 1
 offset_left = -100.0
@@ -229,10 +218,10 @@ offset_top = -50.0
 offset_right = 100.0
 offset_bottom = 50.0
 
-[node name="Settings" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("19_jam7r")]
+[node name="Settings" parent="Game State Machine/Main Menu/CanvasLayer/Theme" unique_id=1518652636 instance=ExtResource("19_jam7r")]
 visible = false
 layout_mode = 1
 
-[node name="Start" parent="Game State Machine/Main Menu/CanvasLayer/Theme" instance=ExtResource("20_ear1b")]
+[node name="Start" parent="Game State Machine/Main Menu/CanvasLayer/Theme" unique_id=1678230170 instance=ExtResource("20_ear1b")]
 visible = false
 layout_mode = 1

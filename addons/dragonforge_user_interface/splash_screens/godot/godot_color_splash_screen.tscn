@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpypwgpnlx0kb"]
+[gd_scene format=3 uid="uid://dpypwgpnlx0kb"]
 
 [ext_resource type="Script" uid="uid://duw1rutluws5t" path="res://addons/dragonforge_user_interface/ui/screens/splash_screen.gd" id="1_se2xu"]
 [ext_resource type="VideoStream" uid="uid://rdhb3l6ainv2" path="res://addons/dragonforge_user_interface/splash_screens/godot/stayathomedev_logo-animation.ogv" id="2_otsj5"]
 
-[node name="Godot Color Splash Screen" type="Control" node_paths=PackedStringArray("video_player")]
+[node name="Godot Color Splash Screen" type="Control" unique_id=1547990830 node_paths=PackedStringArray("video_player")]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -16,7 +16,7 @@ display_time = 4.5
 video_player = NodePath("VideoStreamPlayer")
 metadata/_custom_type_script = "uid://duw1rutluws5t"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1770047223]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=853414432]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

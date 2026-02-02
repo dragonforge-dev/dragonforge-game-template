@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbwis4cvtrlxp"]
+[gd_scene format=3 uid="uid://bbwis4cvtrlxp"]
 
 [ext_resource type="Script" uid="uid://dkhjdypn3iqga" path="res://addons/dragonforge_sound/sound.gd" id="1_qkf74"]
 [ext_resource type="AudioStream" uid="uid://cpeki2se3tx20" path="res://addons/dragonforge_sound/assets/sound/sfx/click/UI2_Button_1.wav" id="2_bmmo0"]
@@ -8,31 +8,21 @@
 [sub_resource type="Resource" id="Resource_1yto7"]
 script = ExtResource("4_vlef6")
 sounds = Dictionary[String, AudioStream]({
-"button_pressed": ExtResource("2_bmmo0"),
-"volume_confirm": ExtResource("3_a4m8v")
+"button_pressed": ExtResource("2_bmmo0")
 })
 metadata/_custom_type_script = "uid://byl24usjgcm7p"
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_xiywv"]
-
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_n2t86"]
-
-[node name="Sound" type="Node"]
+[node name="Sound" type="Node" unique_id=503082837]
 script = ExtResource("1_qkf74")
 ui_sounds = SubResource("Resource_1yto7")
 
-[node name="DialoguePlayer" type="AudioStreamPlayer" parent="."]
-process_mode = 1
-bus = &"Dialogue"
-
-[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
-process_mode = 1
-stream = SubResource("AudioStreamPolyphonic_xiywv")
-max_polyphony = 32
-bus = &"SFX"
-
-[node name="UISoundPlayer" type="AudioStreamPlayer" parent="."]
+[node name="DialoguePlayer" type="AudioStreamPlayer" parent="." unique_id=884944979]
 process_mode = 3
-stream = SubResource("AudioStreamPolyphonic_n2t86")
+
+[node name="UISoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1224156102]
+process_mode = 3
 max_polyphony = 32
-bus = &"UI"
+
+[node name="VolumeConfirmSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1890324662]
+process_mode = 2
+stream = ExtResource("3_a4m8v")

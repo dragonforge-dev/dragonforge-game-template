@@ -1,7 +1,7 @@
 class_name MapLevel2D extends Node2D
 
 @export var spawn_point: Node2D
-@export var level_music: Song
+@export var level_music: AudioStream
 
 var player: CharacterBody2D
 
@@ -29,6 +29,6 @@ func start(incoming_player: Node, incoming_spawn_position: String) -> void:
 	player.position = Vector2(spawn_point.position.x, spawn_point.position.y)
 	player.set_physics_process(true)
 	if level_music:
-		level_music.play()
+		Music.play(level_music)
 	Disk.load_game()
 	player.show()

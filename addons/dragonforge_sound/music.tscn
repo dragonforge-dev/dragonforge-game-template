@@ -1,14 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://ch5f3qaxf3i7m"]
+[gd_scene format=3 uid="uid://ch5f3qaxf3i7m"]
 
 [ext_resource type="Script" uid="uid://cus6a13t6qqco" path="res://addons/dragonforge_sound/music.gd" id="1_7o7ux"]
 
-[node name="Music" type="Node"]
+[node name="Music" type="Node" unique_id=1082800730]
 script = ExtResource("1_7o7ux")
 
-[node name="GameMusicPlayer" type="AudioStreamPlayer" parent="."]
+[node name="GameMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1145556073]
 process_mode = 1
-bus = &"Music"
 
-[node name="PausedGameMusicPlayer" type="AudioStreamPlayer" parent="."]
+[node name="PausedGameMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1701520160]
 process_mode = 2
-bus = &"Music"

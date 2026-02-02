@@ -8,13 +8,17 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
-config/name="Dragonforge Game Template v0.9"
+config/name="Dragonforge Game Template v0.10"
 config/description="A game template for game jams."
-config/version="0.9"
-run/main_scene="res://addons/dragonforge_game_template/main_template.tscn"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/version="0.10"
+run/main_scene="res://addons/dragonforge_game_template/main.tscn"
+config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="uid://owrnlmkqcu27"
@@ -30,7 +34,7 @@ Mouse="*res://addons/dragonforge_controller/mouse.tscn"
 Keyboard="*res://addons/dragonforge_controller/keyboard.tscn"
 Controller="*res://addons/dragonforge_controller/controller.tscn"
 UI="*res://addons/dragonforge_user_interface/ui.tscn"
-Game="*res://addons/dragonforge_game_template/game_base.tscn"
+Game="*uid://hox7guprntrc"
 
 [editor_plugins]
 

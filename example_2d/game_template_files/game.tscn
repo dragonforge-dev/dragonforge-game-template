@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ya5joap453ji"]
+[gd_scene format=3 uid="uid://ya5joap453ji"]
 
 [ext_resource type="Script" uid="uid://bb1447ukusqve" path="res://example_2d/game_template_files/game.gd" id="1_lm4fu"]
 [ext_resource type="PackedScene" uid="uid://6nqucutpoirn" path="res://example_2d/characters/test_character_2d.tscn" id="2_my808"]
 
-[node name="Game" type="Node" groups=["Persist"]]
+[node name="Game" type="Node" unique_id=1625483451 groups=["Persist"]]
 script = ExtResource("1_lm4fu")
 starting_level = "uid://bluou3no6spkg"
 player_scene = ExtResource("2_my808")

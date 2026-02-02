@@ -1,19 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bluou3no6spkg"]
+[gd_scene format=3 uid="uid://bluou3no6spkg"]
 
 [ext_resource type="Texture2D" uid="uid://dcf5kxmahsco7" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/PNG_Godot Font 1 Circle Cloud.png" id="1_7rdr6"]
 [ext_resource type="Script" uid="uid://d3v8do706twot" path="res://addons/dragonforge_game_template/map_level_2d.gd" id="1_iifpw"]
-[ext_resource type="Resource" uid="uid://cc7b2koxhbs1p" path="res://addons/dragonforge_game_template/assets/sound/music/songs/pairie_theme.tres" id="2_rrdtb"]
+[ext_resource type="AudioStream" uid="uid://kug5or8n56bb" path="res://example_2d/assets/sound/music/bgm_01_hero.wav" id="2_aibuv"]
 
-[node name="TestLevel2D" type="Node2D" node_paths=PackedStringArray("spawn_point")]
+[node name="TestLevel2D" type="Node2D" unique_id=677675809 node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_iifpw")
 spawn_point = NodePath("Marker2D")
-level_music = ExtResource("2_rrdtb")
+level_music = ExtResource("2_aibuv")
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Marker2D" type="Marker2D" parent="." unique_id=359058897]
 position = Vector2(0, -60)
 gizmo_extents = 50.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1282405978]
 texture = ExtResource("1_7rdr6")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1643391460]
