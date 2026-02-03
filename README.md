@@ -5,7 +5,7 @@
 
 # Dragonforge Game Template
 A Godot game template for game jams.
-# Version 0.10
+# Version 0.10.1
 For use with **Godot 4.6-stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
