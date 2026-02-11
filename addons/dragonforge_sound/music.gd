@@ -56,8 +56,16 @@ func _notification(what: int) -> void:
 	match what:
 		NOTIFICATION_PAUSED:
 			music_player = paused_game_music_player
+			if paused_game_music_player.get_playback_position():
+				song_started.emit()
+			elif game_music_player.get_playback_position():
+				song_stopped.emit()
 		NOTIFICATION_UNPAUSED:
 			music_player = game_music_player
+			if game_music_player.get_playback_position():
+				song_started.emit()
+			elif paused_game_music_player.get_playback_position():
+				song_stopped.emit()
 
 
 ## Plays an AudioStream through the music channel. If a Song resource is passed,
@@ -106,12 +114,14 @@ func stop(fade: Fade = Fade.NONE, fade_time: float = DEFAULT_FADE_TIME) -> void:
 ## Returns the playback position where the stream was paused as a float.
 func pause() -> float:
 	music_player.stream_paused = true
+	song_stopped.emit()
 	return music_player.get_playback_position()
 
 
 ## Unpauses the currently queued music.
 func unpause() -> void:
 	music_player.stream_paused = false
+	song_started.emit()
 
 
 ## Returns whether or not music is currently paused.
@@ -169,37 +179,10 @@ func cross_fade(audio_stream_player: AudioStreamPlayer, audio_stream: AudioStrea
 	temp_player.queue_free()
 
 
-## Returns the title, artist and album for the currently playing song if they
-## are stored in the metadata of the song and the stream is of type
-## [AudioStreamOggVorbis] or [AudioStreamWAV].
-## NOTE: [AudioStreamMP3] is not supported by Godot at this time.
-func get_song_info_bbcode() -> String:
-	var return_string: String = ""
-	if music_player.stream is AudioStreamOggVorbis or music_player.stream is AudioStreamWAV:
-		var tags: Dictionary = music_player.stream.get_tags()
-		var title: String
-		var artist: String
-		var album: String
-		
-		if tags.has("title"):
-			title = tags["title"]
-		else:
-			title = music_player.stream.resource_path.get_file().to_snake_case().trim_suffix(".ogg").trim_suffix(".wav").capitalize()
-		
-		return_string += "Song Playing: [color=lawn_green]" + title + "[/color] "
-		
-		if tags.has("artist"):
-			artist = tags["artist"]
-		elif tags.has("album_artist"):
-			artist = tags["album_artist"]
-		
-		if artist:
-			return_string += "by [color=cornflower_blue]" + artist + "[/color] "
-		
-		if tags.has("album"):
-			album = tags["album"]
-			return_string += "from [color=cornflower_blue]" + album + "[/color] "
-	return return_string
+func get_current_song() -> Song:
+	var song = Song.new()
+	song.stream = music_player.stream
+	return song
 
 
 ## Prints to the log the details of the song currently playing when a new song
@@ -207,14 +190,4 @@ func get_song_info_bbcode() -> String:
 ## been set. Only works for [AudioStreamOggVorbis] and some [AudioStreamWAV]
 ## files, because that's all Godot supports.
 func _on_song_started() -> void:
-	print_rich(get_song_info_bbcode())
-		#print_rich("Song Playing: [color=lawn_green]%s[/color]" % [song.title])
-		#else:
-			#print_rich("Song Playing: [color=lawn_green][b]%s[/b][/color] by [color=cornflower_blue]%s[/color]" % [song.title, song.get_album_artist()])
-			#var album_name = song.get_album_name()
-			#if song.album.link.is_empty():
-				#album_name = "[color=cornflower_blue]" + album_name + "[/color]"
-			#else:
-				#var url = "[url=" + song.get_album_link() +"]"
-				#album_name = "[color=light_sky_blue]" + url + album_name + "[/url][/color]"
-			#print_rich("Album: %s" % album_name)
+	print_rich(get_current_song().get_song_info_as_bbcode())

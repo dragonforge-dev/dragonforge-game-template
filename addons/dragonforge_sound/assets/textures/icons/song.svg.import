@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6sycolekxnrj"
-path="res://.godot/imported/sound-effect.svg-990f00f96419c75db459f807b08dab59.ctex"
+uid="uid://ddj5411pqr3p4"
+path="res://.godot/imported/song.svg-5ee24a79c3a1581b9f781aa3e293715d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/dragonforge_sound/assets/textures/icons/sound-effect.svg"
-dest_files=["res://.godot/imported/sound-effect.svg-990f00f96419c75db459f807b08dab59.ctex"]
+source_file="res://addons/dragonforge_sound/assets/textures/icons/song.svg"
+dest_files=["res://.godot/imported/song.svg-5ee24a79c3a1581b9f781aa3e293715d.ctex"]
 
 [params]
 
