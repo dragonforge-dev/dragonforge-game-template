@@ -25,8 +25,9 @@ enum LastInput {
 
 ## When true, 3D look is on for the game. The right stick will look, as well
 ## as the mouse. In addition the mouse will be captured when the game is
-## playing and freed when the game is paused. Defaults to `false` (off).
-@export var enable_3d_look = false
+## playing and freed when the game is paused. Defaults to `true` (on).
+## This can be turned off for 2D games.
+@export var enable_3d_look = true
 
 ## Only action names listed here will show up in the UI. Some defaults are shown
 ## here. The key must exactly match the action name in Project Settings ->
@@ -89,9 +90,9 @@ func _notification(what: int) -> void:
 	
 	match what:
 		NOTIFICATION_PAUSED:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		NOTIFICATION_UNPAUSED:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		NOTIFICATION_UNPAUSED:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 ## Returns the last input type used by the player.

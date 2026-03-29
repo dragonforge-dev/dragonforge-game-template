@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://dd2k76ahtafiv"]
+
+[ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/ui/screens/screen.gd" id="1_p1ojr"]
+[ext_resource type="Script" uid="uid://brorrkk2k5lps" path="res://addons/dragonforge_controller_ui/containers/look_sensitivity_container.gd" id="2_p1ypf"]
+
+[node name="GamePlay" type="Control" unique_id=334598977]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p1ojr")
+metadata/_custom_type_script = "uid://cprxft1lx8m4j"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=48794842]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1395225499]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=2079472784]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="GamePlay" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1017844159]
+layout_mode = 2
+text = "GAMEPLAY_SETTINGS"
+horizontal_alignment = 1
+
+[node name="Look Sensitivity Container" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1504244776]
+layout_mode = 2
+theme_override_constants/separation = 15
+script = ExtResource("2_p1ypf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Look Sensitivity Container" unique_id=1047066621]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Look Sensitivity Container/VBoxContainer" unique_id=69395887]
+layout_mode = 2
+text = "MOUSE_LOOK_SENSITIVITY"
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Look Sensitivity Container/VBoxContainer" unique_id=1168586960]
+layout_mode = 2
+text = "GAMEPAD_X_LOOK_SENSITIVITY"
+
+[node name="Label4" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Look Sensitivity Container/VBoxContainer" unique_id=861616532]
+layout_mode = 2
+text = "GAMEPAD_Y_LOOK_SENSITIVITY"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Look Sensitivity Container" unique_id=709726763]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Mouse Look Sensitivity HSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/Look Sensitivity Container/VBoxContainer2" unique_id=187817740]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.001
+
+[node name="Gamepad X Look Sensitivity HSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/Look Sensitivity Container/VBoxContainer2" unique_id=773298531]
+layout_mode = 2
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.001
+
+[node name="Gamepad Y Look Sensitivity HSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/Look Sensitivity Container/VBoxContainer2" unique_id=779811385]
+layout_mode = 2
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.001
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Look Sensitivity Container" unique_id=1120637892]
+layout_mode = 2
+
+[node name="Mouse Look Sensitivity Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Look Sensitivity Container/VBoxContainer3" unique_id=2068461095]
+layout_mode = 2
+text = "0.001"
+
+[node name="Gamepad X Look Sensitivity Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Look Sensitivity Container/VBoxContainer3" unique_id=1925800042]
+layout_mode = 2
+text = "0.001"
+
+[node name="Gamepad Y Look Sensitivity Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Look Sensitivity Container/VBoxContainer3" unique_id=81568783]
+layout_mode = 2
+text = "0.001"
+
+[node name="ResetButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=255949275]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "RESET"

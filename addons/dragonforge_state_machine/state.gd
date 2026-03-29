@@ -33,15 +33,37 @@ func _ready() -> void:
 	set_process_unhandled_input(false)
 
 
-## Asks the state machine to switch to this [State]. Should always be used instead of _enter_state()
-## when a [State] wants to switch to itself.
+## Asks the [StateMachine] to switch to this [State]. Should always be used
+## instead of calling _enter_state() when a [State] wants to switch to itself.
 func switch_state() -> void:
 	_state_machine.switch_state(self)
+
+
+## Asks the [StateMachine] to exit this [State] if it is the current [State].
+## Should always be used instead of calling _exit_state() when a [State] wants
+## to exit. Will fail if the current [State] is not this one.
+func clear_state() -> void:
+	if is_current_state():
+		_state_machine.clear_state()
 
 
 ## Returns true if this is the current [State].
 func is_current_state() -> bool:
 	return _state_machine.is_current_state(self)
+
+
+## Returns the [StateMachine]'s current [State]. Intended for type checking.
+## E.G. if you wanted to only switch to a custom [b]JumpState[/b] state when the
+## "jump" action is pressed and the player is not in a custom [b]FallState[/b],
+## as long as the FallState had [b]class_name FallState[/b] at the top of the
+## script, you could write:
+## [codeblock]
+## func _process(delta: float) -> void:
+## 	if Input.is_action_just_pressed("jump") and not get_current_state() is FallState:
+## 		switch_state()
+## [/codeblock]
+func get_current_state() -> State:
+	return _state_machine.get_current_state()
 
 
 ## Called when the [State] is added to a [StateMachine].
@@ -84,23 +106,3 @@ func _enter_state() -> void:
 func _exit_state() -> void:
 	if _state_machine.print_state_changes:
 		print_rich("[color=dark_orange][b]Exit[/b][/color] [color=gold][b]%s[/b][/color] [color=ivory]%s State:[/color] [color=dark_orange]%s[/color]" % [_subject_name, _state_machine_name, self.name])
-
-
-## Adds an argument [param arg] to the [member StateMachine._args] [Dictionary]
-## with value [param value] that can be used for communication
-## between [State]s.
-func set_arg(arg: StringName, value: bool = true) -> void:
-	_state_machine.set_arg(arg, value)
-
-
-## Removes an argument [param arg] from the [member StateMachine._args]
-## [Dictionary].
-func remove_arg(arg: StringName) -> void:
-	_state_machine.remove_arg(arg)
-
-
-## Returns an argument [param arg] from the [member StateMachine._args]
-## [Dictionary], or [code]false[/code] if the argument doesn't exist
-## in the [member StateMachine._args].
-func is_arg(arg: StringName) -> bool:
-	return _state_machine.get_arg(arg)

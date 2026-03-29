@@ -1,15 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw00qvyib81gf"]
+[gd_scene format=3 uid="uid://dw00qvyib81gf"]
 
 [ext_resource type="Texture2D" uid="uid://pk6u7je37xyu" path="res://addons/dragonforge_controller/assets/controller_buttons/xbox/xbox_button_color_b.svg" id="1_p1ije"]
-[ext_resource type="Script" uid="uid://dt84iptuy3fbr" path="res://addons/dragonforge_game_template/ui/screens/action_display.gd" id="1_tblkm"]
+[ext_resource type="Script" uid="uid://dt84iptuy3fbr" path="res://addons/dragonforge_controller_ui/screens/action_display.gd" id="1_tblkm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4lsvo"]
 font_size = 36
 
-[node name="Action Display" type="CanvasLayer"]
+[node name="Action Display" type="CanvasLayer" unique_id=619101893]
 script = ExtResource("1_tblkm")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=342843155]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -22,17 +22,17 @@ offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=926399144]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1946976036]
 layout_mode = 2
 alignment = 1
 
-[node name="Action Texture" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="Action Texture" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=892188467]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 0)
 layout_mode = 2
@@ -40,7 +40,7 @@ texture = ExtResource("1_p1ije")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Action Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="Action Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1371764339]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Jump"

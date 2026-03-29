@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dfg3pf4o4rnp"]
+[gd_scene format=3 uid="uid://dfg3pf4o4rnp"]
 
 [ext_resource type="Script" uid="uid://5mq258ryefhj" path="res://addons/dragonforge_controller/gamepad.gd" id="1_iq7rn"]
 [ext_resource type="Texture2D" uid="uid://blt66mgw62kf6" path="res://addons/dragonforge_controller/assets/controller_buttons/xbox/xbox_button_color_a.svg" id="9_1fynb"]
@@ -79,7 +79,7 @@
 [ext_resource type="Texture2D" uid="uid://cupfxrk3s15sn" path="res://addons/dragonforge_controller/assets/controller_buttons/nintendo/switch_stick_r_left.svg" id="84_74nxq"]
 [ext_resource type="Texture2D" uid="uid://dyegtdwsonrpr" path="res://addons/dragonforge_controller/assets/controller_buttons/nintendo/switch_stick_r_up.svg" id="85_rqjw2"]
 
-[node name="Gamepad" type="Node"]
+[node name="Gamepad" type="Node" unique_id=1702847512]
 script = ExtResource("1_iq7rn")
 xbox_button_images = Array[Texture2D]([ExtResource("9_1fynb"), ExtResource("10_gf5c5"), ExtResource("11_mqey2"), ExtResource("12_l33g6"), ExtResource("13_tgtxa"), ExtResource("14_nxyiu"), ExtResource("15_rlhc6"), ExtResource("16_t8llf"), ExtResource("17_0lusj"), ExtResource("18_nvhx6"), ExtResource("19_ujxcs"), ExtResource("20_vwht2"), ExtResource("21_rxl3t"), ExtResource("22_kwkng"), ExtResource("23_c7inf"), ExtResource("24_1gehx")])
 playstation_button_images = Array[Texture2D]([ExtResource("25_6dbef"), ExtResource("26_mkcw7"), ExtResource("27_6dea4"), ExtResource("28_h2rj0"), ExtResource("29_lqj4b"), null, ExtResource("30_ibbrp"), ExtResource("31_6j1ts"), ExtResource("32_j2sul"), ExtResource("33_mn7tq"), ExtResource("34_4g2dk"), ExtResource("35_xxjyb"), ExtResource("36_5vhmi"), ExtResource("37_8j4ib"), ExtResource("38_4b5e3"), ExtResource("39_x8s3m")])

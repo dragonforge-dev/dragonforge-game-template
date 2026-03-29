@@ -3,7 +3,12 @@
 extends Node
 
 ## Look sensitivity modifier for 3D camera controls
-@export var sensitivity: float = 0.0075
+@export var sensitivity: float = 0.0075:
+	set(value):
+		sensitivity = value
+		if get_tree().root.has_node("Disk"):
+			var disk: Variant = get_tree().root.get_node("Disk")
+			disk.save_setting(sensitivity, "mouse_sensitivity")
 ## ● MOUSE_BUTTON_NONE = 0[br]
 ## Enum value which doesn't correspond to any mouse button. This is used to initialize MouseButton properties with a generic state.[br]
 ## ● MOUSE_BUTTON_LEFT = 1[br]
@@ -28,7 +33,15 @@ extends Node
 @export var mouse_button_images: Array[Texture2D]
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _ready() -> void:
+	if get_tree().root.has_node("Disk"):
+		var disk: Variant = get_tree().root.get_node("Disk")
+		var returned_value = disk.load_setting("mouse_sensitivity")
+		if returned_value:
+			sensitivity = returned_value
+
+
+func _input(event: InputEvent) -> void:
 	if Controller.enable_3d_look and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and event is InputEventMouseMotion:
 		Controller.look = -event.relative * sensitivity
 

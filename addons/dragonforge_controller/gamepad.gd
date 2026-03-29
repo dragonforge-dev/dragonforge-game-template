@@ -11,9 +11,19 @@ enum Type {
 }
 
 ## Right stick horizontal look sensitivity modifier for 3D camera controls.
-@export var horizontal_look_sensitivity: float = 0.075
+@export var horizontal_look_sensitivity: float = 0.075:
+	set(value):
+		horizontal_look_sensitivity = value
+		if get_tree().root.has_node("Disk"):
+			var disk: Variant = get_tree().root.get_node("Disk")
+			disk.save_setting(horizontal_look_sensitivity, "horizontal_look_sensitivity")
 ## Right stick vertical look sensitivity modifier for 3D camera controls.
-@export var vertical_look_sensitivity: float = 0.0375
+@export var vertical_look_sensitivity: float = 0.0375:
+	set(value):
+		vertical_look_sensitivity = value
+		if get_tree().root.has_node("Disk"):
+			var disk: Variant = get_tree().root.get_node("Disk")
+			disk.save_setting(vertical_look_sensitivity, "vertical_look_sensitivity")
 ##● JOY_BUTTON_A = 0
 ##Game controller SDL button A. Corresponds to the bottom action button: Sony Cross, Xbox A, Nintendo B.
 ##● JOY_BUTTON_B = 1
@@ -102,6 +112,17 @@ enum Type {
 	Type.Playstation: playstation_negative_joystick_images,
 	Type.Nintendo: nintendo_negative_joystick_images
 }
+
+
+func _ready() -> void:
+	if get_tree().root.has_node("Disk"):
+		var disk: Variant = get_tree().root.get_node("Disk")
+		var returned_value = disk.load_setting("horizontal_look_sensitivity")
+		if returned_value:
+			horizontal_look_sensitivity = returned_value
+		var returned_value_2 = disk.load_setting("vertical_look_sensitivity")
+		if returned_value_2:
+			vertical_look_sensitivity = returned_value_2
 
 
 func _unhandled_input(event: InputEvent) -> void:

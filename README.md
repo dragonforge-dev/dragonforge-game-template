@@ -1,12 +1,12 @@
-[![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.6.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
+[![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.6.1.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 [![License](https://img.shields.io/github/license/dragonforge-dev/dragonforge-game-template?logo=mit)](https://github.com/dragonforge-dev/dragonforge-game-template/blob/main/LICENSE)
 [![GitHub release badge](https://badgen.net/github/release/dragonforge-dev/dragonforge-game-template/latest)](https://github.com/dragonforge-dev/dragonforge-game-template/releases/latest)
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dragonforge-dev/dragonforge-game-template)](https://img.shields.io/github/languages/code-size/dragonforge-dev/dragonforge-game-template)
 
 # Dragonforge Game Template
 A Godot game template for game jams.
-# Version 0.10.2
-For use with **Godot 4.6-stable** and later.
+# Version 0.10.3
+For use with **Godot 4.6.1-stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
 - [Dragonforge Controller 0.14.1](https://github.com/dragonforge-dev/dragonforge-controller)

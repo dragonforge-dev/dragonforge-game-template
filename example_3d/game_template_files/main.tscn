@@ -203,6 +203,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Audio" parent="Game State Machine/Main Menu/CanvasLayer/Theme" unique_id=958825840 instance=ExtResource("14_xr8be")]
+process_mode = 2
 visible = false
 layout_mode = 1
 
