@@ -1,5 +1,5 @@
 @tool
-@icon("res://addons/dragonforge_game_template/assets/textures/icons/gears.svg")
+@icon("uid://ee4pcroscqjt")
 # Game Configuration
 class_name GameConfiguration extends Node
 

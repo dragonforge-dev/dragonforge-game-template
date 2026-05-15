@@ -1,3 +1,4 @@
+@icon("uid://gpt0r4tqaaem")
 class_name MapLevel3D extends Node3D
 
 @export var spawn_point: Node3D

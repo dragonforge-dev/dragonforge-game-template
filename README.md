@@ -5,11 +5,11 @@
 
 # Dragonforge Game Template
 A Godot game template for game jams.
-# Version 0.10.3
+# Version 0.10.4
 For use with **Godot 4.6.1-stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
-- [Dragonforge Controller 0.14.1](https://github.com/dragonforge-dev/dragonforge-controller)
+- [Dragonforge Controller 0.14.6](https://github.com/dragonforge-dev/dragonforge-controller)
 - [Dragonforge Disk (Save/Load) 0.7](https://github.com/dragonforge-dev/dragonforge-disk)
 - [Dragonforge Display 0.15](https://github.com/dragonforge-dev/dragonforge-display)
 - [Dragonforge Sound 0.17.1](https://github.com/dragonforge-dev/dragonforge-sound)

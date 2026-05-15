@@ -1,3 +1,4 @@
+@icon("uid://e6pb8qppn6kd")
 class_name MapLevel2D extends Node2D
 
 @export var spawn_point: Node2D
