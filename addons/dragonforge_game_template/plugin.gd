@@ -21,8 +21,6 @@ func _enable_plugin() -> void:
 	var main_scene = ProjectSettings.get_setting("application/config/autoload_main_scene", DEFAULT_AUTOLOAD_MAIN_SCENE)
 	ProjectSettings.set_setting(MAIN_SCENE_SETTING, main_scene)
 	ProjectSettings.save()
-	#if get_node_or_null("/root/Sound") == null:
-		#load Sound autoload
 	print_rich("[color=yellow][b]WARNING[/b][/color]: Project must be reloaded for InputMap changes to appear. [color=ivory][b]Project -> Reload Current Project[/b][/color]")
 
 
