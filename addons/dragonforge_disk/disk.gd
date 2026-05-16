@@ -1,5 +1,4 @@
-#TODO: Add unit tests.
-@icon("res://addons/dragonforge_disk/assets/textures/icons/floppy-disk-red.svg")
+@icon("uid://dm87nd032qpjk")
 extends Node
 
 const DEFAULT_SETTINGS_PATH = "user://configuration.settings"

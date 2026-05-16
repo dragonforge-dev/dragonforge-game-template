@@ -4,3 +4,5 @@
 
 [node name="Game Configuration" type="Node" unique_id=2091606029]
 script = ExtResource("1_ix3ps")
+game_scene = "res://example_3d/game_template_files/game.tscn"
+main_scene = "res://example_3d/game_template_files/main.tscn"
