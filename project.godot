@@ -14,14 +14,16 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Dragonforge Game Template v0.10.4"
+config/name="Dragonforge Game Template v0.11"
 config/description="A game template for game jams."
-config/version="0.10.4"
-run/main_scene="res://addons/dragonforge_game_template/main.tscn"
+config/version="0.11"
+run/main_scene="res://example_3d/game_template_files/main.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="uid://owrnlmkqcu27"
+config/autoload_game_scene="res://example_3d/game_template_files/game.tscn"
+config/autoload_main_scene="res://example_3d/game_template_files/main.tscn"
 
 [autoload]
 
@@ -34,7 +36,7 @@ Gamepad="*uid://dfg3pf4o4rnp"
 Mouse="*uid://bwlgdsh0r723f"
 Keyboard="*uid://d0nyff4fg7q68"
 Controller="*uid://3ltyjrnxgjpo"
-Game="*uid://hox7guprntrc"
+Game="*uid://x62t8cao8nhd"
 
 [editor_plugins]
 
