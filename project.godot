@@ -38,6 +38,10 @@ Keyboard="*uid://d0nyff4fg7q68"
 Controller="*uid://3ltyjrnxgjpo"
 Game="*uid://x62t8cao8nhd"
 
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dragonforge_controller/plugin.cfg", "res://addons/dragonforge_disk/plugin.cfg", "res://addons/dragonforge_display/plugin.cfg", "res://addons/dragonforge_game_template/plugin.cfg", "res://addons/dragonforge_sound/plugin.cfg", "res://addons/dragonforge_user_interface/plugin.cfg")
