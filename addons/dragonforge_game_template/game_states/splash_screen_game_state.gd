@@ -1,11 +1,11 @@
-class_name GameStateSplashScreen extends State
+## Shows all the [SplashScreen] nodes attached as children, in the order they
+## are attached. Add any [SplashScreen] nodes you want shown at the beginning
+##  of the game. If this [State] has no child [SplashScreen] nodes, the splash
+## screen state will be skipped.
+class_name SplashScreenGameState extends State
 
 const SPLASH_SCREENS_VIEWED = "splash_screens_viewed"
 
-## All the splash screens to show, and the order to show them in. Add any 
-## [SplashScreen] nodes you want shown at the beginning of the game. Leaving
-## this blank will cause the splash screen state to be skipped.
-@export var active_splash_screens: Array[SplashScreen]
 ## If true, you can skip the splash screens using the "skip" action (which is
 ## automatically added when this plugin is activated) as long as you have viewed
 ## them once. See [member GameStateSplashScreen.splash_screens_viewed] for more
@@ -21,12 +21,17 @@ var _current_splash_screen: int = 0
 ## false if configuration.settings is deleted in the UserData folder.
 ## See also: [member Main.bypass_splash_screens_during_debug].
 var splash_screens_viewed: bool = false
+## All the splash screens to show, and the order to show them in. Populated
+## using the child nodes of this [State].
+var _active_splash_screens: Array[SplashScreen]
 
 
 func _ready() -> void:
 	super()
-	for splash_screen in active_splash_screens:
-		splash_screen.splash_complete.connect(_on_splash_complete)
+	for splash_screen in get_children():
+		if splash_screen is SplashScreen:
+			splash_screen.splash_complete.connect(_on_splash_complete)
+			_active_splash_screens.append(splash_screen)
 	# Load whether or not the splash screens have been viewed.
 	var splash_viewed = Disk.load_setting(SPLASH_SCREENS_VIEWED)
 	if splash_viewed is bool:
@@ -41,10 +46,10 @@ func _input(event: InputEvent) -> void:
 func _enter_state() -> void:
 	super()
 	set_process_input(true)
-	if active_splash_screens.size() == 0:
+	if _active_splash_screens.size() == 0:
 		Game.splash_screens_complete.emit()
 		return
-	active_splash_screens[_current_splash_screen].show()
+	_active_splash_screens[_current_splash_screen].show()
 
 
 func _exit_state() -> void:
@@ -55,10 +60,10 @@ func _exit_state() -> void:
 
 
 func _on_splash_complete() -> void:
-	active_splash_screens[_current_splash_screen].hide()
+	_active_splash_screens[_current_splash_screen].hide()
 	_current_splash_screen += 1
-	if _current_splash_screen < active_splash_screens.size():
-		active_splash_screens[_current_splash_screen].show()
+	if _current_splash_screen < _active_splash_screens.size():
+		_active_splash_screens[_current_splash_screen].show()
 	else:
 		print("Splash Complete")
 		splash_screens_viewed = true

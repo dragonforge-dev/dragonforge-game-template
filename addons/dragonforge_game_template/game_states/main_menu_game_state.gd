@@ -1,4 +1,4 @@
-class_name GameStateMainMenu extends State
+class_name MainMenuGameState extends State
 
 ## Music that plays whenever the main menu is visible.
 @export var main_menu_music: AudioStream

@@ -1,4 +1,4 @@
-class_name GameStateLoading extends State
+class_name LoadingGameState extends State
 
 var progress_amount := 0.0
 var level_path: String

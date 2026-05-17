@@ -1,4 +1,4 @@
-class_name GameStateGameplay extends State
+class_name GameplayGameState extends State
 
 var level_path: String
 var player: Node

@@ -2,15 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cbdygxoaqt4fh" path="res://addons/dragonforge_game_template/main.gd" id="1_j1w7p"]
 [ext_resource type="Script" uid="uid://i0o4sv7i7cp0" path="res://addons/dragonforge_state_machine/state_machine.gd" id="2_0k747"]
-[ext_resource type="Script" uid="uid://diddwe2khtlx7" path="res://addons/dragonforge_game_template/game_states/game_state_splash_screen.gd" id="3_3fsx3"]
+[ext_resource type="Script" uid="uid://diddwe2khtlx7" path="res://addons/dragonforge_game_template/game_states/splash_screen_game_state.gd" id="3_3fsx3"]
 [ext_resource type="PackedScene" uid="uid://dpypwgpnlx0kb" path="res://addons/dragonforge_user_interface/splash_screens/godot/godot_color_splash_screen.tscn" id="4_d7ehc"]
-[ext_resource type="PackedScene" uid="uid://1mevm3fut3t0" path="res://addons/dragonforge_user_interface/splash_screens/godot/godot_black_and_white_splash_screen.tscn" id="5_3150d"]
 [ext_resource type="PackedScene" uid="uid://iujsdfhqqv4o" path="res://addons/dragonforge_user_interface/splash_screens/dragonforge_dev/dragonforge_dev_splash_screen.tscn" id="6_wnhy6"]
-[ext_resource type="Script" uid="uid://7h7dfu4itm5m" path="res://addons/dragonforge_game_template/game_states/game_state_loading.gd" id="7_7jr54"]
+[ext_resource type="Script" uid="uid://7h7dfu4itm5m" path="res://addons/dragonforge_game_template/game_states/loading_game_state.gd" id="7_7jr54"]
 [ext_resource type="Texture2D" uid="uid://dcf5kxmahsco7" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/PNG_Godot Font 1 Circle Cloud.png" id="8_gburs"]
-[ext_resource type="Script" uid="uid://jd2223iicj5q" path="res://addons/dragonforge_game_template/game_states/game_state_gameplay.gd" id="9_lyh6f"]
+[ext_resource type="Script" uid="uid://jd2223iicj5q" path="res://addons/dragonforge_game_template/game_states/gameplay_game_state.gd" id="9_lyh6f"]
 [ext_resource type="PackedScene" uid="uid://dw00qvyib81gf" path="res://addons/dragonforge_controller_ui/screens/action_display.tscn" id="10_vci2x"]
-[ext_resource type="Script" uid="uid://b716hier1tnm7" path="res://addons/dragonforge_game_template/game_states/game_state_main_menu.gd" id="11_eawnr"]
+[ext_resource type="Script" uid="uid://b716hier1tnm7" path="res://addons/dragonforge_game_template/game_states/main_menu_game_state.gd" id="11_eawnr"]
 [ext_resource type="Texture2D" uid="uid://b6h0ihc2tcxhm" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/godot file 3.png" id="13_2nh0k"]
 [ext_resource type="PackedScene" uid="uid://d2gujmw182d4w" path="res://addons/dragonforge_sound/ui/screens/audio.tscn" id="14_de6d3"]
 [ext_resource type="PackedScene" uid="uid://dqfau8pvhksue" path="res://addons/dragonforge_controller_ui/screens/controls.tscn" id="15_voa1y"]
@@ -61,14 +60,11 @@ script = ExtResource("2_0k747")
 starting_state = NodePath("Splash Screen")
 metadata/_custom_type_script = "uid://i0o4sv7i7cp0"
 
-[node name="Splash Screen" type="Node" parent="Game State Machine" unique_id=1947184488 node_paths=PackedStringArray("active_splash_screens")]
+[node name="Splash Screen" type="Node" parent="Game State Machine" unique_id=1947184488]
 script = ExtResource("3_3fsx3")
-active_splash_screens = [NodePath("Godot Color Splash Screen"), NodePath("Dragonforge Dev Splash Screen")]
 metadata/_custom_type_script = "uid://diddwe2khtlx7"
 
 [node name="Godot Color Splash Screen" parent="Game State Machine/Splash Screen" unique_id=417411336 instance=ExtResource("4_d7ehc")]
-
-[node name="Godot Black and White Splash Screen" parent="Game State Machine/Splash Screen" unique_id=1730515234 instance=ExtResource("5_3150d")]
 
 [node name="Dragonforge Dev Splash Screen" parent="Game State Machine/Splash Screen" unique_id=162513764 instance=ExtResource("6_wnhy6")]
 
