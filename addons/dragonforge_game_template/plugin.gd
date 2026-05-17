@@ -22,7 +22,7 @@ func _enable_plugin() -> void:
 	ProjectSettings.set_setting(MAIN_SCENE_SETTING, main_scene)
 	ProjectSettings.save()
 	print_rich("Using Game Autoload File Path: [color=ivory]%s[/color]" % game_scene)
-	print_rich("Using Main File Path: [color=ivory]%s[/color]" % game_scene)
+	print_rich("Using Main File Path: [color=ivory]%s[/color]" % main_scene)
 	print_rich("[color=yellow][b]WARNING[/b][/color]: Project must be reloaded for InputMap changes to appear. [color=ivory][b]Project -> Reload Current Project[/b][/color]")
 
 
