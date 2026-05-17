@@ -15,6 +15,7 @@ The following dependencies are included in the addons folder and are required fo
 - [Dragonforge Sound 0.17.1](https://github.com/dragonforge-dev/dragonforge-sound)
 - [Dragonforge State Machine 1.1](https://github.com/dragonforge-dev/dragonforge-state-machine)
 - [Dragonforge User Interface 0.2.1](https://github.com/dragonforge-dev/dragonforge-user-interface)
+- [Dragonforge Credits 0.1](https://github.com/dragonforge-dev/dragonforge-credits)
 # Installation Instructions
 1. Copy all the folders from the `addons` folder into your project's `addons` folder.
 2. Ignore any errors (they are appearing because the component is not yet enabled):
