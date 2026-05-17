@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://jd2223iicj5q" path="res://addons/dragonforge_game_template/game_states/gameplay_game_state.gd" id="8_8jwi5"]
 [ext_resource type="PackedScene" uid="uid://dw00qvyib81gf" path="res://addons/dragonforge_controller_ui/screens/action_display.tscn" id="9_emuep"]
 [ext_resource type="Script" uid="uid://b716hier1tnm7" path="res://addons/dragonforge_game_template/game_states/main_menu_game_state.gd" id="10_mmjmq"]
+[ext_resource type="AudioStream" uid="uid://d2tx3dpo75765" path="res://example_2d/assets/sound/music/dragonforge_theme.ogg" id="11_78sul"]
 [ext_resource type="Texture2D" uid="uid://b6h0ihc2tcxhm" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/godot file 3.png" id="11_ibmu0"]
 [ext_resource type="PackedScene" uid="uid://d2gujmw182d4w" path="res://addons/dragonforge_sound/ui/screens/audio.tscn" id="12_w6a15"]
 [ext_resource type="PackedScene" uid="uid://dqfau8pvhksue" path="res://addons/dragonforge_controller_ui/screens/controls.tscn" id="13_dx6wa"]
@@ -157,6 +158,7 @@ visible = false
 
 [node name="Main Menu" type="Node" parent="Game State Machine" unique_id=566528286 node_paths=PackedStringArray("main_menu_background", "main_menu", "pause_menu")]
 script = ExtResource("10_mmjmq")
+main_menu_music = ExtResource("11_78sul")
 main_menu_background = NodePath("Background")
 main_menu = NodePath("CanvasLayer/Theme/Start")
 pause_menu = NodePath("CanvasLayer/Theme/Start")
