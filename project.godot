@@ -22,8 +22,8 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="uid://owrnlmkqcu27"
-config/autoload_game_scene="res://example_3d/game_template_files/game.tscn"
 config/autoload_main_scene="res://example_3d/game_template_files/main.tscn"
+config/autoload_game_scene="res://example_3d/game_template_files/game.tscn"
 
 [autoload]
 
@@ -36,7 +36,7 @@ Gamepad="*uid://dfg3pf4o4rnp"
 Mouse="*uid://bwlgdsh0r723f"
 Keyboard="*uid://d0nyff4fg7q68"
 Controller="*uid://3ltyjrnxgjpo"
-Game="*uid://hox7guprntrc"
+Game="*uid://x62t8cao8nhd"
 
 [editor_plugins]
 

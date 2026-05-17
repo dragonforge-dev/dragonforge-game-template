@@ -2,7 +2,6 @@ class_name GameplayGameState extends State
 
 var level_path: String
 var player: Node
-var current_level: Node
 var target_transition_area
 var level_loading = false
 
@@ -54,8 +53,8 @@ func _start_level() -> void:
 	add_child(new_level)
 	if player != null:
 		player.reparent(self)
-	if new_level != current_level and current_level != null:
-		current_level.queue_free()
-	current_level = new_level
-	current_level.start(player, target_transition_area)
+	if new_level != Game.current_level and Game.current_level != null:
+		Game.current_level.queue_free()
+	Game.current_level = new_level
+	Game.current_level.start(player, target_transition_area)
 	level_loading = false

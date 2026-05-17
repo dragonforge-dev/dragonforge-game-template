@@ -25,7 +25,9 @@ var is_loaded: bool = false
 var in_progress: bool = false
 ## Path for loading the next level. Saved to disk.
 var level_path: String
-
+## Stores the current level.
+## TODO: Make this specific to MapLevel2D and MapLevel3D when split.
+var current_level: Node
 
 # Loading this before the game even initializes. Ultimately if there are multiple
 # saves this won't work, but for this game jam (Craftpix 1 - 2025) it will work.
