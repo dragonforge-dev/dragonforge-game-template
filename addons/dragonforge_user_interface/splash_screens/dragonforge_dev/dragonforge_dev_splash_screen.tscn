@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://iujsdfhqqv4o"]
+[gd_scene format=3 uid="uid://iujsdfhqqv4o"]
 
 [ext_resource type="Script" uid="uid://duw1rutluws5t" path="res://addons/dragonforge_user_interface/ui/screens/splash_screen.gd" id="1_nvt6o"]
 [ext_resource type="Texture2D" uid="uid://b8rvftwg2jdic" path="res://addons/dragonforge_user_interface/splash_screens/dragonforge_dev/Dragonforge Development Logo - Cropped.png" id="2_qip5e"]
-[ext_resource type="AudioStream" uid="uid://cslvxevoonx7j" path="res://addons/dragonforge_user_interface/splash_screens/dragonforge_dev/Asian Sho.wav" id="3_y68wf"]
+[ext_resource type="AudioStream" uid="uid://cjssrh2jwm1du" path="res://addons/dragonforge_user_interface/splash_screens/dragonforge_dev/Asian Sho.ogg" id="3_dtl02"]
 
 [sub_resource type="Animation" id="Animation_vunwi"]
 length = 0.001
@@ -45,7 +45,7 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_y68wf")
+"stream": ExtResource("3_dtl02")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -57,7 +57,7 @@ _data = {
 &"Show": SubResource("Animation_ryixe")
 }
 
-[node name="Dragonforge Dev Splash Screen" type="Control" node_paths=PackedStringArray("animation_player")]
+[node name="Dragonforge Dev Splash Screen" type="Control" unique_id=92364071 node_paths=PackedStringArray("animation_player")]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -70,7 +70,7 @@ display_time = 6.2
 animation_player = NodePath("AnimationPlayer")
 metadata/_custom_type_script = "uid://duw1rutluws5t"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1444865634]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,18 +79,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.03529412, 0.043137256, 0.1882353, 1)
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=506379625]
 self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_top = 32.5
-offset_right = 1152.0
-offset_bottom = 615.5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_qip5e")
 stretch_mode = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_mw7v5")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=590976227]
+libraries/ = SubResource("AnimationLibrary_mw7v5")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=640557132]

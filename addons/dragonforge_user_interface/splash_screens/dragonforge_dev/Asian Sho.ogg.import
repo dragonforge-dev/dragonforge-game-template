@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cjssrh2jwm1du"
+path="res://.godot/imported/Asian Sho.ogg-870cf7459d045ed3be3c48045bd3c3e7.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/dragonforge_user_interface/splash_screens/dragonforge_dev/Asian Sho.ogg"
+dest_files=["res://.godot/imported/Asian Sho.ogg-870cf7459d045ed3be3c48045bd3c3e7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

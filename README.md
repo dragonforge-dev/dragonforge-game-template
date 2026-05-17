@@ -5,16 +5,17 @@
 
 # Dragonforge Game Template
 A Godot game template for game jams.
-# Version 0.10.4
+# Version 0.11
 For use with **Godot 4.6.2-stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
 - [Dragonforge Controller 0.14.6](https://github.com/dragonforge-dev/dragonforge-controller)
-- [Dragonforge Disk (Save/Load) 0.8](https://github.com/dragonforge-dev/dragonforge-disk)
+- [Dragonforge Disk (Save/Load) 0.8.1](https://github.com/dragonforge-dev/dragonforge-disk)
 - [Dragonforge Display 0.15](https://github.com/dragonforge-dev/dragonforge-display)
 - [Dragonforge Sound 0.17.1](https://github.com/dragonforge-dev/dragonforge-sound)
 - [Dragonforge State Machine 1.1](https://github.com/dragonforge-dev/dragonforge-state-machine)
 - [Dragonforge User Interface 0.2.1](https://github.com/dragonforge-dev/dragonforge-user-interface)
+- [Dragonforge Credits 0.1](https://github.com/dragonforge-dev/dragonforge-credits)
 # Installation Instructions
 1. Copy all the folders from the `addons` folder into your project's `addons` folder.
 2. Ignore any errors (they are appearing because the component is not yet enabled):
@@ -218,32 +219,34 @@ This **State** monitors the `Game.splash_screens_complete` signal and takes over
 # Localization
 This project's UI has been created to work with localization. You can easily use localization by using the [Dragonforge Localization](https://github.com/dragonforge-dev/dragonforge-localization) plugin. The following labels exist and should be given translations:
 
-- VOLUME
-- MAIN
-- MUSIC
-- SOUND_EFFECTS
-- DIALOGUE
-- BACK
-- DISPLAY_SETTINGS
-- MONITOR
-- FULLSCREEN
-- RESOLUTION
-- ZOOM_SCALE
 - ACTION
-- KEYBOARD
-- MOUSE
-- RESET
-- SONG_TITLE
-- ARTIST
 - ALBUM
-- PLAY
-- NEXT
-- PREVIOUS
-- PAUSE
-- NEW_GAME
-- SETTINGS
-- MUSIC_DISPLAY
+- ARTIST
+- AUDIO
+- BACK
 - CREDITS
+- DIALOGUE
+- DISPLAY
+- DISPLAY_SETTINGS
+- FULLSCREEN
+- KEYBOARD
+- MAIN
+- MONITOR
+- MOUSE
+- MUSIC
+- MUSIC_DISPLAY
+- NEW_GAME
+- NEXT
+- PAUSE
+- PLAY
+- PREVIOUS
 - QUIT_GAME
+- RESET
+- RESOLUTION
 - RESUME_GAME
 - RESUME_SAVED_GAME
+- SETTINGS
+- SONG_TITLE
+- SOUND_EFFECTS
+- VOLUME
+- ZOOM_SCALE

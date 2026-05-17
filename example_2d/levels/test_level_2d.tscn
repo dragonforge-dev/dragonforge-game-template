@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dcf5kxmahsco7" path="res://addons/dragonforge_game_template/assets/textures/godot_splash/PNG_Godot Font 1 Circle Cloud.png" id="1_7rdr6"]
 [ext_resource type="Script" uid="uid://d3v8do706twot" path="res://addons/dragonforge_game_template/map_level_2d.gd" id="1_iifpw"]
-[ext_resource type="AudioStream" uid="uid://kug5or8n56bb" path="res://example_2d/assets/sound/music/bgm_01_hero.wav" id="2_aibuv"]
+[ext_resource type="AudioStream" uid="uid://d2kwq55jt2ql7" path="res://example_2d/assets/sound/music/bgm_01_hero.ogg" id="2_aibuv"]
 
 [node name="TestLevel2D" type="Node2D" unique_id=677675809 node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_iifpw")

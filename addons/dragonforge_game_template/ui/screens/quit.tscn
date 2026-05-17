@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqqvy1p3pt5m6"]
+[gd_scene format=3 uid="uid://cqqvy1p3pt5m6"]
 
 [ext_resource type="Script" uid="uid://cprxft1lx8m4j" path="res://addons/dragonforge_user_interface/ui/screens/screen.gd" id="1_uxdwy"]
 [ext_resource type="Script" uid="uid://1e5jknrhaq58" path="res://addons/dragonforge_game_template/ui/buttons/button_quit.gd" id="2_k0hcj"]
 [ext_resource type="Script" uid="uid://bq1x7qgsp1es6" path="res://addons/dragonforge_user_interface/ui/buttons/button_open_screen.gd" id="3_k0hcj"]
 
-[node name="Quit" type="Control" node_paths=PackedStringArray("default_focused_control")]
+[sub_resource type="InputEventAction" id="InputEventAction_k0hcj"]
+action = &"back_button"
+
+[sub_resource type="Shortcut" id="Shortcut_rl7m8"]
+events = [SubResource("InputEventAction_k0hcj")]
+
+[node name="Quit" type="Control" unique_id=1937665976 node_paths=PackedStringArray("default_focused_control")]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 3
 anchors_preset = 8
@@ -22,7 +28,7 @@ script = ExtResource("1_uxdwy")
 default_focused_control = NodePath("MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/Ok")
 metadata/_custom_type_script = "uid://cprxft1lx8m4j"
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1090659995]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -36,51 +42,52 @@ offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="MarginContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1988467761]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=300725943]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=2000721974]
 layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="TopDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="TopDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=909822911]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_type_variation = &"TopDecoration"
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1646220815]
 layout_mode = 2
 size_flags_vertical = 6
 text = "QUIT_TO_DESKTOP"
 horizontal_alignment = 1
 
-[node name="BottomDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="BottomDecoration" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=489405242]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_type_variation = &"BottomDecoration"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1336209739]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
 theme_override_constants/separation = 20
 
-[node name="Ok" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="Ok" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1247481547]
 layout_mode = 2
 text = "OK"
 script = ExtResource("2_k0hcj")
 
-[node name="Cancel" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="Cancel" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1077528678]
 layout_mode = 2
+shortcut = SubResource("Shortcut_rl7m8")
 text = "CANCEL"
 script = ExtResource("3_k0hcj")
 screen_to_open = "Start"
 
-[node name="TopDecoration2" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="TopDecoration2" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=533388169]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_type_variation = &"TopDecoration"

@@ -12,15 +12,17 @@ const DEFAULT_AUTOLOAD_MAIN_SCENE = "res://addons/dragonforge_game_template/main
 
 
 func _enable_plugin() -> void:
-	var game_scene = ProjectSettings.get_setting("application/config/autoload_game_scene", DEFAULT_AUTOLOAD_GAME_SCENE)
+	var game_scene: String = ProjectSettings.get_setting("application/config/autoload_game_scene", DEFAULT_AUTOLOAD_GAME_SCENE)
 	add_autoload_singleton(AUTOLOAD_GAME, game_scene)
 	append_action(UI_ACCEPT_ACTION, JOY_BUTTON_A)
 	add_action(BACK_BUTTON_ACTION, JOY_BUTTON_B, MOUSE_BUTTON_XBUTTON1, KEY_ESCAPE)
 	add_action(SKIP_ACTION, JOY_BUTTON_B, MOUSE_BUTTON_LEFT, KEY_SPACE)
 	add_action(PAUSE_ACTION, JOY_BUTTON_START, MOUSE_BUTTON_NONE, KEY_ESCAPE)
-	var main_scene = ProjectSettings.get_setting("application/config/autoload_main_scene", DEFAULT_AUTOLOAD_MAIN_SCENE)
+	var main_scene: String = ProjectSettings.get_setting("application/config/autoload_main_scene", DEFAULT_AUTOLOAD_MAIN_SCENE)
 	ProjectSettings.set_setting(MAIN_SCENE_SETTING, main_scene)
 	ProjectSettings.save()
+	print_rich("Using Game Autoload File Path: [color=ivory]%s[/color]" % game_scene)
+	print_rich("Using Main File Path: [color=ivory]%s[/color]" % game_scene)
 	print_rich("[color=yellow][b]WARNING[/b][/color]: Project must be reloaded for InputMap changes to appear. [color=ivory][b]Project -> Reload Current Project[/b][/color]")
 
 
